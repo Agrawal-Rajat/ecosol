@@ -1,38 +1,43 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function CoreServices() {
   const services = [
     {
       id: "01",
-      title: "Electrical Design Engineering",
+      title: "Power System Studies",
       image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1558444479-c8f010523282?auto=format&fit=crop&q=80&w=1200",
       description:
-        "Comprehensive electrical design for utility-scale industrial projects and specialized solar power plant layouts.",
+        "Advanced load flow, short circuit analysis, and grid stability studies using industry-standard computational modeling.",
+      tags: ["ETAP", "PSS/E", "DIGSILENT"],
     },
     {
       id: "02",
-      title: "Power System Studies",
+      title: "Protection & Safety",
       image:
-        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1590959651373-a3db0f38a961?auto=format&fit=crop&q=80&w=1200",
       description:
-        "Advanced load flow, short circuit analysis, protection coordination, and stability studies for complex grids.",
+        "Relay configuration, protection coordination, and specialized Arc Flash mitigation to ensure global compliance.",
+      tags: ["IEEE", "IEC", "NFPA"],
     },
     {
       id: "03",
-      title: "Solar & Renewable Engineering",
+      title: "Renewable Integration",
       image:
-        "https://images.unsplash.com/photo-1509391366360-fe5bb6583e29?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1509391366360-fe5bb6583e29?auto=format&fit=crop&q=80&w=1200",
       description:
-        "End-to-end conceptual and detailed engineering for large-scale Solar PV, hybrid systems, and battery storage.",
+        "Detailed engineering for utility-scale Solar PV, hybrid systems, and battery energy storage (BESS).",
+      tags: ["SOLAR", "WIND", "BESS"],
     },
     {
       id: "04",
-      title: "Protection & Safety Studies",
+      title: "Substations & Grounding",
       image:
-        "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1200",
       description:
-        "Specialized relay configuration, arc flash analysis, and safety mitigation to ensure global standard compliance.",
+        "Comprehensive design for high-voltage substations and complex grounding system EMI analysis.",
+      tags: ["400KV", "GIS", "EMC"],
     },
   ];
 
@@ -40,196 +45,271 @@ function CoreServices() {
     <>
       <style>
         {`
-          .service-card {
-            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+          .services-vivid-section {
+            padding: 140px 0;
+            background-color: #ffffff;
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; /* Align content to bottom */
-            min-height: 450px;
-            color: #ffffff;
-            border-radius: 4px;
           }
 
-          .card-bg {
+          /* Global Architectural Grid Background */
+          .services-vivid-section::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(#e2e8f0 1.2px, transparent 1.2px);
+            background-size: 45px 45px;
+            opacity: 0.6;
+            pointer-events: none;
+          }
+
+          .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+          }
+
+          .services-main-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 60px;
+          }
+
+          .service-item-card {
+            position: relative;
+            height: 520px;
+            background: #000033;
+            overflow: hidden;
+            border-radius: 2px;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+          }
+
+          .service-img-layer {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             background-size: cover;
             background-position: center;
-            transition: transform 0.6s ease;
-            z-index: 1;
+            opacity: 0.6;
+            transition: transform 1.2s ease, opacity 0.6s ease;
           }
 
-          /* Dark gradient overlay for text legibility */
-          .card-overlay {
+          .service-gradient {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,102,0.1) 0%, rgba(0,0,51,0.9) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,51,0) 20%, rgba(0,0,51,0.95) 95%);
             z-index: 2;
-            transition: background 0.4s ease;
           }
 
-          .card-content {
-            position: relative;
-            z-index: 3;
+          .service-content-box {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%;
             padding: 40px 30px;
+            z-index: 3;
+            transform: translateY(65px);
+            transition: transform 0.4s ease;
           }
 
-          .service-card:hover .card-bg {
+          .service-item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 40px 80px rgba(0,0,51,0.2);
+          }
+
+          .service-item-card:hover .service-img-layer {
             transform: scale(1.1);
+            opacity: 0.8;
           }
 
-          .service-card:hover .card-overlay {
-            background: linear-gradient(to bottom, rgba(68,158,29,0.2) 0%, rgba(0,0,51,1) 100%);
+          .service-item-card:hover .service-content-box {
+            transform: translateY(0);
           }
 
-          /* Mobile Slider Logic */
+          .tech-tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transition: opacity 0.4s ease 0.2s;
+          }
+
+          .service-item-card:hover .tech-tag-group {
+            opacity: 1;
+          }
+
+          .tech-pill {
+            font-family: monospace;
+            font-size: 10px;
+            color: #ffffff;
+            background: var(--color-accent-green);
+            padding: 3px 10px;
+            letter-spacing: 1px;
+            font-weight: 700;
+          }
+
+          .view-all-btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: transparent;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+          }
+
+          .view-all-btn:hover {
+            background: var(--color-primary);
+            color: #ffffff;
+          }
+
+          /* MOBILE HORIZONTAL SCROLL LOGIC */
+          @media (max-width: 1024px) {
+            .services-main-grid { 
+              grid-template-columns: repeat(2, 1fr); 
+            }
+          }
+
           @media (max-width: 768px) {
-            .services-grid {
-              display: flex !important; /* Switch to Flex for sliding */
-              overflow-x: auto !important; /* Enable horizontal scroll */
-              scroll-snap-type: x mandatory;
-              gap: 20px !important;
-              padding: 20px 0 40px 0 !important;
+            .services-vivid-section { padding: 80px 0; }
+            .services-container { padding: 0 24px; }
+            
+            .services-main-grid { 
+              display: flex; 
+              overflow-x: auto; 
+              scroll-snap-type: x mandatory; 
+              gap: 16px;
+              padding: 0 0 40px 0;
+              margin: 0 -24px 20px -24px;
+              padding-left: 24px;
               -webkit-overflow-scrolling: touch;
             }
+
+            /* Hide scrollbar but allow scrolling */
+            .services-main-grid::-webkit-scrollbar { display: none; }
+
+            .service-item-card { 
+              flex: 0 0 82%; 
+              scroll-snap-align: start; 
+              height: 500px;
+            }
             
-            .services-grid::-webkit-scrollbar {
-              height: 4px;
+            .service-content-box { 
+              transform: translateY(0);
+              padding: 30px 20px;
             }
-            .services-grid::-webkit-scrollbar-thumb {
-              background: var(--color-accent-green);
-              border-radius: 10px;
-            }
-
-            .service-card {
-              flex: 0 0 85%; /* Card width on mobile */
-              scroll-snap-align: center;
-              min-height: 400px;
-            }
-          }
-
-          @media (min-width: 769px) {
-            .services-grid {
-              display: grid !important;
-              grid-template-columns: repeat(4, 1fr) !important;
-              gap: 30px;
-            }
+            
+            .tech-tag-group { opacity: 1; }
+            .view-all-btn { width: 100%; text-align: center; }
           }
         `}
       </style>
 
-      <section className="services-section" style={styles.section}>
-        <div style={styles.container}>
-          <div style={styles.headerArea}>
-            <div style={styles.badge}>Our Expertise</div>
-            <h2 className="services-heading" style={styles.heading}>
-              Core Engineering Services
+      <section className="services-vivid-section">
+        <div className="services-container">
+          <div style={{ marginBottom: "60px", maxWidth: "800px" }}>
+            <div
+              style={{
+                color: "var(--color-accent-green)",
+                fontSize: "12px",
+                fontWeight: "700",
+                textTransform: "uppercase",
+                letterSpacing: "4px",
+                marginBottom: "16px",
+              }}
+            >
+              Core Engineering Expertise
+            </div>
+            <h2
+              style={{
+                fontSize: "clamp(32px, 8vw, 52px)",
+                fontWeight: "900",
+                color: "var(--color-primary)",
+                lineHeight: "1.1",
+                letterSpacing: "-2px",
+                marginBottom: "24px",
+              }}
+            >
+              Technical Solutions <br />
+              <span style={{ color: "var(--color-accent-green)" }}>
+                Without Compromise.
+              </span>
             </h2>
-            <div style={styles.headingUnderline} />
-            <p style={styles.subtext}>
-              Delivering specialized electrical power engineering solutions with
-              technical precision and adherence to global safety standards.
+            <p
+              style={{ fontSize: "17px", color: "#64748b", lineHeight: "1.7" }}
+            >
+              Delivering specialized electrical power engineering services with
+              absolute technical precision and compliance to global standards.
             </p>
           </div>
 
-          <div className="services-grid">
-            {services.map((service) => (
-              <div key={service.id} className="service-card">
+          <div className="services-main-grid">
+            {services.map((service, index) => (
+              <div key={index} className="service-item-card">
                 <div
-                  className="card-bg"
+                  className="service-img-layer"
                   style={{ backgroundImage: `url(${service.image})` }}
                 />
-                <div className="card-overlay" />
-
-                <div className="card-content">
-                  <div style={styles.serviceId}>{service.id}</div>
-                  <h3 style={styles.cardTitle}>{service.title}</h3>
-                  <p style={styles.cardText}>{service.description}</p>
-                  <div style={styles.cardFooter}>
-                    <span style={styles.learnMore}>
-                      Technical Specifications →
-                    </span>
+                <div className="service-gradient" />
+                <div className="service-content-box">
+                  <div className="tech-tag-group">
+                    {service.tags.map((tag, i) => (
+                      <span key={i} className="tech-pill">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h3
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: "800",
+                      color: "#ffffff",
+                      marginBottom: "12px",
+                      lineHeight: "1.2",
+                    }}
+                  >
+                    {service.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "14px",
+                      color: "rgba(255,255,255,0.8)",
+                      lineHeight: "1.6",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    {service.description}
+                  </p>
+                  <div
+                    style={{
+                      fontSize: "10px",
+                      fontWeight: "800",
+                      color: "var(--color-accent-green)",
+                      letterSpacing: "2px",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    Ref_id: Tech_00{index + 1} //
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Link to="/services" className="view-all-btn">
+              View All Services
+            </Link>
           </div>
         </div>
       </section>
     </>
   );
 }
-
-const styles = {
-  section: {
-    backgroundColor: "#ffffff",
-    padding: "100px 0",
-  },
-  container: {
-    maxWidth: "var(--container-width)",
-    margin: "0 auto",
-    padding: "0 40px",
-  },
-  headerArea: { marginBottom: "60px" },
-  badge: {
-    color: "var(--color-accent-green)",
-    fontSize: "12px",
-    fontWeight: "700",
-    textTransform: "uppercase",
-    letterSpacing: "3px",
-    marginBottom: "16px",
-  },
-  heading: {
-    fontSize: "42px",
-    fontWeight: "800",
-    color: "var(--color-primary)",
-    marginBottom: "20px",
-    letterSpacing: "-1px",
-  },
-  headingUnderline: {
-    width: "60px",
-    height: "4px",
-    backgroundColor: "var(--color-accent-green)",
-    marginBottom: "30px",
-  },
-  subtext: {
-    fontSize: "17px",
-    color: "#64748b",
-    maxWidth: "650px",
-    lineHeight: "1.7",
-  },
-  serviceId: {
-    fontSize: "14px",
-    fontWeight: "800",
-    color: "var(--color-accent-green)",
-    marginBottom: "15px",
-  },
-  cardTitle: {
-    fontSize: "22px",
-    fontWeight: "700",
-    color: "#ffffff",
-    marginBottom: "15px",
-    lineHeight: "1.3",
-  },
-  cardText: {
-    fontSize: "15px",
-    color: "rgba(255,255,255,0.8)",
-    lineHeight: "1.6",
-    marginBottom: "25px",
-  },
-  cardFooter: {
-    paddingTop: "15px",
-    borderTop: "1px solid rgba(255,255,255,0.2)",
-  },
-  learnMore: {
-    fontSize: "11px",
-    fontWeight: "700",
-    color: "var(--color-accent-green)",
-    textTransform: "uppercase",
-    letterSpacing: "1px",
-  },
-};
 
 export default CoreServices;
