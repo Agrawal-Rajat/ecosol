@@ -8,16 +8,14 @@ function HomeHero() {
         {`
           .hero-section {
             position: relative;
-            min-height: 90vh;
+            min-height: 85vh; 
             display: flex;
             align-items: center;
             background-color: #000033;
-            /* Using a high-quality industrial power grid image */
-            background-image: linear-gradient(to right, rgba(0, 0, 51, 0.9) 30%, rgba(0, 0, 51, 0.4) 100%), 
+            background-image: linear-gradient(to right, rgba(0, 0, 51, 0.85) 40%, rgba(0, 0, 51, 0.4) 100%), 
                               url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=2070');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Parallax effect for desktop */
             overflow: hidden;
           }
 
@@ -26,7 +24,7 @@ function HomeHero() {
             top: 0; left: 0; right: 0; bottom: 0;
             background-image: linear-gradient(rgba(68, 158, 29, 0.05) 1px, transparent 1px), 
                               linear-gradient(90deg, rgba(68, 158, 29, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background-size: 40px 40px;
             z-index: 1;
             pointer-events: none;
           }
@@ -37,41 +35,52 @@ function HomeHero() {
             max-width: 1400px;
             width: 100%;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 40px; 
           }
 
           .hero-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(68, 158, 29, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(68, 158, 29, 0.2);
             filter: brightness(1.1);
           }
           
-          /* RESPONSIVENESS FIXES */
+          /* MOBILE & TABLET SPACIOUSNESS FIXES */
           @media (max-width: 1024px) {
             .hero-section { 
-              padding: 120px 0 80px 0; 
+              min-height: 90vh; /* Increased height for mobile spaciousness */
+              padding: 100px 0; /* More vertical breathing room */
               text-align: center; 
-              background-attachment: scroll; /* Better performance on mobile */
-              background-image: linear-gradient(rgba(0, 0, 51, 0.8), rgba(0, 0, 51, 0.8)), 
+              background-image: linear-gradient(rgba(0, 0, 51, 0.75), rgba(0, 0, 51, 0.75)), 
                                 url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=2070');
             }
-            .hero-content { padding: 0 24px; }
-            .hero-heading { font-size: 52px !important; }
-            .hero-usp { 
-              margin: 0 auto 24px auto !important; 
-              border-left: none !important; 
-              border-bottom: 3px solid var(--color-accent-green);
-              display: inline-block;
-              padding: 0 0 10px 0 !important;
+            .hero-content { padding: 0 32px; } /* Wider side padding */
+            .hero-heading { 
+              font-size: 44px !important; 
+              margin-bottom: 28px !important; 
+              line-height: 1.2 !important; /* Spacious text lines */
             }
-            .hero-subtext { margin: 0 auto 40px auto !important; }
-            .hero-btn-group { justify-content: center !important; flex-wrap: wrap; }
+            .hero-usp { 
+              margin: 0 auto 40px auto !important; 
+              border-left: none !important; 
+              border-bottom: 2px solid var(--color-accent-green);
+              padding: 0 0 12px 0 !important;
+              letter-spacing: 2px !important;
+              max-width: 85%; /* Centered text width control */
+            }
+            .hero-btn-group { 
+              justify-content: center !important; 
+              flex-direction: column; /* Stacked for thumb-friendly reach */
+              gap: 20px !important; 
+              width: 100%;
+              max-width: 320px;
+              margin: 0 auto;
+            }
           }
 
-          @media (max-width: 600px) {
-            .hero-heading { font-size: 38px !important; }
-            .hero-btn { width: 100%; }
-            .hero-badge { font-size: 11px !important; letter-spacing: 2px !important; }
+          @media (max-width: 480px) {
+            .hero-section { padding: 80px 0; }
+            .hero-heading { font-size: 36px !important; }
+            .hero-btn { width: 100%; padding: 18px 20px !important; }
           }
         `}
       </style>
@@ -93,13 +102,7 @@ function HomeHero() {
           </h1>
 
           <p className="hero-usp" style={styles.usp}>
-            Global Power Engineering Expertise. Localized Solutions.
-          </p>
-
-          <p className="hero-subtext" style={styles.subtext}>
-            A specialized consultancy delivering high-end technical design, grid
-            stability analysis, and renewable integration for utility and
-            industrial scales worldwide.
+            Global Power Engineering Expertise. <br /> Localized Solutions.
           </p>
 
           <div className="hero-btn-group" style={styles.buttonGroup}>
@@ -128,72 +131,65 @@ const styles = {
   badge: {
     display: "inline-flex",
     alignItems: "center",
-    gap: "12px",
+    gap: "10px",
     color: "var(--color-accent-green)",
-    fontSize: "13px",
+    fontSize: "12px",
     fontWeight: "700",
     textTransform: "uppercase",
-    letterSpacing: "4px",
-    marginBottom: "24px",
+    letterSpacing: "3px",
+    marginBottom: "20px",
   },
   badgeLine: {
-    width: "30px",
+    width: "25px",
     height: "2px",
     backgroundColor: "var(--color-accent-green)",
   },
   heading: {
-    fontSize: "72px",
+    fontSize: "64px",
     fontWeight: "900",
     color: "#ffffff",
-    lineHeight: "1",
+    lineHeight: "1.1",
     marginBottom: "24px",
-    letterSpacing: "-2px",
+    letterSpacing: "-1.5px",
   },
   usp: {
-    fontSize: "20px",
+    fontSize: "18px",
     fontWeight: "700",
     color: "#ffffff",
-    marginBottom: "24px",
+    marginBottom: "40px",
     borderLeft: "4px solid var(--color-accent-green)",
-    paddingLeft: "20px",
+    paddingLeft: "15px",
     textTransform: "uppercase",
     letterSpacing: "1px",
     maxWidth: "fit-content",
   },
-  subtext: {
-    fontSize: "18px",
-    lineHeight: "1.7",
-    color: "rgba(255, 255, 255, 0.75)",
-    marginBottom: "48px",
-    maxWidth: "600px",
-  },
   buttonGroup: {
     display: "flex",
-    gap: "20px",
+    gap: "16px",
   },
   primaryBtn: {
     backgroundColor: "var(--color-accent-green)",
     color: "#fff",
-    padding: "18px 36px",
-    fontSize: "14px",
+    padding: "16px 32px",
+    fontSize: "13px",
     fontWeight: "800",
     textTransform: "uppercase",
-    letterSpacing: "2px",
+    letterSpacing: "1.5px",
     textDecoration: "none",
-    transition: "all 0.3s ease",
+    transition: "all 0.2s ease",
     display: "inline-block",
   },
   secondaryBtn: {
     backgroundColor: "transparent",
     color: "#fff",
-    padding: "18px 36px",
-    fontSize: "14px",
+    padding: "16px 32px",
+    fontSize: "13px",
     fontWeight: "800",
     textTransform: "uppercase",
-    letterSpacing: "2px",
+    letterSpacing: "1.5px",
     textDecoration: "none",
     border: "2px solid rgba(255, 255, 255, 0.3)",
-    transition: "all 0.3s ease",
+    transition: "all 0.2s ease",
     display: "inline-block",
   },
 };

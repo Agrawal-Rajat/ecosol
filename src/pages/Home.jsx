@@ -5,12 +5,14 @@ import IndustriesServed from "../components/home/IndustriesServed";
 import WhyEcosol from "../components/home/WhyEcosol";
 import ClientsGrid from "../components/home/ClientsGrid";
 import PrimaryCTA from "../components/home/PrimaryCTA";
+import ServicePillars from "../components/home/ServicePillars";
 
 function Home() {
   return (
     <>
       <HomeHero />
-      <TrustIndicators />
+      <ServicePillars />
+      {/* <TrustIndicators /> */}
       <CoreServices />
       <IndustriesServed />
       <WhyEcosol />
