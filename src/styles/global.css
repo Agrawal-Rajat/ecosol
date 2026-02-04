@@ -1,0 +1,77 @@
+@import "./variables.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* Update your global.css */
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Takes full height of the browser */
+}
+
+main {
+  flex: 1; /* This pushes the footer to the bottom by taking all available space */
+}
+
+body {
+  /* Using the navy primary color for better text contrast on enterprise sites */
+  font-family: var(--font-primary);
+  background-color: var(--color-bg);
+  color: #1a1a1a;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base Link Styles */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-accent-green);
+}
+
+/* Image Handling */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility for Enterprise-grade Containers */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Refined Typography for Engineering context */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-primary);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+/* Selection color matching the brand */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}

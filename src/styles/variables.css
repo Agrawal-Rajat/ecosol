@@ -1,0 +1,9 @@
+:root {
+  --color-primary: #000066; /* Deep Navy from logo text */
+  --color-accent-green: #449e1d; /* Vibrant Green from leaf top */
+  --color-logo-blue: #1a5fb4; /* Royal Blue from leaf bottom */
+  --color-bg: #f9fafb;
+  --color-white: #ffffff;
+  --font-primary: "Inter", system-ui, sans-serif;
+  --container-width: 1400px;
+}
