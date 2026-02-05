@@ -46,8 +46,14 @@ function IndustriesServed() {
     <>
       <style>
         {`
+          :root {
+            --color-primary: #0f172a;
+            --color-accent-green: #10b981;
+            --color-grid: #e2e8f0;
+          }
+
           .sectors-section {
-            padding: 140px 0;
+            padding: 100px 0; /* Reduced from 140px */
             background-color: #f8fafc;
             overflow: hidden;
             position: relative;
@@ -57,32 +63,68 @@ function IndustriesServed() {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background-image: linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
-            background-size: 50px 50px;
+            background-size: 40px 40px; /* Smaller grid cells */
             opacity: 0.4;
             pointer-events: none;
           }
 
           .sectors-container {
-            max-width: 1400px;
+            max-width: 1280px; /* Slightly tighter container */
             margin: 0 auto;
             padding: 0 40px;
             display: grid;
-            grid-template-columns: 450px 1fr;
-            gap: 80px;
+            grid-template-columns: 380px 1fr; /* Reduced column width from 450px */
+            gap: 60px; /* Reduced gap from 80px */
             position: relative;
             z-index: 2;
           }
 
+          /* --- HEADING STYLES --- */
+          .eyebrow {
+            color: var(--color-accent-green);
+            font-weight: 800;
+            letter-spacing: 3px;
+            font-size: 12px; /* Reduced from 13px */
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+          }
+          
+          .eyebrow::before {
+            content: "";
+            display: block;
+            width: 6px; height: 6px;
+            background: var(--color-accent-green);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--color-accent-green);
+          }
+
+          .main-heading {
+            font-size: 48px; /* Reduced from 56px */
+            font-weight: 900;
+            color: var(--color-primary);
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin: 0;
+          }
+
+          .heading-accent {
+            color: var(--color-accent-green);
+          }
+
+          /* --- NAV BUTTONS --- */
           .sector-nav {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px; /* Reduced gap */
           }
 
           .sector-btn {
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            padding: 25px 30px;
+            padding: 20px 24px; /* Reduced padding from 25px 30px */
             text-align: left;
             cursor: pointer;
             display: flex;
@@ -100,12 +142,12 @@ function IndustriesServed() {
           .sector-btn.active {
             background: var(--color-primary);
             border-color: var(--color-primary);
-            transform: translateX(20px);
-            box-shadow: -20px 20px 40px rgba(0,0,51,0.1);
+            transform: translateX(15px); /* Reduced movement */
+            box-shadow: -15px 15px 30px rgba(0,0,51,0.1);
           }
 
           .sector-label {
-            font-size: 18px;
+            font-size: 16px; /* Reduced from 18px */
             font-weight: 700;
             color: var(--color-primary);
             transition: color 0.3s;
@@ -117,7 +159,7 @@ function IndustriesServed() {
 
           .sector-code {
             font-family: monospace;
-            font-size: 11px;
+            font-size: 10px;
             color: #94a3b8;
             letter-spacing: 1px;
           }
@@ -126,14 +168,16 @@ function IndustriesServed() {
             color: var(--color-accent-green);
           }
 
+          /* --- DISPLAY CARD --- */
           .sector-display-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            height: 600px;
+            height: 500px; /* Reduced from 600px */
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            border-radius: 4px;
           }
 
           .sector-image-area {
@@ -154,29 +198,32 @@ function IndustriesServed() {
           }
 
           .sector-info-overlay {
-            padding: 50px;
+            padding: 35px; /* Reduced from 50px */
             background: #ffffff;
-            border-top: 4px solid var(--color-accent-green);
+            border-top: 3px solid var(--color-accent-green);
           }
 
           .sector-title-large {
-            font-size: 32px;
+            font-size: 28px; /* Reduced from 32px */
             font-weight: 900;
             color: var(--color-primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
           }
 
           .sector-desc-large {
-            font-size: 17px;
+            font-size: 15px; /* Reduced from 17px */
             color: #64748b;
-            line-height: 1.8;
-            max-width: 700px;
+            line-height: 1.7;
+            max-width: 650px;
           }
 
           @media (max-width: 1100px) {
-            .sectors-container { grid-template-columns: 1fr; }
-            .sector-btn.active { transform: translateY(-10px); }
+            .sectors-section { padding: 60px 0; }
+            .sectors-container { grid-template-columns: 1fr; gap: 40px; }
+            .sector-btn.active { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
             .sector-display-card { height: auto; }
+            .main-heading { font-size: 36px; }
           }
         `}
       </style>
@@ -187,26 +234,11 @@ function IndustriesServed() {
         <div className="sectors-container">
           {/* Left: Interactive Navigation */}
           <div className="sector-nav-wrapper">
+            {/* UPDATED HEADING BLOCK */}
             <div style={{ marginBottom: "40px" }}>
-              <span
-                style={{
-                  color: "var(--color-accent-green)",
-                  fontWeight: "800",
-                  fontSize: "12px",
-                  letterSpacing: "3px",
-                }}
-              >
-                OPERATIONAL DOMAINS
-              </span>
-              <h2
-                style={{
-                  fontSize: "42px",
-                  fontWeight: "900",
-                  color: "var(--color-primary)",
-                  marginTop: "10px",
-                }}
-              >
-                Industries Served
+              <div className="eyebrow">Operational Domains</div>
+              <h2 className="main-heading">
+                Industries <span className="heading-accent">Served.</span>
               </h2>
             </div>
 

@@ -6,6 +6,7 @@ import WhyEcosol from "../components/home/WhyEcosol";
 import ClientsGrid from "../components/home/ClientsGrid";
 import PrimaryCTA from "../components/home/PrimaryCTA";
 import ServicePillars from "../components/home/ServicePillars";
+import GlobalFootprint from "../components/home/GlobalFootprint";
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       {/* <TrustIndicators /> */}
       <CoreServices />
       <IndustriesServed />
+      <GlobalFootprint />
       <WhyEcosol />
       <ClientsGrid />
       <PrimaryCTA />
