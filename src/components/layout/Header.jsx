@@ -82,7 +82,7 @@ function Header() {
               "About",
               "Services",
               "Projects",
-              "Expertise",
+              "Contact",
               "Careers",
             ].map((item) => (
               <NavLink
@@ -146,7 +146,6 @@ function Header() {
               "About",
               "Services",
               "Projects",
-              "Expertise",
               "Careers",
               "Contact",
             ].map((item) => (
