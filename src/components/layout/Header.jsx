@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import servicesData from "../../data/servicesData.js";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,62 +12,89 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Sync menu open state with body scroll
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "unset";
   }, [isMenuOpen]);
 
-  const navLinkStyle = ({ isActive }) => ({
-    ...styles.navLink,
-    color: isActive ? "var(--color-primary)" : "#666",
-  });
+  const closeAllMenus = () => setIsMenuOpen(false);
 
   return (
     <>
       <style>
         {`
+          .nav-link {
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+            padding: 15px 0;
+            transition: color 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+          }
+
           .nav-link:after {
             content: '';
-            display: block;
-            width: 0;
-            height: 2px;
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 2px;
             background: var(--color-accent-green);
             transition: width .3s;
-            margin-top: 4px;
           }
-          .nav-link:hover { color: var(--color-primary) !important; }
-          .nav-link:hover:after { width: 100%; }
-          .active-link:after { width: 100% !important; }
-          
+
+          .nav-link:hover, .nav-link.active { color: var(--color-primary) !important; }
+          .nav-link:hover:after, .nav-link.active:after { width: 100%; }
+
+          .nav-item-services { display: flex; align-items: center; height: 100%; position: relative; }
+          .nav-item-services:after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 20px; background: transparent; }
+
+          .mega-menu {
+            position: fixed; top: 90px; left: 0; width: 100vw;
+            background: #ffffff; opacity: 0; visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+            border-bottom: 4px solid var(--color-accent-green);
+            z-index: 1000; pointer-events: none;
+          }
+
+          .is-scrolled .mega-menu { top: 70px; }
+          .nav-item-services:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
+
+          .mega-grid-link { padding: 12px 18px; text-decoration: none; color: var(--color-primary); font-weight: 700; font-size: 14px; border-radius: 4px; transition: all 0.2s ease; display: block; }
+          .mega-grid-link:hover { background: var(--color-bg); color: var(--color-accent-green); transform: translateX(5px); }
+
           @media (max-width: 1024px) {
             .desktop-nav { display: none !important; }
             .mobile-btn { display: block !important; }
+            .mega-menu { display: none; }
           }
         `}
       </style>
 
       <header
+        className={`header-full ${scrolled ? "is-scrolled" : ""}`}
         style={{
           ...styles.header,
           height: scrolled ? "70px" : "90px",
-          backgroundColor: isMenuOpen
-            ? "transparent"
-            : scrolled
-              ? "rgba(255, 255, 255, 0.98)"
-              : "var(--color-white)",
-          boxShadow:
-            scrolled && !isMenuOpen ? "0 4px 20px rgba(0,0,0,0.05)" : "none",
+          backgroundColor: isMenuOpen ? "#fff" : "rgba(255, 255, 255, 0.98)",
+          boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.08)" : "none",
         }}
       >
         <div style={styles.container}>
-          {/* Brand Logo Section */}
-          <NavLink
-            to="/"
-            style={styles.logoContainer}
-            onClick={() => setIsMenuOpen(false)}
-          >
+          <NavLink to="/" style={styles.logoContainer} onClick={closeAllMenus}>
             <div style={styles.logoLayout}>
-              <span style={styles.brandMain}>ecosol</span>
+              <span
+                style={{
+                  ...styles.brandMain,
+                  fontSize: scrolled ? "28px" : "32px",
+                }}
+              >
+                ecosol
+              </span>
               <div style={styles.brandSubWrapper}>
                 <div style={styles.line} />
                 <span style={styles.brandSub}>projects</span>
@@ -75,36 +103,80 @@ function Header() {
             </div>
           </NavLink>
 
-          {/* Desktop Navigation */}
           <nav className="desktop-nav" style={styles.nav}>
-            {[
-              "Home",
-              "About",
-              "Services",
-              "Projects",
-              "Contact",
-              "Careers",
-            ].map((item) => (
+            <NavLink to="/" className="nav-link" onClick={closeAllMenus}>
+              Home
+            </NavLink>
+            <NavLink to="/about" className="nav-link" onClick={closeAllMenus}>
+              About
+            </NavLink>
+            <div className="nav-item-services">
               <NavLink
-                key={item}
-                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className={({ isActive }) =>
-                  isActive ? "nav-link active-link" : "nav-link"
-                }
-                style={navLinkStyle}
+                to="/services"
+                className="nav-link"
+                onClick={closeAllMenus}
               >
-                {item}
+                Services
               </NavLink>
-            ))}
+              <div className="mega-menu">
+                <div style={styles.megaContainerContent}>
+                  <div style={styles.megaInfoPane}>
+                    <h4 style={styles.megaHeaderSmall}>
+                      Engineering Expertise
+                    </h4>
+                    <p style={styles.megaPara}>
+                      Technical power system studies and industrial
+                      electrification solutions.
+                    </p>
+                    <NavLink
+                      to="/contact"
+                      style={styles.megaCtaButton}
+                      onClick={closeAllMenus}
+                    >
+                      Consultation
+                    </NavLink>
+                  </div>
+                  <div style={styles.megaLinksPane}>
+                    {servicesData.map((s) => (
+                      <NavLink
+                        key={s.slug}
+                        to={`/services/${s.slug}`}
+                        className="mega-grid-link"
+                        onClick={closeAllMenus}
+                      >
+                        {s.title}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <NavLink
+              to="/projects"
+              className="nav-link"
+              onClick={closeAllMenus}
+            >
+              Projects
+            </NavLink>
+            <NavLink to="/careers" className="nav-link" onClick={closeAllMenus}>
+              Careers
+            </NavLink>
+            <NavLink to="/contact" className="nav-link" onClick={closeAllMenus}>
+              Contact
+            </NavLink>
           </nav>
 
-          {/* Action Area */}
           <div style={styles.actionArea}>
-            <NavLink to="/contact" className="desktop-nav" style={styles.cta}>
+            <NavLink
+              to="/contact"
+              className="desktop-nav"
+              style={styles.cta}
+              onClick={closeAllMenus}
+            >
               Get in Touch
             </NavLink>
 
-            {/* Mobile Toggle Button */}
+            {/* MOBILE TOGGLE (The X button when open) */}
             <button
               className="mobile-btn"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -113,17 +185,25 @@ function Header() {
               <div
                 style={{
                   ...styles.bar,
+                  backgroundColor: "var(--color-primary)",
                   transform: isMenuOpen
-                    ? "rotate(45deg) translate(6px, 6px)"
+                    ? "rotate(45deg) translate(5px, 5px)"
                     : "none",
                 }}
               />
-              <div style={{ ...styles.bar, opacity: isMenuOpen ? 0 : 1 }} />
               <div
                 style={{
                   ...styles.bar,
+                  backgroundColor: "var(--color-primary)",
+                  opacity: isMenuOpen ? 0 : 1,
+                }}
+              />
+              <div
+                style={{
+                  ...styles.bar,
+                  backgroundColor: "var(--color-primary)",
                   transform: isMenuOpen
-                    ? "rotate(-45deg) translate(6px, -6px)"
+                    ? "rotate(-45deg) translate(7px, -7px)"
                     : "none",
                 }}
               />
@@ -131,13 +211,12 @@ function Header() {
           </div>
         </div>
 
-        {/* Mobile Menu Overlay */}
+        {/* MOBILE OVERLAY (Styled as per reference) */}
         <div
           style={{
             ...styles.mobileOverlay,
-            opacity: isMenuOpen ? 1 : 0,
-            visibility: isMenuOpen ? "visible" : "hidden",
             transform: isMenuOpen ? "translateX(0)" : "translateX(100%)",
+            visibility: isMenuOpen ? "visible" : "hidden",
           }}
         >
           <div style={styles.mobileNavLinks}>
@@ -152,7 +231,7 @@ function Header() {
               <NavLink
                 key={item}
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={closeAllMenus}
                 style={styles.mobileLink}
               >
                 {item}
@@ -167,7 +246,7 @@ function Header() {
 
 const styles = {
   header: {
-    position: "sticky",
+    position: "fixed",
     top: 0,
     left: 0,
     right: 0,
@@ -178,31 +257,26 @@ const styles = {
     borderBottom: "1px solid rgba(0,0,0,0.05)",
   },
   container: {
-    maxWidth: "var(--container-width)",
+    maxWidth: "1400px",
     width: "100%",
     margin: "0 auto",
-    padding: "0 5%",
+    padding: "0 40px",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    zIndex: 2002,
   },
-  logoContainer: {
-    textDecoration: "none",
-    display: "flex",
-    flexDirection: "column",
-  },
+  logoContainer: { textDecoration: "none" },
   logoLayout: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
   },
   brandMain: {
-    fontSize: "32px",
     fontWeight: "800",
     color: "var(--color-primary)",
     letterSpacing: "-1px",
     lineHeight: "0.9",
+    transition: "0.3s",
   },
   brandSubWrapper: {
     display: "flex",
@@ -211,11 +285,7 @@ const styles = {
     gap: "4px",
     marginTop: "2px",
   },
-  line: {
-    flex: 1,
-    height: "1.5px",
-    backgroundColor: "#000",
-  },
+  line: { flex: 1, height: "1.5px", backgroundColor: "#000" },
   brandSub: {
     fontSize: "10px",
     fontWeight: "700",
@@ -223,73 +293,93 @@ const styles = {
     textTransform: "uppercase",
     letterSpacing: "1px",
   },
-  nav: {
-    display: "flex",
-    gap: "35px",
-  },
-  navLink: {
-    textDecoration: "none",
-    fontSize: "13px",
-    fontWeight: "700",
-    textTransform: "uppercase",
-    letterSpacing: "0.5px",
-    transition: "all 0.3s ease",
-  },
-  actionArea: {
-    display: "flex",
-    alignItems: "center",
-  },
+  nav: { display: "flex", gap: "35px", height: "100%", alignItems: "center" },
+  actionArea: { display: "flex", alignItems: "center" },
   cta: {
     textDecoration: "none",
     backgroundColor: "var(--color-primary)",
     color: "#fff",
-    padding: "12px 24px",
+    padding: "10px 20px",
     fontSize: "12px",
     fontWeight: "700",
     textTransform: "uppercase",
-    transition: "all 0.3s ease",
   },
+
   mobileToggle: {
     display: "none",
     background: "none",
     border: "none",
     cursor: "pointer",
-    padding: "10px",
     zIndex: 3000,
+    position: "relative",
   },
-  bar: {
-    width: "28px",
-    height: "2px",
-    backgroundColor: "var(--color-primary)",
-    margin: "6px 0",
-    transition: "0.4s",
+  bar: { width: "24px", height: "2px", margin: "6px 0", transition: "0.4s" },
+
+  megaContainerContent: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+    display: "grid",
+    gridTemplateColumns: "300px 1fr",
+    padding: "60px 40px",
+    gap: "60px",
   },
+  megaInfoPane: { paddingRight: "40px", borderRight: "1px solid #eee" },
+  megaLinksPane: {
+    display: "grid",
+    gridTemplateColumns: "repeat(2, 1fr)",
+    gap: "5px 30px",
+  },
+  megaHeaderSmall: {
+    color: "var(--color-accent-green)",
+    textTransform: "uppercase",
+    letterSpacing: "2px",
+    fontSize: "11px",
+    marginBottom: "20px",
+  },
+  megaPara: {
+    fontSize: "14px",
+    color: "#666",
+    lineHeight: "1.5",
+    marginBottom: "30px",
+  },
+  megaCtaButton: {
+    background: "var(--color-primary)",
+    color: "#fff",
+    padding: "10px 20px",
+    textDecoration: "none",
+    fontSize: "12px",
+    fontWeight: "700",
+    textTransform: "uppercase",
+    display: "inline-block",
+  },
+
   mobileOverlay: {
     position: "fixed",
     top: 0,
     left: 0,
     width: "100%",
     height: "100vh",
-    backgroundColor: "var(--color-white)",
+    backgroundColor: "#fff",
     zIndex: 2001,
     display: "flex",
     flexDirection: "column",
+    paddingTop: "120px", // Pushes links down to match reference
     transition: "all 0.5s cubic-bezier(0.77,0.2,0.05,1.0)",
   },
   mobileNavLinks: {
     display: "flex",
     flexDirection: "column",
-    padding: "120px 10% 0 10%",
-    gap: "20px",
+    padding: "0 10%",
+    gap: "0",
   },
   mobileLink: {
-    fontSize: "28px",
+    fontSize: "24px",
     fontWeight: "800",
     color: "var(--color-primary)",
     textDecoration: "none",
     textTransform: "uppercase",
     borderBottom: "1px solid #eee",
-    paddingBottom: "10px",
+    padding: "20px 0", // Matches the spaced-out reference
   },
 };
 
