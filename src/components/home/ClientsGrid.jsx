@@ -99,7 +99,7 @@ function ClientGrid() {
           .scroll-right { animation: scroll-right 45s linear infinite; }
 
           .logo-box {
-            width: 300px; /* Further increased for premium feel */
+            width: 300px;
             height: 170px; 
             display: flex;
             align-items: center;
@@ -154,7 +154,12 @@ function ClientGrid() {
               border-radius: 22px;
             }
             .marquee-content { gap: 25px; padding-right: 25px; }
-            .clients-header h2 { font-size: 38px; padding: 0 15px; }
+            /* Increased Mobile Header Size and weight */
+            .clients-header h2 { 
+              font-size: 42px !important; 
+              line-height: 1.1 !important;
+              padding: 0 10px;
+            }
             .scroll-left, .scroll-right { animation-duration: 35s; }
           }
         `}

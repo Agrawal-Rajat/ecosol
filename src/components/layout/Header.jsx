@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import servicesData from "../../data/servicesData.js";
+// Import your logo asset
+import ecosolLogo from "../../assets/logos/weblogo.png";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -86,21 +88,14 @@ function Header() {
       >
         <div style={styles.container}>
           <NavLink to="/" style={styles.logoContainer} onClick={closeAllMenus}>
-            <div style={styles.logoLayout}>
-              <span
-                style={{
-                  ...styles.brandMain,
-                  fontSize: scrolled ? "28px" : "32px",
-                }}
-              >
-                ecosol
-              </span>
-              <div style={styles.brandSubWrapper}>
-                <div style={styles.line} />
-                <span style={styles.brandSub}>projects</span>
-                <div style={styles.line} />
-              </div>
-            </div>
+            <img
+              src={ecosolLogo}
+              alt="Ecosol Projects Logo"
+              style={{
+                ...styles.logoImage,
+                height: scrolled ? "45px" : "55px", // Responsive scaling on scroll
+              }}
+            />
           </NavLink>
 
           <nav className="desktop-nav" style={styles.nav}>
@@ -176,7 +171,6 @@ function Header() {
               Get in Touch
             </NavLink>
 
-            {/* MOBILE TOGGLE (The X button when open) */}
             <button
               className="mobile-btn"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -185,23 +179,15 @@ function Header() {
               <div
                 style={{
                   ...styles.bar,
-                  backgroundColor: "var(--color-primary)",
                   transform: isMenuOpen
                     ? "rotate(45deg) translate(5px, 5px)"
                     : "none",
                 }}
               />
+              <div style={{ ...styles.bar, opacity: isMenuOpen ? 0 : 1 }} />
               <div
                 style={{
                   ...styles.bar,
-                  backgroundColor: "var(--color-primary)",
-                  opacity: isMenuOpen ? 0 : 1,
-                }}
-              />
-              <div
-                style={{
-                  ...styles.bar,
-                  backgroundColor: "var(--color-primary)",
                   transform: isMenuOpen
                     ? "rotate(-45deg) translate(7px, -7px)"
                     : "none",
@@ -211,7 +197,7 @@ function Header() {
           </div>
         </div>
 
-        {/* MOBILE OVERLAY (Styled as per reference) */}
+        {/* MOBILE OVERLAY */}
         <div
           style={{
             ...styles.mobileOverlay,
@@ -265,33 +251,17 @@ const styles = {
     alignItems: "center",
     justifyContent: "space-between",
   },
-  logoContainer: { textDecoration: "none" },
-  logoLayout: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  brandMain: {
-    fontWeight: "800",
-    color: "var(--color-primary)",
-    letterSpacing: "-1px",
-    lineHeight: "0.9",
-    transition: "0.3s",
-  },
-  brandSubWrapper: {
+  logoContainer: {
+    textDecoration: "none",
     display: "flex",
     alignItems: "center",
-    width: "100%",
-    gap: "4px",
-    marginTop: "2px",
   },
-  line: { flex: 1, height: "1.5px", backgroundColor: "#000" },
-  brandSub: {
-    fontSize: "10px",
-    fontWeight: "700",
-    color: "#000",
-    textTransform: "uppercase",
-    letterSpacing: "1px",
+  logoImage: {
+    width: "auto",
+    transition: "all 0.3s ease",
+    objectFit: "contain",
+    // Keep it sharp
+    filter: "contrast(1.05)",
   },
   nav: { display: "flex", gap: "35px", height: "100%", alignItems: "center" },
   actionArea: { display: "flex", alignItems: "center" },
@@ -304,7 +274,6 @@ const styles = {
     fontWeight: "700",
     textTransform: "uppercase",
   },
-
   mobileToggle: {
     display: "none",
     background: "none",
@@ -313,8 +282,13 @@ const styles = {
     zIndex: 3000,
     position: "relative",
   },
-  bar: { width: "24px", height: "2px", margin: "6px 0", transition: "0.4s" },
-
+  bar: {
+    width: "24px",
+    height: "2px",
+    margin: "6px 0",
+    transition: "0.4s",
+    backgroundColor: "var(--color-primary)",
+  },
   megaContainerContent: {
     maxWidth: "1200px",
     margin: "0 auto",
@@ -352,7 +326,6 @@ const styles = {
     textTransform: "uppercase",
     display: "inline-block",
   },
-
   mobileOverlay: {
     position: "fixed",
     top: 0,
@@ -363,7 +336,7 @@ const styles = {
     zIndex: 2001,
     display: "flex",
     flexDirection: "column",
-    paddingTop: "120px", // Pushes links down to match reference
+    paddingTop: "120px",
     transition: "all 0.5s cubic-bezier(0.77,0.2,0.05,1.0)",
   },
   mobileNavLinks: {
@@ -379,7 +352,7 @@ const styles = {
     textDecoration: "none",
     textTransform: "uppercase",
     borderBottom: "1px solid #eee",
-    padding: "20px 0", // Matches the spaced-out reference
+    padding: "20px 0",
   },
 };
 

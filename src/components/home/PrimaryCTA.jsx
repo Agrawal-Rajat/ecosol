@@ -10,7 +10,6 @@ function PrimaryCTA() {
             min-height: 90vh; 
             width: 100%;
             background-color: #ffffff;
-            /* Subtler Engineering Grid */
             background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
             background-size: 30px 30px;
             display: flex;
@@ -21,7 +20,6 @@ function PrimaryCTA() {
             overflow: hidden;
           }
 
-          /* Animated background blobs for a premium feel */
           .cta-bg-blob {
             position: absolute;
             width: 400px;
@@ -37,7 +35,7 @@ function PrimaryCTA() {
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(226, 232, 240, 0.8);
             padding: 120px 60px;
-            border-radius: 24px; /* More modern rounded corners */
+            border-radius: 24px;
             max-width: 1000px;
             width: 100%;
             text-align: center;
@@ -46,18 +44,24 @@ function PrimaryCTA() {
             transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
           }
 
-          /* Hover: Elevation and Border Glow */
           .cta-centered-card:hover {
             transform: translateY(-8px);
             border-color: #10b981;
             box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.1);
           }
 
+          .cta-display-heading {
+            /* Laptop/Desktop sizing kept at original scale */
+            font-size: clamp(36px, 6vw, 64px);
+            line-height: 1.1;
+            transition: all 0.3s ease;
+          }
+
           .cta-btn-modern {
             position: relative;
             display: inline-block;
             padding: 24px 60px;
-            background: #0f172a; /* Navy Blue base */
+            background: #0f172a;
             color: #ffffff;
             font-size: 13px;
             font-weight: 800;
@@ -70,7 +74,6 @@ function PrimaryCTA() {
             border-radius: 4px;
           }
 
-          /* Modern Button Hover: Slide-up green background */
           .cta-btn-modern::before {
             content: '';
             position: absolute;
@@ -78,7 +81,7 @@ function PrimaryCTA() {
             left: 0;
             width: 100%;
             height: 100%;
-            background: #10b981; /* Accent Green */
+            background: #10b981;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: -1;
           }
@@ -93,23 +96,24 @@ function PrimaryCTA() {
             top: 0;
           }
 
-          .cta-display-heading {
-            font-size: clamp(36px, 6vw, 64px);
-            line-height: 1.1;
-            transition: all 0.3s ease;
-          }
-
-          /* Responsive Tweaks */
+          /* RESPONSIVE MOBILE INCREASE */
           @media (max-width: 768px) {
             .cta-viewport-section { min-height: auto; padding: 100px 20px; }
-            .cta-centered-card { padding: 60px 24px; border-radius: 0; border: none; background: transparent; }
-            .cta-btn-modern { width: 100%; padding: 20px; }
+            .cta-centered-card { padding: 80px 24px; border-radius: 0; border: none; background: transparent; }
+            
+            /* The specific increase you asked for on mobile screens */
+            .cta-display-heading { 
+              font-size: 52px !important; 
+              line-height: 1.05 !important;
+              letter-spacing: -2px !important;
+            }
+
+            .cta-btn-modern { width: 100%; padding: 22px; }
           }
         `}
       </style>
 
       <section className="cta-viewport-section">
-        {/* Decorative Background Elements */}
         <div className="cta-bg-blob" style={{ top: "-10%", left: "10%" }}></div>
         <div
           className="cta-bg-blob"
