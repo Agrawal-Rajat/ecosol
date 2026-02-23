@@ -222,7 +222,7 @@ function CareersHero() {
               </p>
             </div>
 
-            <a href="#open-positions" className="primary-action-btn">
+            <a href="#careers-list" className="primary-action-btn">
               Explore Openings <span>→</span>
             </a>
           </div>

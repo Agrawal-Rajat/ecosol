@@ -79,7 +79,7 @@ function Footer() {
                 <NavLink to="/services" style={styles.footerLink}>
                   Power Engineering
                 </NavLink>
-                <NavLink to="/expertise" style={styles.footerLink}>
+                <NavLink to="/services" style={styles.footerLink}>
                   Technical Audit
                 </NavLink>
                 <NavLink to="/services" style={styles.footerLink}>

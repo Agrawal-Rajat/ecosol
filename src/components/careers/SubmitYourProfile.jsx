@@ -110,7 +110,7 @@ function SubmitYourProfile() {
             experience.
           </p>
 
-          <a href="mailto:careers@ecosolprojects.com" className="cv-button">
+          <a href="mailto:info@ecosolprojects.com" className="cv-button">
             Send Your CV <span>→</span>
           </a>
         </div>

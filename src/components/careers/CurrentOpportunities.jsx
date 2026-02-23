@@ -214,7 +214,7 @@ function CurrentOpportunities() {
 
           <p className="general-query">
             Don't see a suitable role? Share your profile at{" "}
-            <b>careers@ecosol.com</b>.
+            <b>info@ecosol.com</b>.
           </p>
         </div>
       </section>
