@@ -95,9 +95,12 @@ function Footer() {
             <div style={styles.linkColumn} className="footer-links">
               <h4 style={styles.columnTitle}>Get in Touch</h4>
               <div style={styles.contactInfo}>
-                <p style={styles.contactItem}>📧 inquiry@ecosolprojects.com</p>
-                <p style={styles.contactItem}>📞 +91 (Your-Phone-Number)</p>
-                <p style={styles.contactItem}>📍 Registered Office, India</p>
+                <p style={styles.contactItem}>📧 info@ecosolprojects.com</p>
+                <p style={styles.contactItem}>📞 +91 90048 17084</p>
+                <p style={styles.contactItem}>
+                  📍 523, Omaxe City – 1 Mayakhedi, Indore – 453771 Madhya
+                  Pradesh, India
+                </p>
               </div>
             </div>
           </div>
