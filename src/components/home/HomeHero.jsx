@@ -46,6 +46,7 @@ function HomeHero() {
           
           /* MOBILE & TABLET SPACIOUSNESS FIXES */
           @media (max-width: 1024px) {
+          
             .hero-section { 
               min-height: 90vh; /* Increased height for mobile spaciousness */
               padding: 100px 0; /* More vertical breathing room */
