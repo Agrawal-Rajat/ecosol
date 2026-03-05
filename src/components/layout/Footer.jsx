@@ -152,7 +152,7 @@ const styles = {
     marginBottom: "25px",
   },
   logoImage: {
-    height: "60px",
+    height: "80px",
     width: "auto",
     display: "block",
   },
