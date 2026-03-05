@@ -181,18 +181,18 @@ function ClientGrid() {
               marginBottom: "20px",
             }}
           >
-            Trusted Partners
+            Industry Experience
           </div>
           <h2
             style={{
-              fontSize: "clamp(34px, 5.5vw, 56px)",
+              fontSize: "clamp(30px, 5.5vw, 56px)",
               fontWeight: "900",
               color: "#0f172a",
               letterSpacing: "-2.5px",
               lineHeight: "1.05",
             }}
           >
-            Fueling{" "}
+            Experience Across{" "}
             <span
               style={{
                 color: "#10b981",
@@ -201,9 +201,9 @@ function ClientGrid() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Innovation
+              Leading
             </span>{" "}
-            Together
+            Organizations
           </h2>
         </div>
 

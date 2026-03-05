@@ -7,9 +7,9 @@ function CoreServices() {
       id: "01",
       title: "Power System Studies",
       image:
-        "https://images.unsplash.com/photo-1558444479-c8f010523282?auto=format&fit=crop&q=80&w=1200",
+        "https://www.jeftechno.com/assets/images/blog/Power-System%20Studies.jpg",
       description:
-        "Advanced load flow, short circuit analysis, and grid stability studies using industry-standard computational modeling.",
+        "Advanced Electrical studies using industry-standard computational modeling.",
       tags: ["ETAP", "PSS/E", "DIGSILENT"],
     },
     {
@@ -18,16 +18,16 @@ function CoreServices() {
       image:
         "https://images.unsplash.com/photo-1590959651373-a3db0f38a961?auto=format&fit=crop&q=80&w=1200",
       description:
-        "Relay configuration, protection coordination, and specialized Arc Flash mitigation to ensure global compliance.",
+        "Electrical Protection & Safety Assessment for industrial grids.",
       tags: ["IEEE", "IEC", "NFPA"],
     },
     {
       id: "03",
       title: "Renewable Integration",
       image:
-        "https://images.unsplash.com/photo-1509391366360-fe5bb6583e29?auto=format&fit=crop&q=80&w=1200",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TZaVGq3tPoQ0uKDiavx9HO4G6m4QIXYH4Q&s",
       description:
-        "Detailed engineering for utility-scale Solar PV, hybrid systems, and battery energy storage (BESS).",
+        "Strategic design and grid compliance for Solar and Wind assets.",
       tags: ["SOLAR", "WIND", "BESS"],
     },
     {
@@ -35,8 +35,7 @@ function CoreServices() {
       title: "Substations & Grounding",
       image:
         "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1200",
-      description:
-        "Comprehensive design for high-voltage substations and complex grounding system EMI analysis.",
+      description: "Detail design engineering for HV/EHV Substations and GIS.",
       tags: ["400KV", "GIS", "EMC"],
     },
   ];
@@ -46,45 +45,34 @@ function CoreServices() {
       <style>
         {`
           .services-vivid-section {
-            padding: 140px 0;
-            background-color: #ffffff;
+            padding: 100px 0;
+            background-color: #f8fafc;
             position: relative;
-            overflow: hidden;
-          }
-
-          /* Global Architectural Grid Background */
-          .services-vivid-section::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: radial-gradient(#e2e8f0 1.2px, transparent 1.2px);
-            background-size: 45px 45px;
-            opacity: 0.6;
-            pointer-events: none;
           }
 
           .services-container {
-            max-width: 1400px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 0 40px;
-            position: relative;
-            z-index: 2;
+            padding: 0 30px;
           }
 
           .services-main-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
           }
 
+          /* Refined Card Design */
           .service-item-card {
             position: relative;
-            height: 520px;
+            height: 380px; /* Reduced height to fix the 'too big' issue */
             background: #000033;
+            border-radius: 12px;
             overflow: hidden;
-            border-radius: 2px;
-            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 30px rgba(0,0,51,0.05);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(0,0,51,0.05);
           }
 
           .service-img-layer {
@@ -92,160 +80,128 @@ function CoreServices() {
             top: 0; left: 0; width: 100%; height: 100%;
             background-size: cover;
             background-position: center;
-            opacity: 0.6;
-            transition: transform 1.2s ease, opacity 0.6s ease;
+            opacity: 0.7;
+            transition: transform 0.8s ease;
           }
 
           .service-gradient {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,51,0) 20%, rgba(0,0,51,0.95) 95%);
+            background: linear-gradient(to bottom, rgba(0,0,51,0.1) 0%, rgba(0,0,51,0.9) 100%);
             z-index: 2;
           }
 
+          /* Content is now always visible but reacts to hover */
           .service-content-box {
             position: absolute;
             bottom: 0; left: 0; width: 100%;
-            padding: 40px 30px;
+            padding: 25px;
             z-index: 3;
-            transform: translateY(65px);
-            transition: transform 0.4s ease;
+            transition: transform 0.3s ease;
           }
 
+          /* New Hover Effect: Elevate and Glow */
           .service-item-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 40px 80px rgba(0,0,51,0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,51,0.2);
+            border-color: var(--color-accent-green);
           }
 
           .service-item-card:hover .service-img-layer {
-            transform: scale(1.1);
-            opacity: 0.8;
-          }
-
-          .service-item-card:hover .service-content-box {
-            transform: translateY(0);
+            transform: scale(1.08);
+            opacity: 0.5;
           }
 
           .tech-tag-group {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
-            margin-bottom: 20px;
-            opacity: 0;
-            transition: opacity 0.4s ease 0.2s;
-          }
-
-          .service-item-card:hover .tech-tag-group {
-            opacity: 1;
+            margin-bottom: 12px;
           }
 
           .tech-pill {
             font-family: monospace;
-            font-size: 10px;
+            font-size: 9px;
             color: #ffffff;
-            background: var(--color-accent-green);
-            padding: 3px 10px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+            padding: 2px 8px;
+            border-radius: 4px;
             letter-spacing: 1px;
-            font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.2);
+          }
+
+          .service-item-card:hover .tech-pill {
+            background: var(--color-accent-green);
+            color: #000033;
+            border-color: var(--color-accent-green);
           }
 
           .view-all-btn {
             display: inline-block;
-            padding: 18px 45px;
-            background: transparent;
-            border: 2px solid var(--color-primary);
-            color: var(--color-primary);
-            font-size: 13px;
-            font-weight: 800;
+            padding: 16px 40px;
+            background: var(--color-primary);
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-decoration: none;
+            border-radius: 4px;
             transition: all 0.3s ease;
           }
 
           .view-all-btn:hover {
-            background: var(--color-primary);
-            color: #ffffff;
-          }
-
-          /* MOBILE HORIZONTAL SCROLL LOGIC */
-          @media (max-width: 1024px) {
-            .services-main-grid { 
-              grid-template-columns: repeat(2, 1fr); 
-            }
+            filter: brightness(1.2);
+            transform: translateY(-2px);
           }
 
           @media (max-width: 768px) {
-            .services-vivid-section { padding: 80px 0; }
-            .services-container { padding: 0 24px; }
-            
+            .services-vivid-section { padding: 60px 0; }
             .services-main-grid { 
-              display: flex; 
-              overflow-x: auto; 
-              scroll-snap-type: x mandatory; 
-              gap: 16px;
-              padding: 0 0 40px 0;
-              margin: 0 -24px 20px -24px;
-              padding-left: 24px;
-              -webkit-overflow-scrolling: touch;
+              grid-template-columns: 1fr;
+              gap: 20px;
             }
-
-            /* Hide scrollbar but allow scrolling */
-            .services-main-grid::-webkit-scrollbar { display: none; }
-
-            .service-item-card { 
-              flex: 0 0 82%; 
-              scroll-snap-align: start; 
-              height: 500px;
-            }
-            
-            .service-content-box { 
-              transform: translateY(0);
-              padding: 30px 20px;
-            }
-            
-            .tech-tag-group { opacity: 1; }
-            .view-all-btn { width: 100%; text-align: center; }
+            .service-item-card { height: 320px; }
           }
         `}
       </style>
 
       <section className="services-vivid-section">
         <div className="services-container">
-          <div style={{ marginBottom: "60px", maxWidth: "800px" }}>
+          <div
+            style={{
+              marginBottom: "50px",
+              textAlign: "center",
+              margin: "0 auto 50px",
+            }}
+          >
             <div
               style={{
                 color: "var(--color-accent-green)",
-                fontSize: "12px",
-                fontWeight: "700",
+                fontSize: "13px",
+                fontWeight: "800",
                 textTransform: "uppercase",
-                letterSpacing: "4px",
-                marginBottom: "16px",
+                letterSpacing: "3px",
+                marginBottom: "12px",
               }}
             >
               Core Engineering Expertise
             </div>
             <h2
               style={{
-                fontSize: "clamp(32px, 8vw, 52px)",
+                fontSize: "clamp(35px, 5vw, 42px)",
                 fontWeight: "900",
                 color: "var(--color-primary)",
-                lineHeight: "1.1",
-                letterSpacing: "-2px",
-                marginBottom: "24px",
+                lineHeight: "1.2",
+                marginBottom: "20px",
               }}
             >
-              Technical Solutions <br />
+              Technical Solutions{" "}
               <span style={{ color: "var(--color-accent-green)" }}>
                 Without Compromise.
               </span>
             </h2>
-            <p
-              style={{ fontSize: "17px", color: "#64748b", lineHeight: "1.7" }}
-            >
-              Delivering specialized electrical power engineering services with
-              absolute technical precision and compliance to global standards.
-            </p>
           </div>
 
           <div className="services-main-grid">
@@ -266,11 +222,10 @@ function CoreServices() {
                   </div>
                   <h3
                     style={{
-                      fontSize: "22px",
-                      fontWeight: "800",
+                      fontSize: "20px",
+                      fontWeight: "700",
                       color: "#ffffff",
-                      marginBottom: "12px",
-                      lineHeight: "1.2",
+                      marginBottom: "8px",
                     }}
                   >
                     {service.title}
@@ -278,24 +233,13 @@ function CoreServices() {
                   <p
                     style={{
                       fontSize: "14px",
-                      color: "rgba(255,255,255,0.8)",
-                      lineHeight: "1.6",
-                      marginBottom: "20px",
+                      color: "rgba(255,255,255,0.7)",
+                      lineHeight: "1.5",
+                      marginBottom: "0",
                     }}
                   >
                     {service.description}
                   </p>
-                  <div
-                    style={{
-                      fontSize: "10px",
-                      fontWeight: "800",
-                      color: "var(--color-accent-green)",
-                      letterSpacing: "2px",
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    Ref_id: Tech_00{index + 1} //
-                  </div>
                 </div>
               </div>
             ))}
@@ -303,7 +247,7 @@ function CoreServices() {
 
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Link to="/services" className="view-all-btn">
-              View All Services
+              Explore All Capabilities
             </Link>
           </div>
         </div>
