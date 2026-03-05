@@ -14,33 +14,36 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Electrical Arc Flash Study",
-      client: "DFE Pharma India Pvt Ltd",
-      category: "Power Systems",
-      location: "Cuddalore, India",
+      title:
+        "Review of Insulation Coordination Study for Garraf Fase 2 Project",
+      client: "Progetti Europa & Global S.p.A",
+      category: "Oil & Gas",
+      location: "Iraq",
       image:
         "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
-      desc: "Comprehensive safety audit and incident energy analysis following NFPA 70E standards.",
+      desc: "Comprehensive review of overvoltage protection and insulation levels for major oil field infrastructure.",
     },
     {
       id: 2,
-      title: "KNPC Refinery Protection Upgrade",
-      client: "Kuwait National Petroleum Company",
-      category: "Oil & Gas",
-      location: "Kuwait",
+      title:
+        "Electrical Detail Design Engineering for 44MWAC/61.6MWp Solar Power Plant",
+      client: "KBH Infra",
+      category: "Renewables",
+      location: "India",
       image:
-        "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800",
-      desc: "Design and implementation of advanced relay protection systems for downstream facilities.",
+        "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800",
+      desc: "Full-scale detail engineering and design optimization for high-capacity solar PV integration.",
     },
     {
       id: 3,
-      title: "Grid Integration Analysis",
-      client: "Solar Energy Hub",
-      category: "Renewables",
-      location: "Oman",
+      title:
+        "Review of Power System Study and Protection Study for Ingot-Wafer Factory",
+      client: "Jacobs Engineering",
+      category: "Industrial",
+      location: "International",
       image:
-        "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800",
-      desc: "Load flow and stability studies for integrating 50MW solar PV plant into the national grid.",
+        "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800",
+      desc: "Advanced stability analysis and protection coordination for high-precision semiconductor manufacturing facilities.",
     },
   ];
 
