@@ -93,7 +93,7 @@ function Header() {
               alt="Ecosol Projects Logo"
               style={{
                 ...styles.logoImage,
-                height: scrolled ? "45px" : "55px", // Responsive scaling on scroll
+                height: scrolled ? "63px" : "65px", // Responsive scaling on scroll
               }}
             />
           </NavLink>
