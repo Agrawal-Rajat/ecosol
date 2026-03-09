@@ -3,26 +3,26 @@ import React from "react";
 function WhyEcosol() {
   const points = [
     {
-      title: "Standards-Driven",
-      desc: "Developed in strict compliance with IEEE, IEC, and NFPA standards.",
+      title: "Specialized Expertise",
+      desc: "Focused engineering expertise in power systems, electromagnetic studies, and grounding design.",
       image:
         "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=600",
     },
     {
-      title: "Senior-Led Team",
-      desc: "Work reviewed by professionals with 20+ years of industry experience.",
+      title: "Independent Advisory",
+      desc: "Objective technical assessments supporting developers, utilities, and EPC contractors.",
       image:
         "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=600",
     },
     {
-      title: "Global Exposure",
-      desc: "Proven track record across MENA, Europe, and India projects.",
+      title: "Simulation‑Driven Engineering",
+      desc: "Engineering solutions backed by advanced modelling and computational analysis.",
       image:
         "https://global-exposure.co.uk/wp-content/uploads/Global-Exposure-Offices-in-Milton-Keynes.jpg",
     },
     {
-      title: "Safety Focused",
-      desc: "Unyielding emphasis on system safety and regulatory compliance.",
+      title: "Standards‑Based Engineering",
+      desc: "Designs aligned with international engineering standards such as IEC and IEEE",
       image:
         "https://besser.bwdcdn.com/_t/Other-Images/_AUTOxAUTO_crop_center-center_none/John-Hanson-Boone.jpg",
     },
@@ -183,10 +183,8 @@ function WhyEcosol() {
                 lineHeight: "1",
               }}
             >
-              Engineering <br />
-              <span style={{ color: "#10b981" }}>
-                Without <br /> Compromise.
-              </span>
+              Why <br />
+              <span style={{ color: "#10b981" }}>Ecosol ?</span>
             </h2>
             <p
               style={{

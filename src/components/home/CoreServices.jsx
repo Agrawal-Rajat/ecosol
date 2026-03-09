@@ -5,12 +5,12 @@ function CoreServices() {
   const services = [
     {
       id: "01",
-      title: "Power System Analysis",
+      title: "Power System Studies",
       image:
         "https://www.jeftechno.com/assets/images/blog/Power-System%20Studies.jpg",
       description:
-        "Advanced electrical network modeling and system performance studies to ensure stability, safety, and operational efficiency.",
-      tags: ["ETAP", "DIgSILENT PowerFactory", "PSCAD"],
+        "Advanced network modelling, short-circuit studies, load flow analysis, and system stability assessment using industry-standard simulation tools.",
+      tags: [],
     },
 
     {
@@ -19,28 +19,28 @@ function CoreServices() {
       image:
         "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800",
       description:
-        "Electromagnetic interference and high voltage interaction studies to evaluate infrastructure impact on nearby systems.",
-      tags: ["CDEGS", "PSCAD"],
+        "Electromagnetic interference studies, transmission line interaction analysis, and mitigation engineering.",
+      tags: [],
     },
 
     {
       id: "03",
-      title: "Grounding Analysis",
+      title: "Grounding Engineering",
       image:
         "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800",
       description:
-        "Electrical earthing and grounding system engineering to ensure personnel safety and reliable fault current dissipation.",
-      tags: ["CDEGS", "Grounding Simulation"],
+        "Substation grounding design, step-touch voltage analysis, and grounding grid optimization.",
+      tags: [],
     },
 
     {
       id: "04",
-      title: "Detail Design Engineering",
+      title: "Electrical Detail Design",
       image:
         "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=800",
       description:
-        "Complete electrical engineering design solutions for substations, power plants, and industrial infrastructure.",
-      tags: ["IEC", "IEEE", "NEC"],
+        "Detailed engineering for substations, electrical infrastructure, and power distribution systems.",
+      tags: [],
     },
   ];
 

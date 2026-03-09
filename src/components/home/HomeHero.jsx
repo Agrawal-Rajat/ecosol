@@ -12,8 +12,9 @@ function HomeHero() {
             display: flex;
             align-items: center;
             background-color: #000033;
-            background-image: linear-gradient(to right, rgba(0, 0, 51, 0.85) 40%, rgba(0, 0, 51, 0.4) 100%), 
-                              url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=2070');
+            /* New High-Quality Engineering Image */
+            background-image: linear-gradient(to right, rgba(0, 0, 51, 0.9) 30%, rgba(0, 0, 51, 0.3) 100%), 
+                              url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2070');
             background-size: cover;
             background-position: center;
             overflow: hidden;
@@ -21,10 +22,10 @@ function HomeHero() {
 
           .hero-grid-overlay {
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: linear-gradient(rgba(68, 158, 29, 0.05) 1px, transparent 1px), 
-                              linear-gradient(90deg, rgba(68, 158, 29, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
+            inset: 0;
+            background-image: linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
             z-index: 1;
             pointer-events: none;
           }
@@ -32,56 +33,37 @@ function HomeHero() {
           .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 1400px;
+            max-width: 1300px;
             width: 100%;
             margin: 0 auto;
             padding: 40px; 
           }
 
-          .hero-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(68, 158, 29, 0.2);
-            filter: brightness(1.1);
-          }
-          
-          /* MOBILE & TABLET SPACIOUSNESS FIXES */
-          @media (max-width: 1024px) {
-          
-            .hero-section { 
-              min-height: 90vh; /* Increased height for mobile spaciousness */
-              padding: 100px 0; /* More vertical breathing room */
-              text-align: center; 
-              background-image: linear-gradient(rgba(0, 0, 51, 0.75), rgba(0, 0, 51, 0.75)), 
-                                url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=2070');
-            }
-            .hero-content { padding: 0 32px; } /* Wider side padding */
-            .hero-heading { 
-              font-size: 44px !important; 
-              margin-bottom: 28px !important; 
-              line-height: 1.2 !important; /* Spacious text lines */
-            }
-            .hero-usp { 
-              margin: 0 auto 40px auto !important; 
-              border-left: none !important; 
-              border-bottom: 2px solid var(--color-accent-green);
-              padding: 0 0 12px 0 !important;
-              letter-spacing: 2px !important;
-              max-width: 85%; /* Centered text width control */
-            }
-            .hero-btn-group { 
-              justify-content: center !important; 
-              flex-direction: column; /* Stacked for thumb-friendly reach */
-              gap: 20px !important; 
-              width: 100%;
-              max-width: 320px;
-              margin: 0 auto;
-            }
+          .hero-btn {
+            transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+            display: inline-block;
+            text-align: center;
           }
 
-          @media (max-width: 480px) {
-            .hero-section { padding: 80px 0; }
-            .hero-heading { font-size: 36px !important; }
-            .hero-btn { width: 100%; padding: 18px 20px !important; }
+          .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(16, 185, 129, 0.3);
+          }
+          
+          @media (max-width: 1024px) {
+            .hero-section { 
+              min-height: 80vh;
+              text-align: center; 
+              background-image: linear-gradient(rgba(0, 0, 51, 0.8), rgba(0, 0, 51, 0.8)), 
+                                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2070');
+            }
+            .hero-content { padding: 0 24px; }
+            .hero-heading { font-size: 42px !important; }
+            .hero-btn-group { 
+              justify-content: center !important; 
+              flex-direction: column;
+              gap: 16px !important;
+            }
           }
         `}
       </style>
@@ -92,18 +74,18 @@ function HomeHero() {
         <div className="hero-content">
           <div className="hero-badge" style={styles.badge}>
             <span style={styles.badgeLine} />
-            Powering Global Infrastructure
+            Independent Consultancy
           </div>
 
           <h1 className="hero-heading" style={styles.heading}>
-            Sustainable Energy <br />
-            <span style={{ color: "var(--color-accent-green)" }}>
-              Precision Engineered.
-            </span>
+            Engineering Intelligence <br />
+            <span style={{ color: "#10b981" }}>For Power Infrastructure.</span>
           </h1>
 
-          <p className="hero-usp" style={styles.usp}>
-            Global Power Engineering Expertise. <br /> Localized Solutions.
+          <p className="hero-subheadline" style={styles.subheadline}>
+            Independent electrical engineering consultancy specializing in power
+            system studies, electromagnetic analysis, grounding engineering, and
+            detailed electrical infrastructure design.
           </p>
 
           <div className="hero-btn-group" style={styles.buttonGroup}>
@@ -112,14 +94,14 @@ function HomeHero() {
               className="hero-btn"
               style={styles.primaryBtn}
             >
-              Explore Services
+              Explore Our Services
             </NavLink>
             <NavLink
               to="/contact"
               className="hero-btn"
               style={styles.secondaryBtn}
             >
-              Consult Our Experts
+              Speak with an Engineer
             </NavLink>
           </div>
         </div>
@@ -133,65 +115,61 @@ const styles = {
     display: "inline-flex",
     alignItems: "center",
     gap: "10px",
-    color: "var(--color-accent-green)",
+    color: "#10b981",
     fontSize: "12px",
-    fontWeight: "700",
+    fontWeight: "800",
     textTransform: "uppercase",
     letterSpacing: "3px",
     marginBottom: "20px",
   },
   badgeLine: {
-    width: "25px",
+    width: "30px",
     height: "2px",
-    backgroundColor: "var(--color-accent-green)",
+    backgroundColor: "#10b981",
   },
   heading: {
-    fontSize: "64px",
+    fontSize: "clamp(42px, 6vw, 68px)",
     fontWeight: "900",
     color: "#ffffff",
     lineHeight: "1.1",
-    marginBottom: "24px",
+    marginBottom: "28px",
     letterSpacing: "-1.5px",
+    maxWidth: "950px",
   },
-  usp: {
+  subheadline: {
     fontSize: "18px",
-    fontWeight: "700",
-    color: "#ffffff",
-    marginBottom: "40px",
-    borderLeft: "4px solid var(--color-accent-green)",
-    paddingLeft: "15px",
-    textTransform: "uppercase",
-    letterSpacing: "1px",
-    maxWidth: "fit-content",
+    fontWeight: "400",
+    color: "rgba(255, 255, 255, 0.8)",
+    marginBottom: "48px",
+    lineHeight: "1.7",
+    maxWidth: "680px",
   },
   buttonGroup: {
     display: "flex",
-    gap: "16px",
+    gap: "20px",
   },
   primaryBtn: {
-    backgroundColor: "var(--color-accent-green)",
+    backgroundColor: "#10b981",
     color: "#fff",
-    padding: "16px 32px",
+    padding: "18px 36px",
     fontSize: "13px",
-    fontWeight: "800",
+    fontWeight: "700",
     textTransform: "uppercase",
     letterSpacing: "1.5px",
     textDecoration: "none",
-    transition: "all 0.2s ease",
-    display: "inline-block",
+    borderRadius: "4px",
   },
   secondaryBtn: {
     backgroundColor: "transparent",
-    color: "#fff",
-    padding: "16px 32px",
+    color: "#ffffff",
+    padding: "18px 36px",
     fontSize: "13px",
-    fontWeight: "800",
+    fontWeight: "700",
     textTransform: "uppercase",
     letterSpacing: "1.5px",
     textDecoration: "none",
-    border: "2px solid rgba(255, 255, 255, 0.3)",
-    transition: "all 0.2s ease",
-    display: "inline-block",
+    border: "2px solid rgba(255, 255, 255, 0.4)",
+    borderRadius: "4px",
   },
 };
 

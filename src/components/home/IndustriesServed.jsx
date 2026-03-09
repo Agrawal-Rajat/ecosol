@@ -3,45 +3,80 @@ import React, { useState } from "react";
 function IndustriesServed() {
   const [activeTab, setActiveTab] = useState(0);
 
+  // const industries = [
+  //   {
+  //     label: "Power & Utilities",
+  //     desc: "Grid modernization, substation engineering, and transmission network studies for national and regional utility providers. We ensure high-voltage stability and seamless power distribution.",
+  //     img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1200",
+  //     code: "SEC_UTIL_01",
+  //   },
+  //   {
+  //     label: "Oil & Gas",
+  //     desc: "Comprehensive electrical infrastructure for upstream and downstream operations. We specialize in hazardous area classification and robust power systems for offshore and onshore rigs.",
+  //     img: "https://images.unsplash.com/photo-1516195851888-6f1a981a8a2a?auto=format&fit=crop&q=80&w=1200",
+  //     code: "SEC_O&G_02",
+  //   },
+  //   {
+  //     label: "Petrochemicals",
+  //     desc: "Engineering for complex chemical processing plants. Our focus is on continuous power reliability, motor starting studies, and EMI mitigation in sensitive processing environments.",
+  //     img: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=1200",
+  //     code: "SEC_CHEM_03",
+  //   },
+  //   {
+  //     label: "Manufacturing & Process",
+  //     desc: "Optimization of industrial plant electrical systems. We deliver protection coordination, arc flash studies, and energy efficiency audits for large-scale manufacturing facilities.",
+  //     img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200",
+  //     code: "SEC_MANU_04",
+  //   },
+  //   {
+  //     label: "Renewables",
+  //     desc: "Technical consultancy for Solar PV, Wind energy integration, and Battery Energy Storage Systems (BESS). We bridge the gap between intermittent generation and grid requirements.",
+  //     img: "https://images.unsplash.com/photo-1509391366360-fe5bb6583e29?auto=format&fit=crop&q=80&w=1200",
+  //     code: "SEC_RENE_05",
+  //   },
+  //   {
+  //     label: "Infrastructure",
+  //     desc: "Power engineering for transportation networks, data centers, and critical public infrastructure. Ensuring safety and compliance with international standards (IEEE/IEC).",
+  //     img: "https://images.unsplash.com/photo-1517089534706-3d5efebb2492?auto=format&fit=crop&q=80&w=1200",
+  //     code: "SEC_INFR_06",
+  //   },
+  // ];
   const industries = [
     {
-      label: "Power & Utilities",
-      desc: "Grid modernization, substation engineering, and transmission network studies for national and regional utility providers. We ensure high-voltage stability and seamless power distribution.",
+      label: "Power Utilities",
+      desc: "Engineering consultancy services supporting electric utilities with power system studies, grid stability analysis, and substation infrastructure design.",
       img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1200",
       code: "SEC_UTIL_01",
     },
+
     {
-      label: "Oil & Gas",
-      desc: "Comprehensive electrical infrastructure for upstream and downstream operations. We specialize in hazardous area classification and robust power systems for offshore and onshore rigs.",
-      img: "https://images.unsplash.com/photo-1516195851888-6f1a981a8a2a?auto=format&fit=crop&q=80&w=1200",
-      code: "SEC_O&G_02",
+      label: "Renewable Energy Developers",
+      desc: "Technical engineering studies supporting renewable energy projects including grid integration analysis, power system studies, and electrical infrastructure design.",
+      img: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=1200",
+      code: "SEC_REN_02",
     },
+
     {
-      label: "Petrochemicals",
-      desc: "Engineering for complex chemical processing plants. Our focus is on continuous power reliability, motor starting studies, and EMI mitigation in sensitive processing environments.",
-      img: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=1200",
-      code: "SEC_CHEM_03",
+      label: "Industrial Manufacturing Facilities",
+      desc: "Electrical engineering support for complex industrial facilities including power distribution design, grounding engineering, and system reliability analysis.",
+      img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1200",
+      code: "SEC_IND_03",
     },
+
     {
-      label: "Manufacturing & Process",
-      desc: "Optimization of industrial plant electrical systems. We deliver protection coordination, arc flash studies, and energy efficiency audits for large-scale manufacturing facilities.",
-      img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200",
-      code: "SEC_MANU_04",
+      label: "Transmission Infrastructure Projects",
+      desc: "Advanced engineering analysis for high-voltage transmission systems including electromagnetic studies, grounding design, and transmission corridor analysis.",
+      img: "https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?auto=format&fit=crop&q=80&w=1200",
+      code: "SEC_TRN_04",
     },
+
     {
-      label: "Renewables",
-      desc: "Technical consultancy for Solar PV, Wind energy integration, and Battery Energy Storage Systems (BESS). We bridge the gap between intermittent generation and grid requirements.",
-      img: "https://images.unsplash.com/photo-1509391366360-fe5bb6583e29?auto=format&fit=crop&q=80&w=1200",
-      code: "SEC_RENE_05",
-    },
-    {
-      label: "Infrastructure",
-      desc: "Power engineering for transportation networks, data centers, and critical public infrastructure. Ensuring safety and compliance with international standards (IEEE/IEC).",
-      img: "https://images.unsplash.com/photo-1517089534706-3d5efebb2492?auto=format&fit=crop&q=80&w=1200",
-      code: "SEC_INFR_06",
+      label: "Engineering Procurement & Construction (EPC) Companies",
+      desc: "Independent engineering advisory and technical consulting services supporting EPC contractors during project design, procurement, and technical evaluation phases.",
+      img: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&q=80&w=1200",
+      code: "SEC_EPC_05",
     },
   ];
-
   return (
     <>
       <style>

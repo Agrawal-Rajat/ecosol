@@ -7,18 +7,23 @@ import ClientsGrid from "../components/home/ClientsGrid";
 import PrimaryCTA from "../components/home/PrimaryCTA";
 import ServicePillars from "../components/home/ServicePillars";
 import GlobalFootprint from "../components/home/GlobalFootprint";
+import EngineeringToolsBar from "../components/home/EngineeringToolsBar";
+import ImpactAndInsights from "../components/home/ImpactAndInsights";
 
 function Home() {
   return (
     <>
       <HomeHero />
-      <ServicePillars />
+      <EngineeringToolsBar />
       {/* <TrustIndicators /> */}
       <CoreServices />
+      <ServicePillars />
+      <WhyEcosol />
       <IndustriesServed />
       <GlobalFootprint />
-      <WhyEcosol />
+
       <ClientsGrid />
+      <ImpactAndInsights />
       <PrimaryCTA />
     </>
   );

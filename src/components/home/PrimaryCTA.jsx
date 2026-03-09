@@ -153,7 +153,7 @@ function PrimaryCTA() {
               letterSpacing: "-2.5px",
             }}
           >
-            Ready to Start Your <br />
+            Need Engineering Support <br />
             <span
               style={{
                 color: "#10b981",
@@ -162,7 +162,7 @@ function PrimaryCTA() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Engineering Journey?
+              for Your Power Project?
             </span>
           </h2>
 
@@ -177,13 +177,12 @@ function PrimaryCTA() {
               fontWeight: "400",
             }}
           >
-            Partner with Ecosol for world-class technical expertise. From
-            initial feasibility to final compliance, we ensure engineering
-            excellence at every stage.
+            Speak with our engineers to discuss power system studies, grounding
+            analysis, or electrical infrastructure design.
           </p>
 
           <Link to="/contact" className="cta-btn-modern">
-            Contact Ecosol Expertise
+            Schedule a Consultation
           </Link>
         </div>
       </section>
