@@ -5,38 +5,42 @@ function CoreServices() {
   const services = [
     {
       id: "01",
-      title: "Power System Studies",
+      title: "Power System Analysis",
       image:
         "https://www.jeftechno.com/assets/images/blog/Power-System%20Studies.jpg",
       description:
-        "Advanced Electrical studies using industry-standard computational modeling.",
-      tags: ["ETAP", "PSS/E", "DIGSILENT"],
+        "Advanced electrical network modeling and system performance studies to ensure stability, safety, and operational efficiency.",
+      tags: ["ETAP", "DIgSILENT PowerFactory", "PSCAD"],
     },
+
     {
       id: "02",
-      title: "Protection & Safety",
+      title: "Electromagnetic Analysis",
       image:
-        "https://images.unsplash.com/photo-1590959651373-a3db0f38a961?auto=format&fit=crop&q=80&w=1200",
+        "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800",
       description:
-        "Electrical Protection & Safety Assessment for industrial grids.",
-      tags: ["IEEE", "IEC", "NFPA"],
+        "Electromagnetic interference and high voltage interaction studies to evaluate infrastructure impact on nearby systems.",
+      tags: ["CDEGS", "PSCAD"],
     },
+
     {
       id: "03",
-      title: "Renewable Integration",
+      title: "Grounding Analysis",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TZaVGq3tPoQ0uKDiavx9HO4G6m4QIXYH4Q&s",
+        "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800",
       description:
-        "Strategic design and grid compliance for Solar and Wind assets.",
-      tags: ["SOLAR", "WIND", "BESS"],
+        "Electrical earthing and grounding system engineering to ensure personnel safety and reliable fault current dissipation.",
+      tags: ["CDEGS", "Grounding Simulation"],
     },
+
     {
       id: "04",
-      title: "Substations & Grounding",
+      title: "Detail Design Engineering",
       image:
-        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1200",
-      description: "Detail design engineering for HV/EHV Substations and GIS.",
-      tags: ["400KV", "GIS", "EMC"],
+        "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=800",
+      description:
+        "Complete electrical engineering design solutions for substations, power plants, and industrial infrastructure.",
+      tags: ["IEC", "IEEE", "NEC"],
     },
   ];
 

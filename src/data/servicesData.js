@@ -1,289 +1,267 @@
 const servicesData = [
     {
-        slug: "power-system-studies",
-        title: "Power System Studies",
+        slug: "power-system-analysis",
+        title: "Power System Analysis",
         heroText:
-            "Comprehensive power system analysis to ensure reliability, safety, and optimal performance of electrical networks across utility and industrial installations.",
+            "Advanced electrical network modeling and system performance studies to ensure stability, safety, and operational efficiency across generation, transmission, distribution, and industrial power systems.",
 
         overview:
-            "Ecosol provides detailed power system studies to evaluate system behavior under normal and fault conditions. Our studies support safe, reliable, and standards-compliant operation of electrical networks.",
+            "Modern power systems require detailed analytical evaluation to ensure stability, safety, and operational efficiency. Our engineers perform advanced simulation-based studies to evaluate electrical network performance across generation, transmission, distribution, and industrial power systems.",
 
         scope: [
-            "Load Flow Studies",
-            "Short Circuit Analysis",
-            "Transient Stability Studies",
-            "Motor Starting Studies",
-            "Harmonic Analysis",
-            "Reactive Power Optimization"
+            "Load flow and power network analysis",
+            "Short circuit and fault level studies",
+            "Motor starting and transient stability studies",
+            "Harmonic analysis and power quality assessment",
+            "Contingency and reliability studies",
+            "Reactive power optimization and voltage stability studies"
         ],
 
         deliverables: [
-            "Technical Study Report",
-            "System Modeling Files",
-            "Protection Coordination Curves",
-            "Single Line Diagram Updates",
-            "Compliance Documentation"
+            "Detailed engineering study reports",
+            "Simulation models and system analysis results",
+            "Technical recommendations for system optimization",
+            "Network performance and risk assessment documentation"
         ],
 
-        tools: ["ETAP", "DIgSILENT PowerFactory", "PSCAD"],
+        tools: ["ETAP", "DIgSILENT PowerFactory", "PSCAD", "Paladin DesignBase"],
 
-        standards: ["IEEE", "IEC", "NFPA"],
+        standards: ["IEC", "IEEE"],
 
         industries: [
             "Utilities",
-            "Oil & Gas",
+            "Industrial Power Systems",
+            "Energy Infrastructure",
             "Manufacturing",
-            "Renewables",
-            "Infrastructure"
+            "Power Transmission & Distribution"
         ]
     },
 
     {
-        slug: "protection-relay-systems",
-        title: "Protection & Relay Systems",
+        slug: "electromagnetic-analysis",
+        title: "Electromagnetic Analysis",
         heroText:
-            "Design, evaluation, and optimization of protection and relay systems to safeguard electrical assets and ensure coordinated fault clearance.",
+            "Electromagnetic interference and high voltage system interaction studies to evaluate electrical infrastructure impact on nearby equipment, pipelines, and communication systems.",
 
         overview:
-            "Ecosol delivers protection coordination and relay engineering services to enhance system reliability and ensure safe isolation of faults in compliance with international standards.",
+            "High-voltage electrical infrastructure can create electromagnetic interactions that impact nearby equipment, pipelines, and communication systems. Our electromagnetic analysis services help identify and mitigate these risks through advanced simulation and engineering evaluation.",
 
         scope: [
-            "Protection Coordination Studies",
-            "Relay Selection & Configuration",
-            "CT/PT Evaluation",
-            "Substation Protection Design",
-            "Retrofit & Upgrade Studies"
+            "Electromagnetic interference (EMI) analysis",
+            "Conductive and inductive coupling studies",
+            "Transmission line interaction analysis",
+            "Lightning and switching transient analysis",
+            "High-frequency and low-frequency EM field modeling"
         ],
 
         deliverables: [
-            "Protection Coordination Report",
-            "Relay Settings Documentation",
-            "Time-Current Curves",
-            "Protection Philosophy Documentation"
+            "Electromagnetic risk assessment reports",
+            "EM field simulation models",
+            "Interference mitigation recommendations",
+            "Compliance documentation and technical validation"
         ],
 
-        tools: ["ETAP", "DIgSILENT PowerFactory"],
+        tools: ["CDEGS", "PSCAD", "Advanced EM modeling tools"],
 
-        standards: ["IEEE", "IEC", "NFPA"],
+        standards: ["IEC", "IEEE"],
 
         industries: [
-            "Utilities",
-            "Oil & Gas",
-            "Petrochemicals",
-            "Industrial Plants"
+            "Transmission Utilities",
+            "Pipeline Infrastructure",
+            "Telecommunications",
+            "Industrial Power Systems",
+            "Energy Infrastructure"
         ]
     },
 
     {
-        slug: "arc-flash-safety",
-        title: "Arc Flash & Electrical Safety Studies",
+        slug: "grounding-analysis",
+        title: "Grounding Analysis",
         heroText:
-            "Electrical safety assessments to identify arc flash hazards and implement mitigation measures in compliance with international standards.",
+            "Electrical earthing and ground potential safety engineering services to ensure personnel protection and reliable fault current dissipation.",
 
         overview:
-            "Ecosol conducts arc flash and electrical safety studies to quantify incident energy levels and recommend mitigation measures for personnel safety and regulatory compliance.",
+            "Grounding systems are critical for personnel safety and reliable fault current dissipation in electrical installations. Our engineers design and analyze grounding systems to ensure compliance with safety standards and operational reliability.",
 
         scope: [
-            "Arc Flash Calculations",
-            "Incident Energy Analysis",
-            "Mitigation Recommendations",
-            "Labeling Requirements",
-            "Electrical Safety Review"
+            "Soil resistivity analysis and multilayer modeling",
+            "Substation grounding grid design",
+            "Step and touch voltage analysis",
+            "Ground potential rise (GPR) studies",
+            "Lightning protection grounding evaluation"
         ],
 
         deliverables: [
-            "Arc Flash Study Report",
-            "Incident Energy Labels",
-            "Mitigation Recommendations",
-            "Compliance Documentation"
+            "Grounding system design reports",
+            "Step and touch voltage calculations",
+            "Earthing layout drawings and design validation",
+            "Safety compliance verification reports"
         ],
 
-        tools: ["ETAP", "DIgSILENT PowerFactory"],
+        tools: ["CDEGS", "Grounding simulation software"],
 
-        standards: ["IEEE 1584", "NFPA 70E", "IEC"],
-
-        industries: [
-            "Oil & Gas",
-            "Petrochemicals",
-            "Utilities",
-            "Manufacturing"
-        ]
-    },
-
-    {
-        slug: "grounding-emi",
-        title: "Grounding & EMI Analysis",
-        heroText:
-            "Advanced grounding and electromagnetic interference analysis to ensure personnel safety, equipment protection, and system integrity.",
-
-        overview:
-            "Ecosol provides high-voltage grounding design and EMI analysis services to ensure system stability, regulatory compliance, and safe operation under fault conditions.",
-
-        scope: [
-            "High Voltage Grounding Design",
-            "Soil Resistivity Modeling",
-            "Touch & Step Voltage Analysis",
-            "EMI Studies",
-            "Lightning Protection Analysis"
-        ],
-
-        deliverables: [
-            "Grounding Design Report",
-            "Soil Resistivity Analysis",
-            "EMI Assessment Documentation",
-            "Compliance Certification Support"
-        ],
-
-        tools: ["CDEGS"],
-
-        standards: ["IEEE", "IEC"],
+        standards: ["IEC", "IEEE"],
 
         industries: [
             "Substations",
             "Power Plants",
             "Industrial Facilities",
-            "Infrastructure"
+            "Energy Infrastructure",
+            "Transmission Networks"
         ]
     },
 
     {
-        slug: "power-generation-substations",
-        title: "Power Generation & Substations",
+        slug: "engineering-software-capabilities",
+        title: "Engineering Software Capabilities",
         heroText:
-            "Electrical design and engineering services for power generation facilities and substations across all voltage levels.",
+            "Advanced digital simulation tools used globally for electrical engineering modeling, system analysis, and infrastructure design.",
 
         overview:
-            "Ecosol supports detailed electrical engineering for power generation facilities and substations including layout design, system studies, and protection coordination.",
+            "Our engineering services are supported by industry-leading simulation and modeling platforms used globally in power system design and analysis. These tools enable accurate modeling of electrical networks and infrastructure systems.",
 
         scope: [
-            "Power Plant Electrical Design",
-            "AIS/GIS Substation Engineering",
-            "Switchyard Layouts",
-            "Equipment Sizing & Specifications",
-            "Protection & Control Schemes"
+            "Electrical network simulation and modeling",
+            "Power system stability and network analysis",
+            "Electromagnetic transient analysis",
+            "Grounding and electromagnetic interference modeling",
+            "Industrial power system engineering studies"
         ],
+        // scope: [],
+
 
         deliverables: [
-            "Single Line Diagrams",
-            "Electrical Layout Drawings",
-            "Technical Specifications",
-            "Design Calculation Reports"
+            "Digital system models and engineering simulations",
+            "Electrical study reports and validation results",
+            "Simulation datasets and engineering documentation"
         ],
 
-        tools: ["ETAP", "DIgSILENT PowerFactory"],
+        tools: [
+            "ETAP",
+            "DIgSILENT PowerFactory",
+            "PSCAD",
+            "CDEGS",
+            "Paladin DesignBase"
+        ],
 
-        standards: ["IEEE", "IEC", "BS"],
+        standards: ["IEC", "IEEE"],
 
         industries: [
+            "Engineering Consultancies",
             "Utilities",
-            "Independent Power Producers",
-            "Industrial Generation"
+            "Industrial Facilities",
+            "Energy Infrastructure",
+            "Power Generation"
         ]
     },
 
     {
-        slug: "power-automation",
-        title: "Power Automation (SCADA & Grid Islanding)",
+        slug: "detail-design-engineering",
+        title: "Detail Design Engineering",
         heroText:
-            "Design and engineering of power automation systems to enhance operational visibility, control, and system reliability.",
+            "Complete electrical engineering design services for substations, power plants, and industrial electrical infrastructure.",
 
         overview:
-            "Ecosol provides engineering consultancy for electrical automation systems including SCADA architecture and grid islanding schemes to improve operational resilience.",
+            "Detailed engineering transforms conceptual electrical designs into executable construction-ready documentation. Our engineering team provides comprehensive design solutions for substations, power plants, and industrial electrical systems.",
 
         scope: [
-            "Electrical SCADA Design",
-            "Load Shedding Schemes",
-            "Grid Islanding Studies",
-            "Automation Architecture Definition",
-            "Integration Planning"
+            "Electrical single line diagram development",
+            "Load calculations and equipment sizing",
+            "Cable routing and cable schedule preparation",
+            "Substation layout engineering",
+            "Lighting and power distribution design",
+            "Protection and control system architecture"
         ],
 
         deliverables: [
-            "Automation Architecture Documentation",
-            "Control Philosophy Documentation",
-            "Load Shedding Scheme Reports"
+            "Engineering drawings and design documentation",
+            "Electrical load calculations and equipment specifications",
+            "Cable schedules and electrical layout plans",
+            "Construction-ready engineering packages"
         ],
 
-        tools: ["ETAP", "DIgSILENT PowerFactory"],
+        tools: ["International Electrical Codes"],
 
-        standards: ["IEEE", "IEC"],
+        standards: ["IEC", "IEEE", "NEC"],
 
         industries: [
-            "Utilities",
             "Power Plants",
-            "Industrial Networks"
+            "Substations",
+            "Industrial Facilities",
+            "Manufacturing Plants",
+            "Energy Infrastructure"
         ]
     },
 
     {
-        slug: "renewable-energy",
-        title: "Renewable Energy Engineering",
+        slug: "procurement-assistance",
+        title: "Procurement Assistance",
         heroText:
-            "Engineering consultancy services for utility-scale and distributed renewable energy projects with strong focus on solar power systems.",
+            "Technical procurement support services for electrical infrastructure projects to ensure equipment reliability and vendor compliance.",
 
         overview:
-            "Ecosol provides engineering support for renewable energy projects including grid integration studies and detailed electrical design for solar and hybrid systems.",
+            "Selecting the right electrical equipment and vendors is essential for project reliability and long-term operational performance. Our procurement support services ensure that equipment specifications, vendor proposals, and procurement decisions align with engineering requirements.",
 
         scope: [
-            "Solar PV Electrical Design",
-            "Feasibility & Concept Engineering",
-            "Grid Integration Studies",
-            "Hybrid & Storage Integration",
-            "Solar Manufacturing Plant Engineering"
+            "Preparation of technical specifications and RFQ documentation",
+            "Vendor prequalification and technical bid evaluation",
+            "Vendor proposal analysis and compliance review",
+            "Equipment performance comparison and recommendation"
         ],
 
         deliverables: [
-            "Grid Integration Study Report",
-            "Electrical Design Documentation",
-            "System Modeling Files",
-            "Technical Specifications"
+            "Technical bid evaluation reports",
+            "Vendor comparison matrices",
+            "Procurement technical specifications",
+            "Equipment selection recommendations"
         ],
 
-        tools: ["ETAP", "DIgSILENT PowerFactory"],
+        tools: ["Engineering procurement documentation tools"],
 
-        standards: ["IEEE", "IEC"],
+        standards: ["IEC", "IEEE"],
 
         industries: [
-            "Renewable Energy Developers",
+            "Power Infrastructure Projects",
             "Utilities",
-            "Industrial Clients"
+            "Industrial Facilities",
+            "Energy Developers",
+            "Engineering EPC Contractors"
         ]
     },
 
     {
-        slug: "industrial-electrification",
-        title: "Industrial Electrification",
+        slug: "third-party-inspection",
+        title: "Third Party Inspection",
         heroText:
-            "Electrical engineering services for complex industrial facilities across multiple process industries.",
+            "Independent electrical equipment inspection and quality verification services for manufacturing and installation stages.",
 
         overview:
-            "Ecosol delivers industrial electrical engineering services including distribution design, hazardous area considerations, and compliance-based system planning.",
+            "Independent inspection ensures that electrical equipment meets project specifications, quality standards, and regulatory requirements before installation and commissioning.",
 
         scope: [
-            "Industrial Power Distribution Design",
-            "Hazardous Area Support",
-            "Equipment Selection & Specifications",
-            "Electrical Layout Development",
-            "Standards Compliance Assessment"
+            "Factory inspection of transformers, switchgear, and control systems",
+            "Factory Acceptance Test (FAT) witnessing",
+            "Manufacturing quality verification",
+            "Installation and site inspection support"
         ],
 
         deliverables: [
-            "Electrical Distribution Drawings",
-            "Calculation Reports",
-            "Equipment Specifications",
-            "Compliance Documentation"
+            "Inspection reports and compliance verification",
+            "FAT witnessing reports and validation documentation",
+            "Non-conformance and corrective action reports",
+            "Equipment quality certification documentation"
         ],
 
-        tools: ["ETAP", "DIgSILENT PowerFactory"],
+        tools: ["Inspection and testing equipment"],
 
-        standards: ["IEC", "IEEE", "NEC", "BS"],
+        standards: ["IEC Testing Standards", "IEEE Equipment Standards", "Industrial QA Protocols"],
 
         industries: [
-            "Oil & Gas",
-            "Petrochemicals",
-            "Cement",
-            "Steel",
-            "Process Industries"
+            "Electrical Equipment Manufacturers",
+            "Utilities",
+            "Industrial Infrastructure",
+            "Energy Projects",
+            "Engineering EPC Contractors"
         ]
     }
 ];

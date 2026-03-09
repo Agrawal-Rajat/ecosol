@@ -4,68 +4,60 @@ import { Link } from "react-router-dom";
 function ServicesGrid() {
   const services = [
     {
-      title: "Power System Studies",
+      title: "Power System Analysis",
       description:
-        "Comprehensive power system analysis to ensure reliability, safety, and optimal performance of electrical networks.",
-      link: "/services/power-system-studies",
+        "Advanced electrical network modeling and system performance studies to ensure stability, safety, and operational efficiency.",
+      link: "/services/power-system-analysis",
       image:
         "https://images.unsplash.com/photo-1581092334651-ddf26d9a1930?auto=format&fit=crop&q=80&w=800",
     },
     {
-      title: "Protection & Relay Systems",
+      title: "Electromagnetic Analysis",
       description:
-        "Design, evaluation, and optimization of protection and relay systems for coordinated fault clearance.",
-      link: "/services/protection-relay-systems",
-      image:
-        "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=800",
-    },
-    {
-      title: "Arc Flash & Electrical Safety Studies",
-      description:
-        "Electrical safety assessments to identify arc flash hazards and implement mitigation measures.",
-      link: "/services/arc-flash-safety",
-      image:
-        "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800",
-    },
-    {
-      title: "Grounding & EMI Analysis",
-      description:
-        "Advanced grounding and electromagnetic interference analysis for personnel and equipment safety.",
-      link: "/services/grounding-emi",
+        "Electromagnetic interference and high voltage interaction studies to assess infrastructure impact on nearby systems.",
+      link: "/services/electromagnetic-analysis",
       image:
         "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800",
     },
     {
-      title: "Power Generation & Substations",
+      title: "Grounding Analysis",
       description:
-        "Electrical design and engineering services for power generation facilities and substations.",
-      link: "/services/power-generation-substations",
+        "Electrical earthing and ground potential safety engineering to ensure personnel protection and reliable fault dissipation.",
+      link: "/services/grounding-analysis",
       image:
-        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800",
     },
     {
-      title: "Power Automation (SCADA & Grid Islanding)",
+      title: "Engineering Software Capabilities",
       description:
-        "Design and engineering of power automation systems to enhance monitoring and control.",
-      link: "/services/power-automation",
+        "Advanced digital simulation platforms used globally for electrical engineering modeling and system analysis.",
+      link: "/services/engineering-software-capabilities",
       image:
         "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
     },
     {
-      title: "Renewable Energy Engineering",
+      title: "Detail Design Engineering",
       description:
-        "Engineering consultancy for utility-scale and distributed renewable energy projects.",
-      link: "/services/renewable-energy",
+        "Complete electrical engineering design services for substations, power plants, and industrial infrastructure.",
+      link: "/services/detail-design-engineering",
       image:
-        "https://images.unsplash.com/photo-1466611653911-954ff21b6748?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=800",
     },
     {
-      title: "Industrial Electrification",
+      title: "Procurement Assistance",
       description:
-        "Electrical engineering services for complex industrial facilities across multiple sectors.",
-      link: "/services/industrial-electrification",
+        "Technical procurement support for electrical infrastructure projects including vendor evaluation and specification development.",
+      link: "/services/procurement-assistance",
       image:
-        "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=800",
+    },
+    {
+      title: "Third Party Inspection",
+      description:
+        "Independent inspection and quality verification services for electrical equipment before installation and commissioning.",
+      link: "/services/third-party-inspection",
+      image:
+        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
     },
   ];
 

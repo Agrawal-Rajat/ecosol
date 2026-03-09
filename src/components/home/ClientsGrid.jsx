@@ -18,6 +18,8 @@ import logo14 from "../../assets/logos/logo14.png";
 import logo15 from "../../assets/logos/logo15.png";
 import logo16 from "../../assets/logos/logo16.png";
 import logo17 from "../../assets/logos/logo17.png";
+import kbhLogo from "../../assets/logos/kbh.png";
+import jacobsLogo from "../../assets/logos/jacobs1.png";
 
 function ClientGrid() {
   const metrics = [
@@ -28,8 +30,8 @@ function ClientGrid() {
   ];
 
   const directClients = [
-    { src: "", alt: "KBH Infra" },
-    { src: "", alt: "Jacobs Engineering" },
+    { src: kbhLogo, alt: "KBH Infra" },
+    { src: jacobsLogo, alt: "Jacobs Engineering" },
   ];
 
   const projectExp = [

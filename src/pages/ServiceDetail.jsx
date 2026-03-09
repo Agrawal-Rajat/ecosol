@@ -28,22 +28,26 @@ function ServiceDetail() {
 
   const getIllustration = (slug) => {
     const images = {
-      "power-system-studies":
+      "power-system-analysis":
         "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1600",
-      "protection-relay-systems":
-        "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=1600",
-      "arc-flash-safety":
-        "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=1600",
-      "grounding-emi":
+
+      "electromagnetic-analysis":
         "https://images.unsplash.com/photo-1581092162384-8987c1d64718?q=80&w=1600",
-      "power-generation-substations":
-        "https://images.unsplash.com/photo-1541913053121-31f82cb527b9?q=80&w=1600",
-      "power-automation":
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600",
-      "renewable-energy":
-        "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600",
-      "industrial-electrification":
+
+      "grounding-analysis":
         "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600",
+
+      "engineering-software-capabilities":
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600",
+
+      "detail-design-engineering":
+        "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=1600",
+
+      "procurement-assistance":
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=1600",
+
+      "third-party-inspection":
+        "https://images.unsplash.com/photo-1541913053121-31f82cb527b9?q=80&w=1600",
     };
     return (
       images[slug] ||
