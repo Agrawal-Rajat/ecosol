@@ -30,106 +30,115 @@ function ImpactAndInsights() {
     <>
       <style>
         {`
-          .impact-section {
-            padding: 80px 0;
-            background: #ffffff;
+          /* Scoping all styles to prevent global CSS leaks */
+          .ecosol-impact-scope {
+            padding: 100px 0;
+            background: var(--color-bg-white);
+            border-top: 1px solid var(--color-bg-light-grey);
           }
 
-          .impact-container {
-            max-width: 1200px;
+          .ecosol-impact-scope .impact-inner-container {
+            max-width: var(--container-width, 1400px);
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 40px;
           }
 
-          /* Metrics Grid */
-          .metrics-grid {
+          /* --- Metrics Grid --- */
+          .ecosol-impact-scope .metrics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            gap: 40px;
             text-align: center;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid var(--color-bg-light-grey);
             padding-bottom: 80px;
             margin-bottom: 80px;
           }
 
-          .metric-value {
-            font-size: 48px;
+          .ecosol-impact-scope .metric-value {
+            font-size: 52px;
             font-weight: 900;
-            color: #000033;
-            margin-bottom: 10px;
+            color: var(--color-logo-navy);
+            margin-bottom: 8px;
             display: block;
+            letter-spacing: -2px;
           }
 
-          .metric-label {
-            font-size: 14px;
-            font-weight: 700;
-            color: #10b981;
+          .ecosol-impact-scope .metric-label {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--color-steel-grey);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
           }
 
-          /* Insights Section */
-          .insights-header {
-            margin-bottom: 50px;
+          /* --- Insights Section --- */
+          .ecosol-impact-scope .insights-header {
+            margin-bottom: 60px;
           }
 
-          .insights-grid {
+          .ecosol-impact-scope .insights-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
           }
 
-          .insight-card {
-            background: #f8fafc;
-            padding: 40px;
-            border-left: 4px solid #10b981;
-            transition: all 0.3s ease;
+          .ecosol-impact-scope .insight-card {
+            background: var(--color-bg-light-grey);
+            padding: 45px 40px;
+            border-left: 3px solid var(--color-logo-blue);
+            border-radius: 2px;
+            transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
             cursor: pointer;
             text-decoration: none;
             display: block;
+            border-right: 1px solid transparent;
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
           }
 
-          .insight-card:hover {
-            background: #ffffff;
-            box-shadow: 0 20px 40px rgba(0,0,51,0.08);
-            transform: translateY(-5px);
+          .ecosol-impact-scope .insight-card:hover {
+            background: var(--color-bg-white);
+            box-shadow: 0 25px 50px rgba(11, 17, 32, 0.08);
+            transform: translateY(-8px);
+            border-color: var(--color-bg-light-grey);
+            border-left-color: var(--color-electric-blue);
           }
 
-          .insight-cat {
+          .ecosol-impact-scope .insight-cat {
             font-size: 11px;
             font-weight: 800;
-            color: #10b981;
+            color: var(--color-electric-blue);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
             display: block;
           }
 
-          .insight-title {
-            font-size: 20px;
+          .ecosol-impact-scope .insight-title {
+            font-size: 22px;
             font-weight: 800;
-            color: #000033;
-            line-height: 1.4;
-            margin-bottom: 15px;
+            color: var(--color-logo-navy);
+            line-height: 1.3;
+            margin-bottom: 18px;
+            letter-spacing: -0.5px;
           }
 
-          .insight-desc {
+          .ecosol-impact-scope .insight-desc {
             font-size: 15px;
-            color: #64748b;
-            line-height: 1.6;
+            color: var(--color-text-main);
+            line-height: 1.7;
           }
 
           @media (max-width: 768px) {
-            .impact-section { padding: 60px 0; }
-            .metric-value { font-size: 36px; }
-            .insight-card { padding: 30px; }
+            .ecosol-impact-scope { padding: 80px 0; }
+            .ecosol-impact-scope .impact-inner-container { padding: 0 24px; }
+            .ecosol-impact-scope .metric-value { font-size: 42px; }
           }
         `}
       </style>
 
-      <section className="impact-section">
-        <div className="impact-container">
-          {/* Project Impact Metrics */}
+      <section className="ecosol-impact-scope">
+        <div className="impact-inner-container">
           <div className="metrics-grid">
             {metrics.map((m, i) => (
               <div key={i} className="metric-item">
@@ -139,28 +148,35 @@ function ImpactAndInsights() {
             ))}
           </div>
 
-          {/* Insights Section (Thought Leadership) */}
           <div className="insights-header">
             <span
               style={{
-                color: "#10b981",
+                color: "var(--color-steel-grey)",
                 fontWeight: "800",
                 fontSize: "12px",
-                letterSpacing: "3px",
+                letterSpacing: "4px",
                 textTransform: "uppercase",
+                display: "block",
+                marginBottom: "10px",
               }}
             >
-              Thought Leadership
+              Technical Expertise
             </span>
             <h2
               style={{
-                fontSize: "36px",
+                /* Standardized heading size for consistency */
+                fontSize: "clamp(32px, 4vw, 42px)",
                 fontWeight: "900",
-                color: "#000033",
-                marginTop: "10px",
+                color: "var(--color-logo-navy)",
+                letterSpacing: "-1.5px",
+                lineHeight: "1.2",
+                margin: "0",
               }}
             >
-              Engineering Insights.
+              Engineering{" "}
+              <span style={{ color: "var(--color-electric-blue)" }}>
+                Insights.
+              </span>
             </h2>
           </div>
 

@@ -5,140 +5,148 @@ function MissionVision() {
     <>
       <style>
         {`
-          .mv-viewport-centered {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #ffffff;
+          .ecosol-mv-scope {
+            /* Tightened vertical padding to eliminate empty space */
+            padding: 60px 0;
+            background-color: var(--color-bg-white);
             position: relative;
             overflow: hidden;
-            padding: 80px 24px;
+            font-family: var(--font-primary);
           }
 
-          /* Correctly Applied Technical Grid Texture */
-          .mv-viewport-centered::before {
+          /* Layered Grid Texture - Matches the Overview component */
+          .ecosol-mv-scope::before {
             content: "";
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            inset: 0;
             background-image: 
-              linear-gradient(#e2e8f0 1.2px, transparent 1.2px),
-              linear-gradient(90deg, #e2e8f0 1.2px, transparent 1.2px);
-            background-size: 40px 40px;
+              linear-gradient(var(--color-bg-light-grey) 1px, transparent 1px),
+              linear-gradient(90deg, var(--color-bg-light-grey) 1px, transparent 1px);
+            background-size: 60px 60px;
             opacity: 0.4;
             pointer-events: none;
           }
 
-          .mv-centered-wrapper {
-            max-width: 1100px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
+          .ecosol-mv-scope .mv-container {
+            max-width: var(--container-width, 1400px);
+            margin: 0 auto;
+            padding: 0 40px;
             position: relative;
             z-index: 2;
           }
 
-          .mv-pro-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-top: 6px solid var(--color-accent-green);
-            padding: 60px 45px;
-            box-shadow: 0 15px 40px rgba(0, 0, 68, 0.04);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+          .ecosol-mv-scope .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
           }
 
-          .mv-pro-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(0, 0, 68, 0.08);
+          /* --- Professional Technical Cards --- */
+          .ecosol-mv-scope .mv-card {
+            background: var(--color-bg-white);
+            border: 1px solid var(--color-bg-light-grey);
+            /* Electric Blue Top Border */
+            border-top: 4px solid var(--color-electric-blue);
+            padding: 45px;
+            transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+            position: relative;
           }
 
-          .mv-header-group {
+          .ecosol-mv-scope .mv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(11, 17, 32, 0.06);
+            border-top-color: var(--color-logo-navy);
+          }
+
+          .ecosol-mv-scope .mv-meta-group {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
           }
 
-          .mv-marker {
-            width: 10px;
-            height: 10px;
-            background-color: var(--color-accent-green);
-            transform: rotate(45deg);
+          /* Technical Status Indicator */
+          .ecosol-mv-scope .mv-indicator {
+            width: 12px;
+            height: 2px;
+            background-color: var(--color-electric-blue);
           }
 
-          .mv-label-pro {
+          .ecosol-mv-scope .mv-label {
             font-family: monospace;
-            font-size: 11px;
-            font-weight: 700;
-            color: #94a3b8;
+            font-size: 10px;
+            font-weight: 800;
+            color: var(--color-steel-grey);
             letter-spacing: 3px;
             text-transform: uppercase;
           }
 
-          .mv-display-title {
-            font-size: 48px;
+          .ecosol-mv-scope .mv-title {
+            font-size: clamp(32px, 4vw, 42px);
             font-weight: 900;
-            color: var(--color-primary);
-            line-height: 1;
-            margin-bottom: 25px;
-            letter-spacing: -2px;
+            color: var(--color-logo-navy);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            text-transform: uppercase;
           }
 
-          .mv-body-text {
-            font-size: 16px;
-            color: #64748b;
-            line-height: 1.8;
-            font-weight: 500;
+          .ecosol-mv-scope .mv-title span {
+            color: var(--color-electric-blue);
+          }
+
+          .ecosol-mv-scope .mv-body {
+            font-size: 15px;
+            color: var(--color-text-main);
+            line-height: 1.7;
+            margin: 0;
           }
 
           @media (max-width: 900px) {
-            .mv-centered-wrapper { grid-template-columns: 1fr; }
-            .mv-viewport-centered { min-height: auto; padding: 100px 24px; }
-            .mv-display-title { font-size: 38px; }
-            .mv-pro-card { padding: 40px 30px; }
+            .ecosol-mv-scope .mv-grid { grid-template-columns: 1fr; }
+            .ecosol-mv-scope { padding: 40px 0; }
+            .ecosol-mv-scope .mv-card { padding: 35px 25px; }
+            .ecosol-mv-scope .mv-title { font-size: 32px; }
           }
         `}
       </style>
 
-      <section className="mv-viewport-centered">
-        <div className="mv-centered-wrapper">
-          {/* Mission Card */}
-          <div className="mv-pro-card">
-            <div className="mv-header-group">
-              <div className="mv-marker" />
-              <span className="mv-label-pro">MISSION_STATEMENT</span>
+      <section className="ecosol-mv-scope">
+        <div className="mv-container">
+          <div className="mv-grid">
+            {/* Mission Card */}
+            <div className="mv-card">
+              <div className="mv-meta-group">
+                <div className="mv-indicator" />
+                <span className="mv-label">MISSION_REF_01</span>
+              </div>
+              <h2 className="mv-title">
+                Functional <br />
+                <span>Excellence.</span>
+              </h2>
+              <p className="mv-body">
+                To deliver reliable, safe, and standards-compliant electrical
+                engineering solutions that support our clients’ operational,
+                safety, and business objectives.
+              </p>
             </div>
-            <h2 className="mv-display-title">
-              Functional <br />
-              <span style={{ color: "var(--color-accent-green)" }}>
-                Excellence.
-              </span>
-            </h2>
-            <p className="mv-body-text">
-              To deliver reliable, safe, and standards-compliant electrical
-              engineering solutions that support our clients’ operational,
-              safety, and business objectives.
-            </p>
-          </div>
 
-          {/* Vision Card */}
-          <div className="mv-pro-card">
-            <div className="mv-header-group">
-              <div className="mv-marker" />
-              <span className="mv-label-pro">VISION_OBJECTIVE</span>
+            {/* Vision Card */}
+            <div className="mv-card">
+              <div className="mv-meta-group">
+                <div className="mv-indicator" />
+                <span className="mv-label">VISION_REF_02</span>
+              </div>
+              <h2 className="mv-title">
+                Global <br />
+                <span>Integrity.</span>
+              </h2>
+              <p className="mv-body">
+                To be a globally trusted power engineering consultancy
+                recognized for technical excellence, engineering integrity, and
+                consistent project delivery.
+              </p>
             </div>
-            <h2 className="mv-display-title">
-              Global <br />
-              <span style={{ color: "var(--color-accent-green)" }}>
-                Integrity.
-              </span>
-            </h2>
-            <p className="mv-body-text">
-              To be a globally trusted power engineering consultancy recognized
-              for technical excellence, engineering integrity, and consistent
-              project delivery.
-            </p>
           </div>
         </div>
       </section>

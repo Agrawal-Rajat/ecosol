@@ -8,22 +8,22 @@ function EngineeringCulture() {
         "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800",
     },
     {
-      title: "Independent Technical Thinking",
+      title: "Technical Thinking",
       image:
         "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=800",
     },
     {
-      title: "Quality Over Speed",
+      title: "Quality Standards",
       image:
         "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=800",
     },
     {
-      title: "Collaborative Engineering",
+      title: "Collaborative Design",
       image:
         "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800",
     },
     {
-      title: "Safety & Compliance First",
+      title: "Compliance First",
       image:
         "https://images.unsplash.com/photo-1454165833767-02a6e3099033?auto=format&fit=crop&q=80&w=800",
     },
@@ -33,101 +33,106 @@ function EngineeringCulture() {
     <>
       <style>
         {`
-          .culture-visual-section {
-            background-color: var(--color-white);
-            padding: 100px 0;
+          /* Scoped to prevent global CSS leaks */
+          .ecosol-culture-scope {
+            background-color: var(--color-bg-white);
+            padding: 120px 0;
             font-family: var(--font-primary);
+            border-top: 1px solid var(--color-bg-light-grey);
           }
 
-          .culture-container {
-            max-width: var(--container-width);
+          .ecosol-culture-scope .culture-container {
+            max-width: var(--container-width, 1400px);
             margin: 0 auto;
             padding: 0 40px;
           }
 
-          .section-header-compact {
+          /* --- Standardized Large Heading --- */
+          .ecosol-culture-scope .section-header-compact {
             margin-bottom: 70px;
             display: flex;
             align-items: center;
             gap: 30px;
           }
 
-          .section-title-heavy {
-            font-size: clamp(38px, 8vw, 56px); 
+          .ecosol-culture-scope .section-title-heavy {
+            font-size: clamp(38px, 6vw, 64px); 
             font-weight: 900;
-            color: var(--color-primary);
+            color: var(--color-logo-navy);
             text-transform: uppercase;
-            letter-spacing: -2px;
+            letter-spacing: -2.5px;
             white-space: nowrap;
-            line-height: 0.95;
+            line-height: 1;
+            margin: 0;
           }
 
-          /* Adding greenish element to heading */
-          .section-title-heavy span {
-            color: var(--color-accent-green);
+          .ecosol-culture-scope .section-title-heavy span {
+            color: var(--color-electric-blue);
           }
 
-          .header-line {
-            height: 3px;
-            background: var(--color-primary);
+          .ecosol-culture-scope .header-line {
+            height: 2px;
+            background: var(--color-bg-light-grey);
             flex-grow: 1;
           }
 
-          .culture-visual-grid {
+          /* --- Culture Grid --- */
+          .ecosol-culture-scope .culture-visual-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 15px;
           }
 
-          .culture-visual-card {
+          .ecosol-culture-scope .culture-visual-card {
             position: relative;
-            height: 450px;
+            height: 480px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             padding: 40px 25px;
-            background-color: var(--color-primary);
-            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-            border-top: 0px solid var(--color-accent-green); /* Hidden initially */
+            background-color: var(--color-logo-navy);
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+            border-top: 2px solid transparent;
           }
 
-          .card-bg {
+          .ecosol-culture-scope .card-bg {
             position: absolute;
             inset: 0;
             background-size: cover;
             background-position: center;
-            opacity: 0.6;
-            transition: transform 0.8s ease, opacity 0.5s ease;
-            filter: grayscale(100%) contrast(1.2);
+            opacity: 0.5;
+            transition: transform 0.8s ease, filter 0.8s ease, opacity 0.5s ease;
+            filter: grayscale(100%) contrast(1.1);
           }
 
-          .culture-visual-card::after {
+          .ecosol-culture-scope .culture-visual-card::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 102, 0.95) 0%, transparent 70%);
+            background: linear-gradient(to top, var(--color-logo-navy) 0%, transparent 70%);
             z-index: 1;
           }
 
-          /* Interactive hover with greenish border hint */
-          .culture-visual-card:hover {
-            border-top: 6px solid var(--color-accent-green);
+          /* Interactive hover with Electric Blue accent */
+          .ecosol-culture-scope .culture-visual-card:hover {
+            border-top: 4px solid var(--color-electric-blue);
+            transform: translateY(-5px);
           }
 
-          .culture-visual-card:hover .card-bg {
+          .ecosol-culture-scope .culture-visual-card:hover .card-bg {
             transform: scale(1.1);
             filter: grayscale(0%);
-            opacity: 0.8;
+            opacity: 0.7;
           }
 
-          .card-content {
+          .ecosol-culture-scope .card-content {
             position: relative;
             z-index: 10;
           }
 
-          .card-title-main {
-            font-size: clamp(20px, 2vw, 26px);
+          .ecosol-culture-scope .card-title-main {
+            font-size: clamp(18px, 1.5vw, 24px);
             font-weight: 900;
             color: #ffffff;
             text-transform: uppercase;
@@ -135,17 +140,15 @@ function EngineeringCulture() {
             line-height: 1.1;
           }
 
-          @media (max-width: 1024px) {
-            .culture-visual-grid {
+          @media (max-width: 1100px) {
+            .ecosol-culture-scope .culture-visual-grid {
               display: flex;
               overflow-x: auto;
               scroll-snap-type: x mandatory;
-              scrollbar-width: none;
+              gap: 15px;
               padding-bottom: 20px;
             }
-            .culture-visual-grid::-webkit-scrollbar { display: none; }
-            
-            .culture-visual-card {
+            .ecosol-culture-scope .culture-visual-card {
               min-width: 300px;
               height: 400px;
               scroll-snap-align: start;
@@ -153,23 +156,22 @@ function EngineeringCulture() {
           }
 
           @media (max-width: 768px) {
-            .culture-container { padding: 0 24px; }
-            /* Mobile scaling for heading */
-            .section-title-heavy { 
-              font-size: 42px; 
-              letter-spacing: -1.5px;
+            .ecosol-culture-scope .culture-container { padding: 0 24px; }
+            .ecosol-culture-scope .section-title-heavy { 
+              font-size: 52px !important; 
+              letter-spacing: -2px !important;
             }
-            .culture-visual-card { min-width: 85%; padding: 30px 20px; }
-            .section-header-compact { gap: 15px; margin-bottom: 45px; }
+            .ecosol-culture-scope .culture-visual-card { min-width: 80%; }
+            .ecosol-culture-scope .section-header-compact { gap: 15px; margin-bottom: 40px; }
           }
         `}
       </style>
 
-      <section className="culture-visual-section">
+      <section className="ecosol-culture-scope">
         <div className="culture-container">
           <div className="section-header-compact">
             <h2 className="section-title-heavy">
-              Our <span>Culture</span>
+              Our <span>Culture.</span>
             </h2>
             <div className="header-line" />
           </div>

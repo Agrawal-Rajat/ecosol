@@ -33,13 +33,14 @@ function WhyWorkWithEcosol() {
     <>
       <style>
         {`
-          .orbit-section {
-            background-color: var(--color-bg);
+          .ecosol-career-orbit {
+            background-color: var(--color-bg-white);
             padding: 100px 0;
-            font-family: var(--font-primary);
-            overflow: hidden;
             display: flex;
             justify-content: center;
+            overflow: hidden;
+            border-top: 1px solid var(--color-bg-light-grey);
+            font-family: var(--font-primary);
           }
 
           .orbit-container {
@@ -52,10 +53,11 @@ function WhyWorkWithEcosol() {
             justify-content: center;
           }
 
+          /* --- Central Hub --- */
           .orbit-hub {
             width: 280px;
             height: 280px;
-            background: var(--color-primary);
+            background: var(--color-logo-navy);
             color: var(--color-white);
             border-radius: 50%;
             display: flex;
@@ -65,18 +67,17 @@ function WhyWorkWithEcosol() {
             text-align: center;
             padding: 30px;
             z-index: 20;
-            border: 4px solid var(--color-accent-green);
-            box-shadow: 0 0 50px rgba(0, 0, 102, 0.2);
+            border: 4px solid var(--color-electric-blue);
+            box-shadow: 0 0 50px rgba(11, 17, 32, 0.2);
           }
 
           .hub-label {
-            font-family: 'Courier New', monospace;
             font-size: 11px;
             letter-spacing: 4px;
-            color: var(--color-accent-green);
+            color: var(--color-electric-blue);
             margin-bottom: 15px;
             text-transform: uppercase;
-            font-weight: 700;
+            font-weight: 800;
           }
 
           .hub-title {
@@ -85,71 +86,80 @@ function WhyWorkWithEcosol() {
             line-height: 1;
             text-transform: uppercase;
             letter-spacing: -1px;
+            color: #ffffff;
           }
 
+          /* --- Orbital Path Line --- */
           .orbit-ring {
             position: absolute;
             width: 750px;
             height: 750px;
-            border: 1px dashed rgba(203, 213, 225, 0.6);
+            border: 1px dashed var(--color-steel-grey);
             border-radius: 50%;
             z-index: 1;
             pointer-events: none;
+            opacity: 0.5;
           }
 
+          /* --- Orbital Cards (Hover Movement Removed) --- */
           .orbit-card {
             position: absolute;
             width: 260px;
             background: #ffffff;
             padding: 30px 24px;
             z-index: 10;
-            /* Animation transition removed for hover movement */
+            border: 1px solid var(--color-bg-light-grey);
+            /* Technical chamfered corner */
+            clip-path: polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%);
             
-            clip-path: polygon(
-              0% 0%, 
-              85% 0%, 
-              100% 15%, 
-              100% 100%, 
-              0% 100%
-            );
-            border: 1px solid #e2e8f0;
+            /* The transition is kept only for the border-color and box-shadow,
+               not for transform/movement.
+            */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
           }
 
           .orbit-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 40px;
-            height: 40px;
-            background: var(--color-accent-green);
+            top: 0; right: 0;
+            width: 40px; height: 40px;
+            background: var(--color-electric-blue);
             clip-path: polygon(100% 0, 100% 100%, 0 0);
             opacity: 0.1;
             transition: opacity 0.3s ease;
           }
 
-          /* Hover effect movement and scaling removed */
+          .orbit-card:hover {
+            /* REMOVED: transform: scale(1.05) or translateY()
+               The card now remains perfectly still.
+            */
+            border-color: var(--color-logo-blue);
+            box-shadow: 0 10px 30px rgba(11, 17, 32, 0.1);
+          }
+
+          /* Retaining the corner 'light up' effect */
           .orbit-card:hover::before {
             opacity: 0.8;
           }
 
-          .pos-0 { transform: rotate(-90deg) translate(380px) rotate(90deg); }
-          .pos-1 { transform: rotate(-18deg) translate(380px) rotate(18deg); }
-          .pos-2 { transform: rotate(54deg) translate(380px) rotate(-54deg); }
-          .pos-3 { transform: rotate(126deg) translate(380px) rotate(-126deg); }
-          .pos-4 { transform: rotate(198deg) translate(380px) rotate(-198deg); }
+          /* Positioning logic on the circle path */
+          .pos-0 { transform: rotate(-90deg) translate(375px) rotate(90deg); }
+          .pos-1 { transform: rotate(-18deg) translate(375px) rotate(18deg); }
+          .pos-2 { transform: rotate(54deg) translate(375px) rotate(-54deg); }
+          .pos-3 { transform: rotate(126deg) translate(375px) rotate(-126deg); }
+          .pos-4 { transform: rotate(198deg) translate(375px) rotate(-198deg); }
 
           .card-title {
             font-size: 17px;
             font-weight: 800;
-            color: var(--color-primary);
+            color: var(--color-logo-navy);
             margin-bottom: 10px;
             text-transform: uppercase;
           }
 
           .card-desc {
             font-size: 14px;
-            color: #64748b;
+            color: var(--color-text-main);
             line-height: 1.6;
           }
 
@@ -167,7 +177,8 @@ function WhyWorkWithEcosol() {
               max-width: 600px;
               margin-top: 20px;
               clip-path: none;
-              border-left: 5px solid var(--color-accent-green);
+              border-left: 5px solid var(--color-electric-blue);
+              border-radius: 2px;
             }
             .orbit-hub {
               margin-bottom: 40px;
@@ -178,15 +189,20 @@ function WhyWorkWithEcosol() {
         `}
       </style>
 
-      <section className="orbit-section">
+      <section className="ecosol-career-orbit">
         <div className="orbit-container">
           <div className="orbit-ring" />
 
           <div className="orbit-hub">
             <span className="hub-label">JOIN THE EXPERTS</span>
-            <h2 className="hub-title" style={{ color: "#ffffff" }}>
+            <h2 className="hub-title">
               WHY <br />
-              <span style={{ color: "#ffffff", fontSize: "32px" }}>
+              <span
+                style={{
+                  fontSize: "32px",
+                  color: "var(--color-electric-blue)",
+                }}
+              >
                 ECOSOL?
               </span>
             </h2>

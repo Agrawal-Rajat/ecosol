@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import servicesData from "../../data/servicesData.js";
-// Import your logo asset
 import ecosolLogo from "../../assets/logos/weblogo.png";
 
 function Header() {
@@ -24,66 +23,110 @@ function Header() {
     <>
       <style>
         {`
-          .nav-link {
+          .ecosol-header-scope .nav-link {
             text-decoration: none;
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #666;
+            letter-spacing: 1px;
+            color: var(--color-text-main);
             padding: 15px 0;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
             display: flex;
             align-items: center;
           }
 
-          .nav-link:after {
+          .ecosol-header-scope .nav-link:after {
             content: '';
             position: absolute;
-            bottom: 0; left: 0;
-            width: 0; height: 2px;
-            background: var(--color-accent-green);
-            transition: width .3s;
+            bottom: 10px; left: 0;
+            width: 0; height: 1.5px;
+            background: var(--color-electric-blue);
+            transition: width .3s ease;
           }
 
-          .nav-link:hover, .nav-link.active { color: var(--color-primary) !important; }
-          .nav-link:hover:after, .nav-link.active:after { width: 100%; }
+          .ecosol-header-scope .nav-link:hover, 
+          .ecosol-header-scope .nav-link.active { 
+            color: var(--color-logo-navy) !important; 
+          }
+          
+          .ecosol-header-scope .nav-link:hover:after, 
+          .ecosol-header-scope .nav-link.active:after { 
+            width: 100%; 
+          }
 
-          .nav-item-services { display: flex; align-items: center; height: 100%; position: relative; }
-          .nav-item-services:after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 20px; background: transparent; }
+          .ecosol-header-scope .nav-item-services { 
+            display: flex; 
+            align-items: center; 
+            height: 100%; 
+            position: relative; 
+          }
 
-          .mega-menu {
-            position: fixed; top: 90px; left: 0; width: 100vw;
-            background: #ffffff; opacity: 0; visibility: hidden;
+          .ecosol-header-scope .mega-menu {
+            position: fixed; 
+            /* Added top padding to act as a bridge so the menu doesn't close when moving mouse down */
+            padding-top: 20px; 
+            top: 70px; /* Aligned closer to header height */
+            left: 0; 
+            width: 100vw;
+            opacity: 0; 
+            visibility: hidden;
             transform: translateY(10px);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
-            border-bottom: 4px solid var(--color-accent-green);
-            z-index: 1000; pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+            z-index: 1000; 
+            pointer-events: none;
           }
 
-          .is-scrolled .mega-menu { top: 70px; }
-          .nav-item-services:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
+          /* The actual visible box of the mega menu */
+          .ecosol-header-scope .mega-menu-content-box {
+            background: #ffffff;
+            box-shadow: 0 25px 50px -12px rgba(11, 17, 32, 0.15);
+            border-bottom: 3px solid var(--color-logo-blue);
+            width: 100%;
+          }
 
-          .mega-grid-link { padding: 12px 18px; text-decoration: none; color: var(--color-primary); font-weight: 700; font-size: 14px; border-radius: 4px; transition: all 0.2s ease; display: block; }
-          .mega-grid-link:hover { background: var(--color-bg); color: var(--color-accent-green); transform: translateX(5px); }
+          .ecosol-header-scope.is-scrolled .mega-menu { top: 50px; }
+          
+          .ecosol-header-scope .nav-item-services:hover .mega-menu { 
+            opacity: 1; 
+            visibility: visible; 
+            transform: translateY(0); 
+            pointer-events: auto; 
+          }
+
+          .ecosol-header-scope .mega-grid-link { 
+            padding: 12px 18px; 
+            text-decoration: none; 
+            color: var(--color-logo-navy); 
+            font-weight: 700; 
+            font-size: 14px; 
+            border-radius: 2px; 
+            transition: all 0.2s ease; 
+            display: block; 
+          }
+          
+          .ecosol-header-scope .mega-grid-link:hover { 
+            background: var(--color-bg-light-grey); 
+            color: var(--color-electric-blue); 
+            transform: translateX(5px); 
+          }
 
           @media (max-width: 1024px) {
-            .desktop-nav { display: none !important; }
-            .mobile-btn { display: block !important; }
-            .mega-menu { display: none; }
+            .ecosol-header-scope .desktop-nav { display: none !important; }
+            .ecosol-header-scope .mobile-btn { display: block !important; }
+            .ecosol-header-scope .mega-menu { display: none; }
           }
         `}
       </style>
 
       <header
-        className={`header-full ${scrolled ? "is-scrolled" : ""}`}
+        className={`ecosol-header-scope ${scrolled ? "is-scrolled" : ""}`}
         style={{
           ...styles.header,
           height: scrolled ? "70px" : "90px",
           backgroundColor: isMenuOpen ? "#fff" : "rgba(255, 255, 255, 0.98)",
-          boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.08)" : "none",
+          boxShadow: scrolled ? "0 4px 20px rgba(11, 17, 32, 0.08)" : "none",
         }}
       >
         <div style={styles.container}>
@@ -93,7 +136,7 @@ function Header() {
               alt="Ecosol Projects Logo"
               style={{
                 ...styles.logoImage,
-                height: scrolled ? "63px" : "65px", // Responsive scaling on scroll
+                height: scrolled ? "55px" : "60px",
               }}
             />
           </NavLink>
@@ -114,34 +157,36 @@ function Header() {
                 Services
               </NavLink>
               <div className="mega-menu">
-                <div style={styles.megaContainerContent}>
-                  <div style={styles.megaInfoPane}>
-                    <h4 style={styles.megaHeaderSmall}>
-                      Engineering Expertise
-                    </h4>
-                    <p style={styles.megaPara}>
-                      Technical power system studies and industrial
-                      electrification solutions.
-                    </p>
-                    <NavLink
-                      to="/contact"
-                      style={styles.megaCtaButton}
-                      onClick={closeAllMenus}
-                    >
-                      Consultation
-                    </NavLink>
-                  </div>
-                  <div style={styles.megaLinksPane}>
-                    {servicesData.map((s) => (
+                <div className="mega-menu-content-box">
+                  <div style={styles.megaContainerContent}>
+                    <div style={styles.megaInfoPane}>
+                      <h4 style={styles.megaHeaderSmall}>
+                        Engineering Expertise
+                      </h4>
+                      <p style={styles.megaPara}>
+                        Specialized power infrastructure studies, grounding
+                        analysis, and electrical detail design.
+                      </p>
                       <NavLink
-                        key={s.slug}
-                        to={`/services/${s.slug}`}
-                        className="mega-grid-link"
+                        to="/contact"
+                        style={styles.megaCtaButton}
                         onClick={closeAllMenus}
                       >
-                        {s.title}
+                        Consultation
                       </NavLink>
-                    ))}
+                    </div>
+                    <div style={styles.megaLinksPane}>
+                      {servicesData.map((s) => (
+                        <NavLink
+                          key={s.slug}
+                          to={`/services/${s.slug}`}
+                          className="mega-grid-link"
+                          onClick={closeAllMenus}
+                        >
+                          {s.title}
+                        </NavLink>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -240,7 +285,7 @@ const styles = {
     transition: "all 0.3s ease",
     display: "flex",
     alignItems: "center",
-    borderBottom: "1px solid rgba(0,0,0,0.05)",
+    borderBottom: "1px solid rgba(11, 17, 32, 0.05)",
   },
   container: {
     maxWidth: "1400px",
@@ -260,19 +305,19 @@ const styles = {
     width: "auto",
     transition: "all 0.3s ease",
     objectFit: "contain",
-    // Keep it sharp
-    filter: "contrast(1.05)",
   },
   nav: { display: "flex", gap: "35px", height: "100%", alignItems: "center" },
   actionArea: { display: "flex", alignItems: "center" },
   cta: {
     textDecoration: "none",
-    backgroundColor: "var(--color-primary)",
+    backgroundColor: "var(--color-logo-navy)",
     color: "#fff",
-    padding: "10px 20px",
+    padding: "12px 24px",
     fontSize: "12px",
     fontWeight: "700",
     textTransform: "uppercase",
+    borderRadius: "2px",
+    letterSpacing: "1px",
   },
   mobileToggle: {
     display: "none",
@@ -287,7 +332,7 @@ const styles = {
     height: "2px",
     margin: "6px 0",
     transition: "0.4s",
-    backgroundColor: "var(--color-primary)",
+    backgroundColor: "var(--color-logo-navy)",
   },
   megaContainerContent: {
     maxWidth: "1200px",
@@ -297,34 +342,39 @@ const styles = {
     padding: "60px 40px",
     gap: "60px",
   },
-  megaInfoPane: { paddingRight: "40px", borderRight: "1px solid #eee" },
+  megaInfoPane: {
+    paddingRight: "40px",
+    borderRight: "1px solid var(--color-bg-light-grey)",
+  },
   megaLinksPane: {
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
     gap: "5px 30px",
   },
   megaHeaderSmall: {
-    color: "var(--color-accent-green)",
+    color: "var(--color-electric-blue)",
     textTransform: "uppercase",
-    letterSpacing: "2px",
+    letterSpacing: "3px",
     fontSize: "11px",
+    fontWeight: "800",
     marginBottom: "20px",
   },
   megaPara: {
     fontSize: "14px",
-    color: "#666",
-    lineHeight: "1.5",
+    color: "var(--color-text-main)",
+    lineHeight: "1.6",
     marginBottom: "30px",
   },
   megaCtaButton: {
-    background: "var(--color-primary)",
+    background: "var(--color-logo-navy)",
     color: "#fff",
-    padding: "10px 20px",
+    padding: "12px 24px",
     textDecoration: "none",
-    fontSize: "12px",
+    fontSize: "11px",
     fontWeight: "700",
     textTransform: "uppercase",
     display: "inline-block",
+    borderRadius: "2px",
   },
   mobileOverlay: {
     position: "fixed",
@@ -337,22 +387,22 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     paddingTop: "120px",
-    transition: "all 0.5s cubic-bezier(0.77,0.2,0.05,1.0)",
+    transition: "all 0.5s cubic-bezier(0.2, 1, 0.3, 1)",
   },
   mobileNavLinks: {
     display: "flex",
     flexDirection: "column",
     padding: "0 10%",
-    gap: "0",
   },
   mobileLink: {
-    fontSize: "24px",
-    fontWeight: "800",
-    color: "var(--color-primary)",
+    fontSize: "22px",
+    fontWeight: "900",
+    color: "var(--color-logo-navy)",
     textDecoration: "none",
     textTransform: "uppercase",
-    borderBottom: "1px solid #eee",
+    borderBottom: "1px solid var(--color-bg-light-grey)",
     padding: "20px 0",
+    letterSpacing: "-1px",
   },
 };
 

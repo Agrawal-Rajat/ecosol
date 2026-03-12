@@ -5,7 +5,7 @@ function Projects() {
 
   const categories = [
     "All",
-    "Power Systems",
+    // "Power Systems",
     "Oil & Gas",
     "Renewables",
     "Industrial",
@@ -54,198 +54,197 @@ function Projects() {
     <>
       <style>
         {`
-          .projects-section {
-            /* DECREASED TOP PADDING TO SIT CLOSER TO HEADER */
-            padding: 80px 0 100px; 
-            background-color: #ffffff;
-            background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
-            background-size: 30px 30px;
+          .ecosol-projects-scope {
+            padding: 100px 0; 
+            background-color: var(--color-bg-white);
+            background-image: 
+              linear-gradient(var(--color-bg-light-grey) 1.5px, transparent 1.5px),
+              linear-gradient(90deg, var(--color-bg-light-grey) 1.5px, transparent 1.5px);
+            background-size: 50px 50px;
           }
 
-          .container {
-            max-width: 1300px;
+          .ecosol-projects-scope .projects-inner-container {
+            max-width: var(--container-width, 1400px);
             margin: 0 auto;
             padding: 0 40px;
           }
 
-          .filter-bar {
+          /* --- ENHANCED HEADING STYLES --- */
+          .ecosol-projects-scope .projects-header-box {
+            text-align: center;
+            margin-bottom: 70px;
+          }
+
+          .ecosol-projects-scope .projects-eyebrow {
+            color: var(--color-steel-grey);
+            font-weight: 800;
+            letter-spacing: 5px;
+            font-size: 11px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 20px;
+          }
+
+          .ecosol-projects-scope .main-heading {
+            /* Increased scale to align with primary CTA and Hero */
+            font-size: clamp(38px, 6vw, 64px); 
+            font-weight: 900;
+            color: var(--color-logo-navy);
+            letter-spacing: -2.5px;
+            line-height: 1.05;
+            margin: 0 auto;
+            max-width: 900px;
+          }
+
+          .ecosol-projects-scope .heading-accent {
+            color: var(--color-electric-blue);
+          }
+
+          /* --- Filter Bar --- */
+          .ecosol-projects-scope .filter-bar {
             display: flex;
             justify-content: center;
             gap: 12px;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             flex-wrap: wrap;
           }
 
-          .filter-btn {
-            padding: 10px 22px;
-            border: 1px solid #e2e8f0;
-            background: #fff;
-            color: #64748b;
-            font-size: 12px;
-            font-weight: 700;
+          .ecosol-projects-scope .filter-btn {
+            padding: 12px 24px;
+            border: 1px solid var(--color-bg-light-grey);
+            background: var(--color-bg-white);
+            color: var(--color-steel-grey);
+            font-size: 11px;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             cursor: pointer;
             transition: all 0.3s ease;
-            border-radius: 4px;
+            border-radius: 2px;
           }
 
-          .filter-btn.active, .filter-btn:hover {
-            border-color: #10b981;
-            color: #10b981;
-            background: rgba(16, 185, 129, 0.05);
+          .ecosol-projects-scope .filter-btn.active, 
+          .ecosol-projects-scope .filter-btn:hover {
+            border-color: var(--color-logo-blue);
+            color: var(--color-logo-navy);
+            background: var(--color-bg-light-grey);
           }
 
-          .project-grid {
+          /* --- Project Grid & Cards --- */
+          .ecosol-projects-scope .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 40px;
+            gap: 30px;
           }
 
-          .project-card {
-            background: #fff;
-            border-radius: 20px;
+          .ecosol-projects-scope .project-card {
+            background: var(--color-bg-white);
+            border-radius: 2px;
             overflow: hidden;
-            border: 1px solid #e2e8f0;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--color-bg-light-grey);
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
           }
 
-          .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.1);
-            border-color: #10b981;
+          .ecosol-projects-scope .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(11, 17, 32, 0.08);
+            border-color: var(--color-logo-blue);
           }
 
-          .img-wrapper {
-            height: 240px;
+          .ecosol-projects-scope .img-wrapper {
+            height: 250px;
             overflow: hidden;
             position: relative;
           }
 
-          .project-img {
+          .ecosol-projects-scope .project-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s ease;
+            filter: grayscale(20%);
+            transition: all 0.8s ease;
           }
 
-          .project-card:hover .project-img {
-            transform: scale(1.1);
+          .ecosol-projects-scope .project-card:hover .project-img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
           }
 
-          .category-tag {
+          .ecosol-projects-scope .category-tag {
             position: absolute;
             top: 20px;
             left: 20px;
-            background: #10b981;
-            color: #fff;
-            padding: 6px 14px;
-            font-size: 11px;
+            background: var(--color-logo-navy);
+            color: var(--color-bg-white);
+            padding: 6px 12px;
+            font-size: 10px;
             font-weight: 800;
             text-transform: uppercase;
-            border-radius: 4px;
+            border-radius: 2px;
+            z-index: 2;
           }
 
-          .project-info {
-            padding: 30px;
+          .ecosol-projects-scope .project-info {
+            padding: 35px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
           }
 
-          .project-location {
-            color: #10b981;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 10px;
-          }
-
-          .project-title {
+          .ecosol-projects-scope .project-title {
             font-size: 24px;
             font-weight: 900;
-            color: #0f172a;
-            line-height: 1.2;
+            color: var(--color-logo-navy);
+            line-height: 1.25;
             margin-bottom: 15px;
             letter-spacing: -0.5px;
           }
 
-          .project-desc {
-            color: #64748b;
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-          }
-
-          .view-case-btn {
+          .ecosol-projects-scope .view-case-btn {
             margin-top: auto;
-            color: #0f172a;
+            color: var(--color-logo-navy);
             text-decoration: none;
             font-weight: 800;
-            font-size: 13px;
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             display: flex;
             align-items: center;
             gap: 10px;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
           }
 
-          .view-case-btn:hover {
-            color: #10b981;
+          .ecosol-projects-scope .view-case-btn:hover {
+            color: var(--color-electric-blue);
+            transform: translateX(5px);
           }
 
-          /* MOBILE OPTIMIZATIONS */
           @media (max-width: 768px) {
-            .projects-section { padding: 60px 0 60px; }
-            .project-grid { grid-template-columns: 1fr; }
-            .container { padding: 0 20px; }
+            .ecosol-projects-scope { padding: 80px 0; }
+            .ecosol-projects-scope .project-grid { grid-template-columns: 1fr; }
+            .ecosol-projects-scope .projects-inner-container { padding: 0 24px; }
             
-            /* INCREASED MOBILE HEADER SIZE */
-            .main-heading { 
-              font-size: 46px !important; 
+            /* High Impact Mobile Size */
+            .ecosol-projects-scope .main-heading { 
+              font-size: 52px !important; 
               line-height: 1.05 !important;
               letter-spacing: -2px !important;
             }
-            .project-title { font-size: 22px; }
-            .filter-bar { gap: 8px; margin-bottom: 40px; }
-            .filter-btn { padding: 8px 16px; font-size: 11px; }
           }
         `}
       </style>
 
-      <section className="projects-section">
-        <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "50px" }}>
-            <span
-              style={{
-                color: "#10b981",
-                fontWeight: "800",
-                letterSpacing: "4px",
-                fontSize: "11px",
-                textTransform: "uppercase",
-              }}
-            >
-              Case Studies
-            </span>
-            <h1
-              className="main-heading"
-              style={{
-                fontSize: "clamp(36px, 5vw, 56px)",
-                fontWeight: "900",
-                color: "#0f172a",
-                marginTop: "10px",
-                letterSpacing: "-2px",
-              }}
-            >
-              Engineering <span style={{ color: "#10b981" }}>Milestones</span>
+      <section className="ecosol-projects-scope">
+        <div className="projects-inner-container">
+          <div className="projects-header-box">
+            <span className="projects-eyebrow">Project Portfolio</span>
+            <h1 className="main-heading">
+              Engineering <span className="heading-accent">Milestones.</span>
             </h1>
           </div>
 
-          {/* Category Filter */}
           <div className="filter-bar">
             {categories.map((cat) => (
               <button
@@ -258,7 +257,6 @@ function Projects() {
             ))}
           </div>
 
-          {/* Project Grid */}
           <div className="project-grid">
             {filteredProjects.map((p) => (
               <div key={p.id} className="project-card">
@@ -267,21 +265,31 @@ function Projects() {
                   <img src={p.image} alt={p.title} className="project-img" />
                 </div>
                 <div className="project-info">
-                  <span className="project-location">{p.location}</span>
                   <h3 className="project-title">{p.title}</h3>
                   <p
                     style={{
-                      fontWeight: "700",
-                      color: "#475569",
-                      marginBottom: "8px",
-                      fontSize: "14px",
+                      fontWeight: "800",
+                      color: "var(--color-logo-navy)",
+                      marginBottom: "10px",
+                      fontSize: "13px",
+                      textTransform: "uppercase",
                     }}
                   >
                     Client: {p.client}
                   </p>
-                  <p className="project-desc">{p.desc}</p>
+                  <p
+                    className="project-desc"
+                    style={{
+                      color: "var(--color-text-main)",
+                      fontSize: "15px",
+                      lineHeight: "1.7",
+                      marginBottom: "25px",
+                    }}
+                  >
+                    {p.desc}
+                  </p>
                   <a href="#" className="view-case-btn">
-                    Read Case Study <span>→</span>
+                    Technical Overview <span>→</span>
                   </a>
                 </div>
               </div>

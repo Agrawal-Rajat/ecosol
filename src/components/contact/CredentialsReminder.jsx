@@ -11,114 +11,129 @@ function CredentialsReminder() {
     <>
       <style>
         {`
-          .credentials-section {
-            background-color: #ffffff;
+          /* Scoped to prevent global CSS leaks */
+          .ecosol-credentials-scope {
+            background-color: var(--color-bg-white);
             padding: 100px 0;
             font-family: var(--font-primary);
+            border-top: 1px solid var(--color-bg-light-grey);
           }
 
-          .credentials-container {
-            max-width: var(--container-width);
+          .ecosol-credentials-scope .credentials-container {
+            max-width: var(--container-width, 1400px);
             margin: 0 auto;
             padding: 0 40px;
             text-align: center;
           }
 
-          .credentials-heading-bold {
-            /* Scaled heading for high impact */
-            font-size: clamp(32px, 5vw, 54px);
+          /* --- Heading (Aligned to 48px Scale) --- */
+          .ecosol-credentials-scope .credentials-heading-bold {
+            font-size: clamp(32px, 5vw, 48px);
             font-weight: 900;
-            color: var(--color-primary);
+            color: var(--color-logo-navy);
             text-transform: uppercase;
-            letter-spacing: -2px;
-            line-height: 1;
-            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: 15px;
           }
 
-          .credentials-heading-bold span {
-            color: var(--color-accent-green);
+          .ecosol-credentials-scope .credentials-heading-bold span {
+            color: var(--color-electric-blue);
           }
 
-          .credentials-subheading {
-            font-size: 14px;
-            font-weight: 700;
+          .ecosol-credentials-scope .credentials-subheading {
+            font-size: 12px;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #94a3b8;
+            letter-spacing: 4px;
+            color: var(--color-steel-grey);
             display: block;
             margin-bottom: 60px;
           }
 
-          .stats-horizontal-row {
+          /* --- Stats Row (Dashboard Style) --- */
+          .ecosol-credentials-scope .stats-horizontal-row {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 80px;
-            margin-bottom: 60px;
+            gap: 60px;
+            margin-bottom: 40px;
           }
 
-          .stat-cell {
+          .ecosol-credentials-scope .stat-cell {
             display: flex;
             flex-direction: column;
             align-items: center;
+            flex: 1;
           }
 
-          .stat-v {
-            font-size: clamp(28px, 4vw, 36px);
-            font-weight: 800;
-            color: var(--color-primary);
+          .ecosol-credentials-scope .stat-v {
+            font-size: clamp(26px, 4vw, 32px);
+            font-weight: 900;
+            color: var(--color-logo-navy);
             margin-bottom: 8px;
-            letter-spacing: -0.5px;
+            letter-spacing: -1px;
           }
 
-          .stat-l {
+          .ecosol-credentials-scope .stat-l {
             font-size: 11px;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #64748b;
-            max-width: 160px;
+            letter-spacing: 1.5px;
+            color: var(--color-steel-grey);
+            max-width: 180px;
             line-height: 1.4;
           }
 
-          .stat-divider {
+          .ecosol-credentials-scope .stat-divider {
             width: 1px;
-            height: 40px;
-            background: #e2e8f0;
+            height: 50px;
+            background: var(--color-bg-light-grey);
           }
 
-          .credentials-para {
+          .ecosol-credentials-scope .credentials-para {
             font-size: 16px;
-            color: #64748b;
+            color: var(--color-text-main);
             max-width: 700px;
             margin: 40px auto 0 auto;
-            line-height: 1.7;
+            line-height: 1.8;
           }
 
           @media (max-width: 1024px) {
-            .stats-horizontal-row { gap: 40px; }
+            .ecosol-credentials-scope .stats-horizontal-row { gap: 30px; }
           }
 
           @media (max-width: 768px) {
-            .credentials-section { padding: 80px 0; }
-            .credentials-container { padding: 0 24px; }
-            .stats-horizontal-row { flex-direction: column; gap: 40px; }
-            .stat-divider { 
-               width: 40px; 
-               height: 1px; 
+            .ecosol-credentials-scope { padding: 80px 0; }
+            .ecosol-credentials-scope .credentials-container { padding: 0 24px; }
+            
+            .ecosol-credentials-scope .stats-horizontal-row { 
+              flex-direction: column; 
+              gap: 40px; 
             }
-            .credentials-heading-bold { font-size: 38px; }
+            
+            .ecosol-credentials-scope .stat-divider { 
+               width: 50px; 
+               height: 1.5px; 
+               background: var(--color-electric-blue);
+               opacity: 0.3;
+            }
+            
+            .ecosol-credentials-scope .credentials-heading-bold { 
+              font-size: 36px !important; 
+              letter-spacing: -1px !important;
+            }
           }
         `}
       </style>
 
-      <section className="credentials-section">
+      <section className="ecosol-credentials-scope">
         <div className="credentials-container">
           <h2 className="credentials-heading-bold">
-            Engineering Capability At <span>Scale</span>
+            Engineering Capability At <span>Scale.</span>
           </h2>
           <span className="credentials-subheading">
-            Infrastructure & Technical Excellence
+            Technical Leadership & Grid Infrastructure
           </span>
 
           <div className="stats-horizontal-row">
@@ -144,8 +159,8 @@ function CredentialsReminder() {
 
           <p className="credentials-para">
             Delivering technical excellence with a focus on safety and
-            regulatory compliance across the global energy and industrial
-            sectors.
+            regulatory compliance across global energy, utility, and
+            high-voltage industrial infrastructure.
           </p>
         </div>
       </section>

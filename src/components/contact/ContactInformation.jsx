@@ -5,39 +5,39 @@ function ContactInformation() {
     <>
       <style>
         {`
-          .contact-rich-section {
-            background-color: var(--color-white);
-            padding: 120px 0;
+          .ecosol-contact-info-scope {
+            background-color: var(--color-bg-white);
+            padding: 100px 0;
             font-family: var(--font-primary);
           }
 
-          .contact-rich-container {
-            max-width: 1000px;
+          .ecosol-contact-info-scope .contact-rich-container {
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 40px;
           }
 
-          .contact-rich-grid {
+          .ecosol-contact-info-scope .contact-rich-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 30px;
           }
 
-          .rich-info-box {
-            position: relative; /* Necessary for absolute background */
-            background: #ffffff;
+          .ecosol-contact-info-scope .rich-info-box {
+            position: relative;
+            background: var(--color-bg-white);
             padding: 50px;
-            border: 1px solid #f1f5f9;
-            box-shadow: 0 10px 30px rgba(0, 0, 102, 0.03);
+            border: 1px solid var(--color-bg-light-grey);
             display: flex;
             flex-direction: column;
-            transition: all 0.4s ease;
-            overflow: hidden; /* Clips the background image scale */
-            min-height: 380px;
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+            overflow: hidden;
+            min-height: 400px;
+            border-radius: 2px;
           }
 
-          /* Background Image Styling */
-          .box-bg-image {
+          /* --- Background Image Styling --- */
+          .ecosol-contact-info-scope .box-bg-image {
             position: absolute;
             top: 0;
             right: 0;
@@ -45,26 +45,25 @@ function ContactInformation() {
             height: 100%;
             background-size: cover;
             background-position: center;
-            opacity: 0.06; /* Keep it very subtle for a rich feel */
+            opacity: 0.05; /* Slightly increased for visibility */
             filter: grayscale(100%);
-            transition: all 0.6s ease;
+            transition: all 0.8s ease;
             z-index: 0;
           }
 
-          .rich-info-box:hover .box-bg-image {
+          .ecosol-contact-info-scope .rich-info-box:hover .box-bg-image {
             opacity: 0.12;
-            transform: scale(1.1);
+            transform: scale(1.05);
             filter: grayscale(0%);
           }
 
-          .rich-info-box:hover {
-            transform: translateY(-5px);
-            border-color: var(--color-accent-green);
-            box-shadow: 0 20px 40px rgba(0, 0, 102, 0.08);
+          .ecosol-contact-info-scope .rich-info-box:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-logo-blue);
+            box-shadow: 0 25px 50px rgba(11, 17, 32, 0.08);
           }
 
-          /* Ensures text stays above image */
-          .box-content {
+          .ecosol-contact-info-scope .box-content {
             position: relative;
             z-index: 2;
             height: 100%;
@@ -72,70 +71,84 @@ function ContactInformation() {
             flex-direction: column;
           }
 
-          .rich-label {
+          .ecosol-contact-info-scope .rich-label {
             font-size: 11px;
             font-weight: 800;
-            color: var(--color-accent-green);
+            color: var(--color-electric-blue);
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+          
+          .ecosol-contact-info-scope .rich-label::after {
+            content: "";
+            width: 20px;
+            height: 1px;
+            background: var(--color-electric-blue);
           }
 
-          .rich-title {
-            font-size: 28px;
+          .ecosol-contact-info-scope .rich-title {
+            font-size: 32px;
             font-weight: 900;
-            color: var(--color-primary);
+            color: var(--color-logo-navy);
             text-transform: uppercase;
             margin-bottom: 20px;
-            line-height: 1.1;
+            line-height: 1.05;
+            letter-spacing: -1px;
           }
 
-          .rich-details {
-            font-size: 17px;
-            color: #475569;
+          .ecosol-contact-info-scope .rich-details {
+            font-size: 16px;
+            color: var(--color-text-main);
             line-height: 1.8;
             margin-top: auto;
           }
 
-          .rich-details strong {
-            color: var(--color-primary);
+          .ecosol-contact-info-scope .rich-details strong {
+            color: var(--color-logo-navy);
+            font-weight: 800;
+            display: block;
+            margin-bottom: 5px;
           }
 
-          .rich-link {
-            color: inherit;
+          .ecosol-contact-info-scope .rich-link {
+            color: var(--color-logo-navy);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             display: inline-block;
-            margin-top: 5px;
-            border-bottom: 1px solid transparent;
             transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
           }
 
-          .rich-link:hover {
-            color: var(--color-accent-green);
-            border-bottom-color: var(--color-accent-green);
+          .ecosol-contact-info-scope .rich-link:hover {
+            color: var(--color-electric-blue);
+            border-bottom-color: var(--color-electric-blue);
           }
 
-          .phone-group {
+          .ecosol-contact-info-scope .phone-group {
             margin-top: 15px;
             display: flex;
             flex-direction: column;
+            gap: 5px;
           }
 
           @media (max-width: 900px) {
-            .contact-rich-grid { grid-template-columns: 1fr; }
-            .rich-info-box { padding: 40px; min-height: 320px;}
+            .ecosol-contact-info-scope .contact-rich-grid { grid-template-columns: 1fr; }
+            .ecosol-contact-info-scope .rich-info-box { padding: 40px; min-height: 350px;}
           }
 
           @media (max-width: 768px) {
-            .contact-rich-section { padding: 80px 0; }
-            .contact-rich-container { padding: 0 24px; }
-            .rich-title { font-size: 24px; }
+            .ecosol-contact-info-scope { padding: 80px 0; }
+            .ecosol-contact-info-scope .contact-rich-container { padding: 0 24px; }
+            .ecosol-contact-info-scope .rich-title { font-size: 28px; }
           }
         `}
       </style>
 
-      <section className="contact-rich-section">
+      <section className="ecosol-contact-info-scope">
         <div className="contact-rich-container">
           <div className="contact-rich-grid">
             {/* Box 1: Registered Office */}
@@ -147,7 +160,7 @@ function ContactInformation() {
                 }}
               />
               <div className="box-content">
-                <span className="rich-label">Location</span>
+                <span className="rich-label">Corporate HQ</span>
                 <h2 className="rich-title">
                   Registered
                   <br />
@@ -167,19 +180,20 @@ function ContactInformation() {
               <div
                 className="box-bg-image"
                 style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800')`,
+                  /* FIXED IMAGE: Swapped to a reliable engineering workspace visual */
+                  backgroundImage: `url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800')`,
+                  backgroundPosition: "center right",
                 }}
               />
               <div className="box-content">
-                <span className="rich-label">Engagement</span>
+                <span className="rich-label">Direct Lines</span>
                 <h2 className="rich-title">
-                  Contact
+                  Technical
                   <br />
-                  Details
+                  Queries
                 </h2>
                 <div className="rich-details">
                   <strong>Prashant Nagar</strong>
-                  <br />
                   <a
                     href="mailto:info@ecosolprojects.com"
                     className="rich-link"

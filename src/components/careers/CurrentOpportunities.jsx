@@ -38,154 +38,159 @@ function CurrentOpportunities() {
     <>
       <style>
         {`
-          .opportunities-section {
-            background-color: var(--color-white);
-            padding: 100px 0;
+          /* Scoped to prevent global CSS leaks */
+          .ecosol-opps-scope {
+            background-color: var(--color-bg-white);
+            padding: 120px 0;
             font-family: var(--font-primary);
+            border-top: 1px solid var(--color-bg-light-grey);
           }
 
-          .opportunities-container {
-            max-width: var(--container-width);
+          .ecosol-opps-scope .opportunities-container {
+            max-width: var(--container-width, 1400px);
             margin: 0 auto;
             padding: 0 40px;
           }
 
-          .opps-header {
+          /* --- Desktop Heading --- */
+          .ecosol-opps-scope .opps-header {
             margin-bottom: 70px;
+            text-align: left;
           }
 
-          .opps-title {
-            /* Optimized clamp for better mobile scaling */
-            font-size: clamp(38px, 8vw, 56px); 
+          .ecosol-opps-scope .opps-title {
+            font-size: clamp(38px, 6vw, 64px); 
             font-weight: 900;
-            color: var(--color-primary);
+            color: var(--color-logo-navy);
             text-transform: uppercase;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
-            line-height: 0.95; /* Tighter line height for large text */
+            margin: 0;
+            letter-spacing: -2.5px;
+            line-height: 1.1;
           }
 
-          .opps-title span {
-            color: var(--color-accent-green);
+          .ecosol-opps-scope .opps-title span {
+            color: var(--color-electric-blue);
           }
 
-          .opps-grid {
+          /* --- Job Grid & Cards --- */
+          .ecosol-opps-scope .opps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
           }
 
-          .job-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            padding: 40px 30px;
+          .ecosol-opps-scope .job-card {
+            background: var(--color-bg-white);
+            border: 1px solid var(--color-bg-light-grey);
+            padding: 50px 40px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+            border-radius: 2px;
           }
 
-          .job-card:hover {
-            border-color: var(--color-primary);
-            box-shadow: 0 15px 30px rgba(0, 0, 102, 0.05);
+          .ecosol-opps-scope .job-card:hover {
+            border-color: var(--color-logo-blue);
+            box-shadow: 0 20px 40px rgba(11, 17, 32, 0.06);
+            transform: translateY(-5px);
           }
 
-          .job-header {
+          .ecosol-opps-scope .job-title-text {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--color-logo-navy);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+          }
+
+          .ecosol-opps-scope .job-exp-tag {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--color-electric-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
             margin-bottom: 25px;
           }
 
-          .job-title-text {
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--color-primary);
-            margin-bottom: 10px;
-            line-height: 1.2;
-            text-transform: uppercase;
-          }
-
-          .job-exp-tag {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--color-accent-green);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-          }
-
-          .job-req-list {
-            margin: 0 0 35px 0;
+          .ecosol-opps-scope .job-req-list {
+            margin: 0 0 40px 0;
             padding: 0;
             list-style: none;
           }
 
-          .job-req-list li {
-            font-size: 14.5px;
-            color: #64748b;
-            padding: 10px 0;
-            border-bottom: 1px solid #f1f5f9;
+          .ecosol-opps-scope .job-req-list li {
+            font-size: 15px;
+            color: var(--color-text-main);
+            padding: 12px 0;
+            border-bottom: 1px solid var(--color-bg-light-grey);
             display: flex;
             align-items: flex-start;
           }
 
-          .job-req-list li::before {
-            content: "→";
-            color: var(--color-accent-green);
+          .ecosol-opps-scope .job-req-list li::before {
+            content: "—"; 
+            color: var(--color-electric-blue);
             font-weight: bold;
-            margin-right: 12px;
+            margin-right: 15px;
           }
 
-          .apply-link {
+          .ecosol-opps-scope .apply-link {
             display: block;
             text-align: center;
-            padding: 16px;
-            background-color: var(--color-primary);
+            padding: 18px;
+            background-color: var(--color-logo-navy);
             color: #ffffff !important;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            border-radius: 2px;
           }
 
-          .apply-link:hover {
-            background-color: var(--color-accent-green);
+          .ecosol-opps-scope .apply-link:hover {
+            background-color: var(--color-logo-blue);
           }
 
-          .general-query {
-            margin-top: 60px;
-            font-size: 15px;
-            color: #64748b;
-            text-align: center;
-            padding: 25px;
-            background: var(--color-bg);
-          }
-
-          .general-query b {
-            color: var(--color-primary);
-          }
-
+          /* --- MOBILE RESPONSIVE UPDATES --- */
           @media (max-width: 768px) {
-            .opportunities-container { padding: 0 24px; }
-            .opps-header { margin-bottom: 45px; }
+            .ecosol-opps-scope { padding: 80px 0; }
+            .ecosol-opps-scope .opportunities-container { padding: 0 24px; }
             
-            /* Enhanced mobile heading scale */
-            .opps-title { 
-              font-size: 42px; 
-              letter-spacing: -1.5px;
-              line-height: 1; 
+            .ecosol-opps-scope .opps-header { 
+              margin-bottom: 45px; 
+              text-align: center; /* Centered for better mobile balance */
             }
             
-            .opps-grid { grid-template-columns: 1fr; }
-            .job-card { padding: 30px 20px; }
+            .ecosol-opps-scope .opps-title { 
+              /* Adjusted size and spacing for mobile readability */
+              font-size: 42px !important; 
+              line-height: 1.05 !important;
+              letter-spacing: -1.5px !important;
+              max-width: 100%;
+            }
+            
+            .ecosol-opps-scope .job-card { padding: 35px 25px; }
+            .ecosol-opps-scope .apply-link { padding: 20px; }
+
+            .ecosol-opps-scope .general-query {
+              margin-top: 50px;
+              font-size: 14px;
+              padding: 25px 20px;
+            }
           }
         `}
       </style>
 
-      <section className="opportunities-section" id="careers-list">
+      <section className="ecosol-opps-scope" id="careers-list">
         <div className="opportunities-container">
           <header className="opps-header">
             <h2 className="opps-title">
-              Current <span>Opportunities</span>
+              Current <span>Opportunities.</span>
             </h2>
           </header>
 
@@ -206,15 +211,15 @@ function CurrentOpportunities() {
                 </div>
 
                 <a href="#contact" className="apply-link">
-                  Apply Now
+                  Technical Application
                 </a>
               </div>
             ))}
           </div>
 
           <p className="general-query">
-            Don't see a suitable role? Share your profile at{" "}
-            <b>info@ecosol.com</b>.
+            Don't see a suitable role? Share your technical profile at{" "}
+            <b>info@ecosolprojects.com</b>
           </p>
         </div>
       </section>

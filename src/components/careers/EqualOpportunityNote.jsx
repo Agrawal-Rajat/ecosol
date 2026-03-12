@@ -5,73 +5,79 @@ function EqualOpportunityNote() {
     <>
       <style>
         {`
-          .eoe-minimal-section {
-            background-color: var(--color-white);
-            padding: 80px 0;
+          /* Scoped to prevent global CSS leaks */
+          .ecosol-eoe-scope {
+            background-color: var(--color-bg-white);
+            padding: 100px 0;
             font-family: var(--font-primary);
             text-align: center;
+            border-top: 1px solid var(--color-bg-light-grey);
           }
 
-          .eoe-wrapper {
+          .ecosol-eoe-scope .eoe-wrapper {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 24px;
             position: relative;
           }
 
-          /* Architectural Divider */
-          .eoe-divider {
+          /* --- Engineering Divider (Status Line) --- */
+          .ecosol-eoe-scope .eoe-divider {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 25px;
+            gap: 20px;
+            margin-bottom: 30px;
           }
 
-          .eoe-line {
+          .ecosol-eoe-scope .eoe-line {
             height: 1px;
-            background: #e2e8f0;
-            width: 60px;
+            background: var(--color-bg-light-grey);
+            width: 80px;
           }
 
-          .eoe-diamond {
-            width: 8px;
-            height: 8px;
-            background: var(--color-accent-green);
-            transform: rotate(45deg);
+          /* Technical Status Marker */
+          .ecosol-eoe-scope .eoe-marker {
+            width: 12px;
+            height: 2px;
+            background: var(--color-electric-blue);
           }
 
-          .eoe-statement {
-            font-size: 15px;
+          .ecosol-eoe-scope .eoe-statement {
+            font-size: 16px;
             line-height: 1.8;
-            color: #64748b;
+            color: var(--color-text-main);
             font-weight: 400;
-            font-style: italic; /* Gives it a formal 'note' feel */
+            /* Maintaining a formal, respectful tone */
+            font-style: italic; 
+            max-width: 650px;
+            margin: 0 auto;
           }
 
-          .eoe-brand {
+          .ecosol-eoe-scope .eoe-brand {
             display: block;
             font-weight: 800;
-            color: var(--color-primary);
+            color: var(--color-logo-navy);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 12px;
-            margin-top: 20px;
+            letter-spacing: 3px;
+            font-size: 11px;
+            margin-top: 25px;
             font-style: normal;
           }
 
           @media (max-width: 768px) {
-            .eoe-minimal-section { padding: 60px 0; }
-            .eoe-statement { font-size: 13.5px; }
+            .ecosol-eoe-scope { padding: 60px 0; }
+            .ecosol-eoe-scope .eoe-statement { font-size: 14px; }
+            .ecosol-eoe-scope .eoe-line { width: 40px; }
           }
         `}
       </style>
 
-      <section className="eoe-minimal-section">
+      <section className="ecosol-eoe-scope">
         <div className="eoe-wrapper">
           <div className="eoe-divider">
             <div className="eoe-line"></div>
-            <div className="eoe-diamond"></div>
+            <div className="eoe-marker"></div>
             <div className="eoe-line"></div>
           </div>
 
@@ -81,7 +87,9 @@ function EqualOpportunityNote() {
             environment for all employees and applicants."
           </p>
 
-          <span className="eoe-brand">Ecosol Standards & Ethics</span>
+          <span className="eoe-brand">
+            Ecosol Standards & Engineering Ethics
+          </span>
         </div>
       </section>
     </>

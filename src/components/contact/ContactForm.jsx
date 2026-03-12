@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 function ContactForm() {
-  const [result, setResult] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -37,162 +36,199 @@ function ContactForm() {
     <>
       <style>
         {`
-          .enquiry-section {
-            background-color: var(--color-bg);
+          .ecosol-enquiry-scope {
+            background-color: var(--color-bg-white);
             padding: 100px 0;
             font-family: var(--font-primary);
             position: relative;
+            /* Blueprint Grid Pattern */
+            background-image: radial-gradient(var(--color-bg-light-grey) 1px, transparent 1px);
+            background-size: 30px 30px;
           }
 
-          .enquiry-container {
+          .ecosol-enquiry-scope .enquiry-container {
             max-width: 900px;
             margin: 0 auto;
             padding: 0 40px;
+            position: relative;
+            z-index: 2;
           }
 
-          .enquiry-header {
+          .ecosol-enquiry-scope .enquiry-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
           }
 
-          .enquiry-heading {
+          .ecosol-enquiry-scope .enquiry-heading {
             font-size: clamp(32px, 5vw, 48px);
             font-weight: 900;
-            color: var(--color-primary);
+            color: var(--color-logo-navy);
             text-transform: uppercase;
             letter-spacing: -1.5px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
           }
 
-          .enquiry-heading span { color: var(--color-accent-green); }
+          .ecosol-enquiry-scope .enquiry-heading span { 
+            color: var(--color-electric-blue); 
+          }
 
-          .enquiry-form {
+          .ecosol-enquiry-scope .enquiry-form {
             background: #ffffff;
-            padding: 50px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 20px 40px rgba(0, 0, 102, 0.05);
+            padding: 60px;
+            border: 1px solid var(--color-bg-light-grey);
+            box-shadow: 0 30px 60px rgba(11, 17, 32, 0.05);
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 30px;
+            border-radius: 2px;
           }
 
-          .form-grid {
+          .ecosol-enquiry-scope .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 25px;
+            gap: 30px;
           }
 
-          .form-group { display: flex; flex-direction: column; gap: 8px; }
+          .ecosol-enquiry-scope .form-group { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 10px; 
+          }
 
-          .form-label {
+          .ecosol-enquiry-scope .form-label {
             font-size: 11px;
             font-weight: 800;
-            color: var(--color-primary);
+            color: var(--color-logo-navy);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
           }
 
-          .form-input, .form-select, .form-textarea {
+          .ecosol-enquiry-scope .form-input, 
+          .ecosol-enquiry-scope .form-select, 
+          .ecosol-enquiry-scope .form-textarea {
             width: 100%;
-            padding: 15px;
-            border: 1px solid #cbd5e1;
+            padding: 16px;
+            border: 1px solid var(--color-bg-light-grey);
             font-size: 15px;
-            background-color: #f8fafc;
+            background-color: var(--color-bg-light-grey);
             font-family: inherit;
+            color: var(--color-logo-navy);
+            transition: all 0.3s ease;
+            border-radius: 2px;
           }
 
-          .form-input:focus, .form-textarea:focus {
+          .ecosol-enquiry-scope .form-input:focus, 
+          .ecosol-enquiry-scope .form-textarea:focus {
             outline: none;
-            border-color: var(--color-accent-green);
+            border-color: var(--color-electric-blue);
             background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
           }
 
-          .submit-btn {
-            background-color: var(--color-primary);
+          .ecosol-enquiry-scope .submit-btn {
+            background-color: var(--color-logo-navy);
             color: #ffffff;
-            padding: 20px;
-            font-size: 14px;
+            padding: 22px;
+            font-size: 13px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 2px;
             border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+            border-radius: 2px;
+            margin-top: 10px;
           }
 
-          .submit-btn:hover { background-color: var(--color-accent-green); }
+          .ecosol-enquiry-scope .submit-btn:hover:not(:disabled) { 
+            background-color: var(--color-logo-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(11, 17, 32, 0.2);
+          }
 
-          /* POPUP STYLES */
-          .success-overlay {
+          .ecosol-enquiry-scope .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+          }
+
+          /* --- SUCCESS POPUP --- */
+          .ecosol-enquiry-scope .success-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 31, 46, 0.95); /* Deep navy theme overlay */
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(11, 17, 32, 0.95);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
+            backdrop-filter: blur(5px);
           }
 
-          .success-popup {
+          .ecosol-enquiry-scope .success-popup {
             background: #ffffff;
             padding: 60px 40px;
             max-width: 500px;
             width: 90%;
             text-align: center;
-            border-top: 5px solid var(--color-accent-green);
+            border-top: 4px solid var(--color-electric-blue);
+            border-radius: 2px;
           }
 
-          .success-icon {
-            font-size: 50px;
-            color: var(--color-accent-green);
-            margin-bottom: 20px;
+          .ecosol-enquiry-scope .success-icon {
+            font-size: 40px;
+            color: var(--color-electric-blue);
+            margin-bottom: 25px;
           }
 
-          .success-title {
+          .ecosol-enquiry-scope .success-title {
             font-size: 24px;
             font-weight: 900;
-            color: var(--color-primary);
+            color: var(--color-logo-navy);
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
           }
 
-          .success-msg {
+          .ecosol-enquiry-scope .success-msg {
             font-size: 16px;
-            color: #64748b;
-            line-height: 1.6;
-            margin-bottom: 30px;
+            color: var(--color-text-main);
+            line-height: 1.7;
+            margin-bottom: 35px;
           }
 
-          .close-popup-btn {
-            background: var(--color-primary);
+          .ecosol-enquiry-scope .close-popup-btn {
+            background: var(--color-logo-navy);
             color: #ffffff;
             border: none;
-            padding: 15px 40px;
+            padding: 18px 45px;
             text-transform: uppercase;
             font-weight: 800;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            font-size: 12px;
             cursor: pointer;
             transition: 0.3s;
+            border-radius: 2px;
           }
 
-          .close-popup-btn:hover { background: var(--color-accent-green); }
+          .ecosol-enquiry-scope .close-popup-btn:hover { 
+            background: var(--color-logo-blue); 
+          }
 
           @media (max-width: 768px) {
-            .enquiry-container { padding: 0 24px; }
-            .enquiry-form { padding: 30px 20px; }
-            .form-grid { grid-template-columns: 1fr; gap: 20px; }
+            .ecosol-enquiry-scope { padding: 80px 0; }
+            .ecosol-enquiry-scope .enquiry-container { padding: 0 24px; }
+            .ecosol-enquiry-scope .enquiry-form { padding: 40px 25px; gap: 20px; }
+            .ecosol-enquiry-scope .form-grid { grid-template-columns: 1fr; gap: 20px; }
+            .ecosol-enquiry-scope .enquiry-heading { font-size: 36px; }
           }
         `}
       </style>
 
-      <section className="enquiry-section">
+      <section className="ecosol-enquiry-scope">
         <div className="enquiry-container">
           <div className="enquiry-header">
             <h2 className="enquiry-heading">
-              Engineering <span>Enquiry</span>
+              Technical <span>Enquiry</span>
             </h2>
           </div>
 
@@ -208,17 +244,17 @@ function ContactForm() {
                 <input
                   type="text"
                   name="name"
-                  placeholder="John Doe"
+                  placeholder="Enter your name"
                   required
                   className="form-input"
                 />
               </div>
               <div className="form-group">
-                <label className="form-label">Company</label>
+                <label className="form-label">Company / Organization</label>
                 <input
                   type="text"
                   name="company"
-                  placeholder="Organization"
+                  placeholder="Organization name"
                   className="form-input"
                 />
               </div>
@@ -236,7 +272,7 @@ function ContactForm() {
                 />
               </div>
               <div className="form-group">
-                <label className="form-label">Phone Number</label>
+                <label className="form-label">Contact Number</label>
                 <input
                   type="tel"
                   name="phone"
@@ -247,21 +283,25 @@ function ContactForm() {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Specialization</label>
+              <label className="form-label">Area of Specialization</label>
               <select name="subject" className="form-select">
                 <option>Power System Studies</option>
                 <option>Electrical Design Engineering</option>
                 <option>Renewable Energy Engineering</option>
-                <option>General Enquiry</option>
+                <option>Grid Compliance & Audits</option>
+                <option>General Consultancy</option>
               </select>
             </div>
 
             <div className="form-group">
-              <label className="form-label">Project Brief</label>
+              <label className="form-label">
+                Technical Brief / Project Requirements
+              </label>
               <textarea
                 name="message"
-                placeholder="Technical requirements..."
+                placeholder="Describe your technical requirements or project scope..."
                 required
+                rows="5"
                 className="form-textarea"
               />
             </div>
@@ -271,7 +311,9 @@ function ContactForm() {
               className="submit-btn"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Processing..." : "Submit Technical Enquiry"}
+              {isSubmitting
+                ? "Processing Submission..."
+                : "Submit Technical Brief"}
             </button>
           </form>
         </div>
@@ -281,16 +323,17 @@ function ContactForm() {
           <div className="success-overlay">
             <div className="success-popup">
               <div className="success-icon">✓</div>
-              <h3 className="success-title">Submission Successful</h3>
+              <h3 className="success-title">Submission Received</h3>
               <p className="success-msg">
-                Your technical query has reached us. Our engineering team will
-                review your requirements and contact you shortly.
+                Your technical query has been logged. Our engineering leads will
+                review your requirements and contact you for further
+                consultation.
               </p>
               <button
                 className="close-popup-btn"
                 onClick={() => setShowSuccess(false)}
               >
-                Close
+                Close Window
               </button>
             </div>
           </div>

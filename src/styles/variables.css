@@ -1,9 +1,26 @@
 :root {
-  --color-primary: #000066; /* Deep Navy from logo text */
-  --color-accent-green: #449e1d; /* Vibrant Green from leaf top */
-  --color-logo-blue: #1a5fb4; /* Royal Blue from leaf bottom */
-  --color-bg: #f9fafb;
-  --color-white: #ffffff;
+  /* --- 1. Ecosol Logo Colors (ACCENTS ONLY) --- */
+  /* Use these strictly for buttons, icons, and small brand highlights */
+  --color-logo-navy: #000066;
+  --color-logo-green: #449e1d;
+  --color-logo-blue: #1a5fb4;
+
+  /* --- 2. Engineering Interface Palette (MAIN THEME) --- */
+  /* Deep Blue for dark sections, headers, or footers */
+  --color-deep-blue: #0b1120;
+  /* Electric Blue for technical highlights or active states */
+  --color-electric-blue: #0ea5e9;
+  /* Steel Grey for secondary text, borders, and muted icons */
+  --color-steel-grey: #64748b;
+  /* Dark Steel Grey for main body text (softer and more technical than pure black) */
+  --color-text-main: #334155;
+
+  /* --- 3. Backgrounds --- */
+  --color-bg-white: #ffffff;
+  /* Light grey for alternating sections to keep the clean, neutral look */
+  --color-bg-light-grey: #f8fafc;
+
+  /* --- 4. Typography & Layout --- */
   --font-primary: "Inter", system-ui, sans-serif;
   --container-width: 1400px;
 }

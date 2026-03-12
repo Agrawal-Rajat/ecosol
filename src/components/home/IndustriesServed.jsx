@@ -3,44 +3,6 @@ import React, { useState } from "react";
 function IndustriesServed() {
   const [activeTab, setActiveTab] = useState(0);
 
-  // const industries = [
-  //   {
-  //     label: "Power & Utilities",
-  //     desc: "Grid modernization, substation engineering, and transmission network studies for national and regional utility providers. We ensure high-voltage stability and seamless power distribution.",
-  //     img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1200",
-  //     code: "SEC_UTIL_01",
-  //   },
-  //   {
-  //     label: "Oil & Gas",
-  //     desc: "Comprehensive electrical infrastructure for upstream and downstream operations. We specialize in hazardous area classification and robust power systems for offshore and onshore rigs.",
-  //     img: "https://images.unsplash.com/photo-1516195851888-6f1a981a8a2a?auto=format&fit=crop&q=80&w=1200",
-  //     code: "SEC_O&G_02",
-  //   },
-  //   {
-  //     label: "Petrochemicals",
-  //     desc: "Engineering for complex chemical processing plants. Our focus is on continuous power reliability, motor starting studies, and EMI mitigation in sensitive processing environments.",
-  //     img: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=1200",
-  //     code: "SEC_CHEM_03",
-  //   },
-  //   {
-  //     label: "Manufacturing & Process",
-  //     desc: "Optimization of industrial plant electrical systems. We deliver protection coordination, arc flash studies, and energy efficiency audits for large-scale manufacturing facilities.",
-  //     img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200",
-  //     code: "SEC_MANU_04",
-  //   },
-  //   {
-  //     label: "Renewables",
-  //     desc: "Technical consultancy for Solar PV, Wind energy integration, and Battery Energy Storage Systems (BESS). We bridge the gap between intermittent generation and grid requirements.",
-  //     img: "https://images.unsplash.com/photo-1509391366360-fe5bb6583e29?auto=format&fit=crop&q=80&w=1200",
-  //     code: "SEC_RENE_05",
-  //   },
-  //   {
-  //     label: "Infrastructure",
-  //     desc: "Power engineering for transportation networks, data centers, and critical public infrastructure. Ensuring safety and compliance with international standards (IEEE/IEC).",
-  //     img: "https://images.unsplash.com/photo-1517089534706-3d5efebb2492?auto=format&fit=crop&q=80&w=1200",
-  //     code: "SEC_INFR_06",
-  //   },
-  // ];
   const industries = [
     {
       label: "Power Utilities",
@@ -48,232 +10,247 @@ function IndustriesServed() {
       img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1200",
       code: "SEC_UTIL_01",
     },
-
     {
       label: "Renewable Energy Developers",
       desc: "Technical engineering studies supporting renewable energy projects including grid integration analysis, power system studies, and electrical infrastructure design.",
       img: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=1200",
       code: "SEC_REN_02",
     },
-
     {
       label: "Industrial Manufacturing Facilities",
       desc: "Electrical engineering support for complex industrial facilities including power distribution design, grounding engineering, and system reliability analysis.",
       img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1200",
       code: "SEC_IND_03",
     },
-
     {
       label: "Transmission Infrastructure Projects",
       desc: "Advanced engineering analysis for high-voltage transmission systems including electromagnetic studies, grounding design, and transmission corridor analysis.",
       img: "https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?auto=format&fit=crop&q=80&w=1200",
       code: "SEC_TRN_04",
     },
-
     {
-      label: "Engineering Procurement & Construction (EPC) Companies",
+      label: "EPC Companies",
       desc: "Independent engineering advisory and technical consulting services supporting EPC contractors during project design, procurement, and technical evaluation phases.",
       img: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&q=80&w=1200",
       code: "SEC_EPC_05",
     },
   ];
+
   return (
     <>
       <style>
         {`
-          :root {
-            --color-primary: #0f172a;
-            --color-accent-green: #10b981;
-            --color-grid: #e2e8f0;
-          }
-
-          .sectors-section {
-            padding: 100px 0; /* Reduced from 140px */
-            background-color: #f8fafc;
+          /* Scoped to prevent global CSS leaks */
+          .ecosol-sectors-scope {
+            padding: 100px 0;
+            background-color: var(--color-bg-white);
             overflow: hidden;
             position: relative;
+            border-bottom: 1px solid var(--color-bg-light-grey);
           }
 
-          .sectors-grid-bg {
+          .ecosol-sectors-scope .sectors-grid-bg {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
-            background-size: 40px 40px; /* Smaller grid cells */
-            opacity: 0.4;
+            background-image: linear-gradient(var(--color-bg-light-grey) 1px, transparent 1px), 
+                              linear-gradient(90deg, var(--color-bg-light-grey) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.8;
             pointer-events: none;
           }
 
-          .sectors-container {
-            max-width: 1280px; /* Slightly tighter container */
+          .ecosol-sectors-scope .sectors-container {
+            max-width: var(--container-width, 1400px);
             margin: 0 auto;
             padding: 0 40px;
             display: grid;
-            grid-template-columns: 380px 1fr; /* Reduced column width from 450px */
-            gap: 60px; /* Reduced gap from 80px */
+            grid-template-columns: 400px 1fr;
+            gap: 60px;
             position: relative;
             z-index: 2;
           }
 
-          /* --- HEADING STYLES --- */
-          .eyebrow {
-            color: var(--color-accent-green);
+          /* --- HEADING STYLES (Aligned with CoreServices) --- */
+          .ecosol-sectors-scope .eyebrow {
+            color: var(--color-steel-grey);
             font-weight: 800;
             letter-spacing: 3px;
-            font-size: 12px; /* Reduced from 13px */
+            font-size: 12px;
             text-transform: uppercase;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 15px;
           }
           
-          .eyebrow::before {
+          .ecosol-sectors-scope .eyebrow::before {
             content: "";
             display: block;
-            width: 6px; height: 6px;
-            background: var(--color-accent-green);
-            border-radius: 50%;
-            box-shadow: 0 0 8px var(--color-accent-green);
+            width: 12px; height: 2px;
+            background: var(--color-electric-blue);
           }
 
-          .main-heading {
-            font-size: 48px; /* Reduced from 56px */
+          .ecosol-sectors-scope .main-heading {
+            /* EXACT MATCH to CoreServices heading scale */
+            font-size: clamp(32px, 4vw, 42px);
             font-weight: 900;
-            color: var(--color-primary);
-            letter-spacing: -2px;
-            line-height: 1.1;
+            color: var(--color-logo-navy);
+            letter-spacing: -1px;
+            line-height: 1.2;
             margin: 0;
           }
 
-          .heading-accent {
-            color: var(--color-accent-green);
+          .ecosol-sectors-scope .heading-accent {
+            color: var(--color-electric-blue);
           }
 
           /* --- NAV BUTTONS --- */
-          .sector-nav {
+          .ecosol-sectors-scope .sector-nav {
             display: flex;
             flex-direction: column;
-            gap: 8px; /* Reduced gap */
+            gap: 10px;
           }
 
-          .sector-btn {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            padding: 20px 24px; /* Reduced padding from 25px 30px */
+          .ecosol-sectors-scope .sector-btn {
+            background: var(--color-bg-white);
+            border: 1px solid var(--color-bg-light-grey);
+            padding: 22px 28px;
             text-align: left;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
             position: relative;
+            border-radius: 2px;
           }
 
-          .sector-btn:hover {
-            border-color: var(--color-accent-green);
-            background: #f1f5f9;
+          .ecosol-sectors-scope .sector-btn:hover {
+            border-color: var(--color-logo-blue);
+            background: var(--color-bg-light-grey);
           }
 
-          .sector-btn.active {
-            background: var(--color-primary);
-            border-color: var(--color-primary);
-            transform: translateX(15px); /* Reduced movement */
-            box-shadow: -15px 15px 30px rgba(0,0,51,0.1);
+          .ecosol-sectors-scope .sector-btn.active {
+            background: var(--color-logo-navy);
+            border-color: var(--color-logo-navy);
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 102, 0.15);
           }
 
-          .sector-label {
-            font-size: 16px; /* Reduced from 18px */
+          .ecosol-sectors-scope .sector-btn.active::after {
+            content: "";
+            position: absolute;
+            left: 0; top: 20%; bottom: 20%;
+            width: 3px;
+            background: var(--color-electric-blue);
+          }
+
+          .ecosol-sectors-scope .sector-label {
+            font-size: 15px;
             font-weight: 700;
-            color: var(--color-primary);
+            color: var(--color-text-main);
             transition: color 0.3s;
           }
 
-          .sector-btn.active .sector-label {
-            color: #ffffff;
+          .ecosol-sectors-scope .sector-btn.active .sector-label {
+            color: var(--color-bg-white);
           }
 
-          .sector-code {
+          .ecosol-sectors-scope .sector-code {
             font-family: monospace;
             font-size: 10px;
-            color: #94a3b8;
+            color: var(--color-steel-grey);
             letter-spacing: 1px;
+            opacity: 0.6;
           }
 
-          .sector-btn.active .sector-code {
-            color: var(--color-accent-green);
+          .ecosol-sectors-scope .sector-btn.active .sector-code {
+            color: var(--color-electric-blue);
+            opacity: 1;
           }
 
           /* --- DISPLAY CARD --- */
-          .sector-display-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            height: 500px; /* Reduced from 600px */
+          .ecosol-sectors-scope .sector-display-card {
+            background: var(--color-bg-white);
+            border: 1px solid var(--color-bg-light-grey);
+            height: 550px;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            border-radius: 4px;
+            border-radius: 2px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
           }
 
-          .sector-image-area {
+          .ecosol-sectors-scope .sector-image-area {
             flex: 1;
             overflow: hidden;
             position: relative;
+            background: var(--color-deep-blue);
           }
 
-          .sector-img {
+          .ecosol-sectors-scope .sector-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s ease;
+            opacity: 0.9;
+            filter: grayscale(20%);
+            transition: transform 1.2s ease, filter 0.8s ease;
           }
 
-          .sector-display-card:hover .sector-img {
+          .ecosol-sectors-scope .sector-display-card:hover .sector-img {
             transform: scale(1.05);
+            filter: grayscale(0%);
           }
 
-          .sector-info-overlay {
-            padding: 35px; /* Reduced from 50px */
-            background: #ffffff;
-            border-top: 3px solid var(--color-accent-green);
+          .ecosol-sectors-scope .sector-info-overlay {
+            padding: 40px;
+            background: var(--color-bg-white);
+            border-top: 1px solid var(--color-bg-light-grey);
+            position: relative;
           }
 
-          .sector-title-large {
-            font-size: 28px; /* Reduced from 32px */
+          .ecosol-sectors-scope .sector-info-overlay::before {
+             content: "";
+             position: absolute;
+             top: -1px; left: 0; width: 60px; height: 3px;
+             background: var(--color-logo-blue);
+          }
+
+          .ecosol-sectors-scope .sector-title-large {
+            font-size: 26px;
             font-weight: 900;
-            color: var(--color-primary);
+            color: var(--color-logo-navy);
             margin-bottom: 15px;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
           }
 
-          .sector-desc-large {
-            font-size: 15px; /* Reduced from 17px */
-            color: #64748b;
+          .ecosol-sectors-scope .sector-desc-large {
+            font-size: 15px;
+            color: var(--color-text-main);
             line-height: 1.7;
             max-width: 650px;
           }
 
           @media (max-width: 1100px) {
-            .sectors-section { padding: 60px 0; }
-            .sectors-container { grid-template-columns: 1fr; gap: 40px; }
-            .sector-btn.active { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-            .sector-display-card { height: auto; }
-            .main-heading { font-size: 36px; }
+            .ecosol-sectors-scope { padding: 60px 0; }
+            .ecosol-sectors-scope .sectors-container { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
+            .ecosol-sectors-scope .sector-btn.active { transform: translateY(-5px) translateX(0); }
+            .ecosol-sectors-scope .sector-display-card { height: auto; }
           }
         `}
       </style>
 
-      <section className="sectors-section">
+      <section className="ecosol-sectors-scope">
         <div className="sectors-grid-bg" />
 
         <div className="sectors-container">
           {/* Left: Interactive Navigation */}
           <div className="sector-nav-wrapper">
-            {/* UPDATED HEADING BLOCK */}
             <div style={{ marginBottom: "40px" }}>
               <div className="eyebrow">Operational Domains</div>
               <h2 className="main-heading">
-                Industries <span className="heading-accent">Served.</span>
+                Market <span className="heading-accent">Sectors.</span>
               </h2>
             </div>
 

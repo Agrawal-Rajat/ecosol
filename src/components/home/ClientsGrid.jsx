@@ -1,8 +1,5 @@
 import React from "react";
-
-// Existing Imports
-import logo1 from "../../assets/logos/logo1.png";
-import logo2 from "../../assets/logos/logo2.png";
+// Existing Imports preserved
 import logo3 from "../../assets/logos/logo3.png";
 import logo4 from "../../assets/logos/logo4.png";
 import logo5 from "../../assets/logos/logo5.png";
@@ -60,115 +57,122 @@ function ClientGrid() {
         {`
           .clients-section {
             padding: 120px 0;
-            background-color: #ffffff;
+            background-color: var(--color-bg-white);
             overflow: hidden;
+            border-top: 1px solid var(--color-bg-light-grey);
           }
 
           .container {
-            max-width: 1400px;
+            max-width: var(--container-width, 1400px);
             margin: 0 auto;
             padding: 0 40px;
           }
 
-          /* Metrics Strip */
+          /* --- Metrics Strip (Visibility Fixed) --- */
           .metrics-strip {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            background: #0f172a;
-            padding: 45px;
-            border-radius: 24px;
+            background: var(--color-logo-navy);
+            padding: 50px 40px;
+            border-radius: 2px;
             margin-bottom: 100px;
-            margin-top: -85px;
-            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.2);
+            margin-top: -95px;
+            box-shadow: 0 30px 60px rgba(11, 17, 32, 0.2);
+            position: relative;
+            z-index: 10;
           }
 
-          .metric-item { text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
+          .metric-item { 
+            text-align: center; 
+            border-right: 1px solid rgba(255,255,255,0.1); 
+          }
           .metric-item:last-child { border-right: none; }
+          
           .metric-value { 
             display: block; 
-            font-size: clamp(28px, 4vw, 40px); 
+            font-size: clamp(32px, 4vw, 44px); 
             font-weight: 900; 
-            color: #10b981; 
+            color: var(--color-electric-blue); 
             line-height: 1;
-            margin-bottom: 8px;
-          }
-          .metric-label { 
-            font-size: 11px; 
-            color: rgba(255,255,255,0.6); 
-            text-transform: uppercase; 
-            letter-spacing: 2.5px;
-            font-weight: 700;
+            margin-bottom: 10px;
           }
 
-          /* Main Centered Header */
+          .metric-label { 
+            font-size: 11px; 
+            /* Lightened color for clear visibility on dark background */
+            color: #cbd5e1; 
+            text-transform: uppercase; 
+            letter-spacing: 3px;
+            font-weight: 800;
+          }
+
+          /* --- Header Styles --- */
           .header-center {
             text-align: center;
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto 100px;
           }
 
-          /* Vivid Gradient Heading Style from Original */
           .vivid-heading {
-            font-size: clamp(36px, 6vw, 58px);
+            font-size: clamp(36px, 5vw, 54px);
             font-weight: 900;
-            color: #0f172a;
-            letter-spacing: -3px;
-            line-height: 1.05;
+            color: var(--color-logo-navy);
+            letter-spacing: -2px;
+            line-height: 1.1;
             margin-bottom: 30px;
           }
 
-          .vivid-green-text {
-            color: #10b981;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+          .accent-text-blue {
+            color: var(--color-electric-blue);
           }
 
           .sub-heading-text {
-            font-size: clamp(24px, 3.5vw, 34px);
+            font-size: 28px;
             font-weight: 900;
-            color: #0f172a;
-            letter-spacing: -1.5px;
+            color: var(--color-logo-navy);
+            letter-spacing: -1px;
             margin-bottom: 15px;
             line-height: 1.2;
           }
 
-          /* Logo Box Style */
+          /* --- Logo Box Style (Original Colors Restored) --- */
           .logo-box {
             width: 280px;
-            height: 150px;
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #ffffff;
-            border: 1px solid #f1f5f9;
-            border-radius: 20px;
-            padding: 35px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            background: var(--color-bg-white);
+            border: 1px solid var(--color-bg-light-grey);
+            border-radius: 2px;
+            padding: 30px;
+            transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
           }
 
           .logo-box:hover {
-            transform: translateY(-10px);
-            border-color: #10b981;
-            box-shadow: 0 25px 45px rgba(15, 23, 42, 0.1);
+            transform: translateY(-8px);
+            border-color: var(--color-logo-blue);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
           }
 
           .logo-img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
+            /* REMOVED grayscale and opacity for original brand colors */
+            transition: all 0.4s ease;
           }
 
           .direct-clients-wrapper {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 30px;
             margin-bottom: 120px;
           }
 
+          /* --- Marquee --- */
           .marquee-track { display: flex; width: max-content; }
-          .marquee-content { display: flex; gap: 30px; animation: scroll-left 60s linear infinite; padding-right: 30px; }
+          .marquee-content { display: flex; gap: 24px; animation: scroll-left 60s linear infinite; padding-right: 24px; }
           
           @keyframes scroll-left {
             0% { transform: translateX(0); }
@@ -176,10 +180,9 @@ function ClientGrid() {
           }
 
           @media (max-width: 768px) {
-            .metrics-strip { grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 30px; margin-top: -60px; }
+            .metrics-strip { grid-template-columns: repeat(2, 1fr); gap: 30px; padding: 35px; margin-top: -60px; }
             .direct-clients-wrapper { flex-direction: column; align-items: center; gap: 20px; }
-            .logo-box { width: 100%; max-width: 300px; }
-            .vivid-heading { letter-spacing: -1.5px; }
+            .logo-box { width: 100%; max-width: 320px; }
           }
         `}
       </style>
@@ -196,11 +199,11 @@ function ClientGrid() {
             ))}
           </div>
 
-          {/* Header matched to WhyEcosol styling */}
+          {/* Header */}
           <div className="header-center">
             <span
               style={{
-                color: "#10b981",
+                color: "var(--color-steel-grey)",
                 fontWeight: "800",
                 letterSpacing: "4px",
                 fontSize: "12px",
@@ -212,46 +215,46 @@ function ClientGrid() {
               Industry Experience
             </span>
             <h2 className="vivid-heading">
-              Experience Across Global Energy & <br />
-              <span className="vivid-green-text">
-                Infrastructure Leadership.
+              Proven Expertise Across <br />
+              <span className="accent-text-blue">
+                Global Energy Infrastructure.
               </span>
             </h2>
             <p
               style={{
-                color: "#64748b",
-                fontSize: "19px",
+                color: "var(--color-text-main)",
+                fontSize: "18px",
                 lineHeight: "1.8",
                 margin: "0 auto",
               }}
             >
-              Our engineering leadership and technical team bring over 20 years
-              of international experience supporting complex power, oil & gas,
-              and industrial infrastructure projects worldwide.
+              Our technical team brings over 20 years of international field
+              experience supporting complex power, petrochemical, and industrial
+              infrastructure projects.
             </p>
           </div>
 
-          {/* Sub-Section 1: Direct Clients */}
+          {/* Direct Clients */}
           <div style={{ textAlign: "center", marginBottom: "50px" }}>
             <div
               style={{
-                height: "3px",
-                width: "80px",
-                background: "#10b981",
+                height: "2px",
+                width: "60px",
+                background: "var(--color-electric-blue)",
                 margin: "0 auto 25px",
               }}
             ></div>
             <h3 className="sub-heading-text">Direct Clients</h3>
             <p
               style={{
-                color: "#64748b",
-                fontSize: "17px",
-                maxWidth: "700px",
+                color: "var(--color-steel-grey)",
+                fontSize: "16px",
+                maxWidth: "600px",
                 margin: "0 auto",
               }}
             >
-              Organizations that have directly engaged Ecosol Projects Pvt Ltd
-              for engineering and consultancy services.
+              Organizations served directly by Ecosol for engineering and
+              specialized technical consultancy.
             </p>
           </div>
 
@@ -263,38 +266,39 @@ function ClientGrid() {
             ))}
           </div>
 
-          {/* Sub-Section 2: Project Experience */}
+          {/* Project Experience */}
           <div style={{ textAlign: "center", marginBottom: "50px" }}>
             <div
               style={{
-                height: "3px",
-                width: "80px",
-                background: "#10b981",
+                height: "2px",
+                width: "60px",
+                background: "var(--color-electric-blue)",
                 margin: "0 auto 25px",
               }}
             ></div>
             <h3 className="sub-heading-text">
-              Projects Delivered With{" "}
-              <span className="vivid-green-text">
+              Project Contributions With <br />
+              <span className="accent-text-blue">
                 Leading Global Organizations
               </span>
             </h3>
             <p
               style={{
-                color: "#64748b",
-                fontSize: "17px",
-                maxWidth: "800px",
+                color: "var(--color-steel-grey)",
+                fontSize: "16px",
+                maxWidth: "750px",
                 margin: "0 auto",
               }}
             >
-              Technical contributions delivered through prior professional
-              engagements and strategic industry collaborations.
+              Technical contributions delivered through professional
+              engagements, strategic partnerships, and collaborative industry
+              projects.
             </p>
           </div>
         </div>
 
         {/* Marquee */}
-        <div style={{ marginTop: "50px" }}>
+        <div style={{ marginTop: "40px" }}>
           <div className="marquee-track">
             <div className="marquee-content">
               {marqueeLogos.map((logo, index) => (
@@ -311,24 +315,23 @@ function ClientGrid() {
             style={{
               marginTop: "80px",
               paddingTop: "40px",
-              borderTop: "1px solid #f1f5f9",
+              borderTop: "1px solid var(--color-bg-light-grey)",
               textAlign: "center",
             }}
           >
             <p
               style={{
-                fontSize: "13px",
-                color: "#94a3b8",
-                maxWidth: "850px",
+                fontSize: "12px",
+                color: "var(--color-steel-grey)",
+                maxWidth: "800px",
                 margin: "0 auto",
                 lineHeight: "1.6",
-                fontStyle: "italic",
+                opacity: 0.8,
               }}
             >
-              * Logos represent organizations where Ecosol’s leadership and
-              engineering team members have contributed in their professional
-              capacity through previous employment, project partnerships, or
-              consulting assignments.
+              * Logos represent organizations where the engineering team has
+              contributed technical expertise through previous professional
+              capacities, consulting assignments, or collaborative partnerships.
             </p>
           </div>
         </div>

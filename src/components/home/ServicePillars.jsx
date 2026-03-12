@@ -33,27 +33,28 @@ function ServicePillars() {
       <style>
         {`
           .pillars-horizon-section {
-            padding: 120px 0; /* Reduced from 160px for a tighter vertical feel */
-            background-color: #ffffff;
+            padding: 120px 0;
+            background-color: var(--color-bg-white);
             position: relative;
             overflow: hidden;
+            border-top: 1px solid var(--color-bg-light-grey);
           }
 
-          /* Global Architectural Grid */
+          /* Architectural Blueprint Grid */
           .pillars-horizon-section::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background-image: 
-              linear-gradient(#f1f5f9 1.5px, transparent 1.5px),
-              linear-gradient(90deg, #f1f5f9 1.5px, transparent 1.5px);
-            background-size: 50px 50px;
-            opacity: 0.6;
+              linear-gradient(var(--color-bg-light-grey) 1.5px, transparent 1.5px),
+              linear-gradient(90deg, var(--color-bg-light-grey) 1.5px, transparent 1.5px);
+            background-size: 60px 60px;
+            opacity: 0.8;
             pointer-events: none;
           }
 
           .pillars-horizon-container {
-            max-width: 1150px; /* Reduced from 1300px to prevent "stretched" cards */
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 40px;
             position: relative;
@@ -62,24 +63,25 @@ function ServicePillars() {
 
           .pillars-horizon-header {
             text-align: center;
-            margin-bottom: 60px; /* Tighter header spacing */
+            margin-bottom: 70px;
           }
 
           .pillars-horizon-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px; /* Slightly tighter gap for a more cohesive unit */
+            gap: 30px;
           }
 
           .horizon-card {
             position: relative;
-            background: #0f172a;
-            min-height: 400px; /* Optimized height for better vertical proportion */
+            background: var(--color-deep-blue);
+            min-height: 420px;
             display: flex;
             flex-direction: column;
-            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
             overflow: hidden;
-            border: 1px solid #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 2px; /* Engineering sharp edges */
           }
 
           .card-image-bg {
@@ -87,8 +89,9 @@ function ServicePillars() {
             top: 0; left: 0; width: 100%; height: 100%;
             background-size: cover;
             background-position: center;
-            opacity: 0.35;
-            transition: transform 1s ease, opacity 0.5s ease;
+            opacity: 0.3;
+            filter: grayscale(100%);
+            transition: transform 1.2s ease, opacity 0.5s ease, filter 0.5s ease;
             z-index: 1;
           }
 
@@ -97,9 +100,9 @@ function ServicePillars() {
             top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(
               to bottom, 
-              rgba(15, 23, 42, 0.9) 0%, 
-              rgba(15, 23, 42, 0.6) 50%, 
-              rgba(15, 23, 42, 0.9) 100%
+              rgba(11, 17, 32, 0.95) 0%, 
+              rgba(11, 17, 32, 0.7) 50%, 
+              rgba(11, 17, 32, 0.95) 100%
             );
             z-index: 2;
           }
@@ -107,55 +110,56 @@ function ServicePillars() {
           .card-content {
             position: relative;
             z-index: 3;
-            padding: 45px 35px; /* Refined padding for smaller cards */
+            padding: 50px 40px;
             flex: 1;
             display: flex;
             flex-direction: column;
           }
 
           .horizon-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--color-accent-green);
-            box-shadow: 0 25px 50px rgba(0, 51, 0, 0.12);
+            transform: translateY(-10px);
+            border-color: var(--color-logo-blue);
+            box-shadow: 0 30px 60px rgba(11, 17, 32, 0.3);
           }
 
           .horizon-card:hover .card-image-bg {
-            transform: scale(1.08);
-            opacity: 0.5;
+            transform: scale(1.1);
+            opacity: 0.4;
+            filter: grayscale(0%);
           }
 
           .horizon-index {
-            font-family: monospace;
+            font-family: var(--font-primary);
             font-size: 11px;
-            color: var(--color-accent-green);
-            font-weight: 700;
-            letter-spacing: 3px;
+            color: var(--color-electric-blue); /* High-tech blue instead of green */
+            font-weight: 800;
+            letter-spacing: 4px;
             margin-bottom: 25px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
           }
 
           .horizon-index::after {
             content: "";
             flex: 1;
             height: 1px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
           }
 
           .horizon-title {
-            font-size: 26px; /* Scaled down for tighter card size */
+            font-size: 28px;
             font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 18px;
+            color: var(--color-bg-white);
+            margin-bottom: 20px;
             line-height: 1.2;
             letter-spacing: -0.5px;
           }
 
           .horizon-desc {
-            font-size: 15px; /* Optimized for readability in smaller cards */
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.6;
+            font-size: 15px;
+            color: var(--color-steel-grey); /* Technical grey for descriptions */
+            line-height: 1.7;
           }
 
           .horizon-marker {
@@ -163,20 +167,20 @@ function ServicePillars() {
             align-self: flex-end;
             width: 20px;
             height: 20px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-            border-right: 2px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            border-right: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
           }
 
           .horizon-card:hover .horizon-marker {
-            border-color: var(--color-accent-green);
-            width: 30px;
-            height: 30px;
+            border-color: var(--color-electric-blue);
+            width: 35px;
+            height: 35px;
           }
 
           @media (max-width: 1024px) {
-            .pillars-horizon-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
-            .horizon-card { min-height: 380px; }
+            .pillars-horizon-grid { grid-template-columns: 1fr; }
+            .horizon-card { min-height: 400px; }
             .pillars-horizon-section { padding: 80px 24px; }
           }
         `}
@@ -187,27 +191,27 @@ function ServicePillars() {
           <div className="pillars-horizon-header">
             <div
               style={{
-                color: "var(--color-accent-green)",
+                color: "var(--color-steel-grey)",
                 fontSize: "12px",
-                fontWeight: "700",
+                fontWeight: "800",
                 textTransform: "uppercase",
                 letterSpacing: "4px",
                 marginBottom: "12px",
               }}
             >
-              Core Operational Framework
+              Operational Foundations
             </div>
             <h2
               style={{
-                fontSize: "42px",
+                fontSize: "clamp(32px, 4vw, 42px)",
                 fontWeight: "900",
-                color: "var(--color-primary)",
+                color: "var(--color-logo-navy)",
                 lineHeight: "1.1",
-                letterSpacing: "-1.5px",
+                letterSpacing: "-1px",
               }}
             >
-              Engineered for{" "}
-              <span style={{ color: "var(--color-accent-green)" }}>
+              Consultancy Built on{" "}
+              <span style={{ color: "var(--color-electric-blue)" }}>
                 Integrity.
               </span>
             </h2>
@@ -223,7 +227,7 @@ function ServicePillars() {
                 <div className="card-overlay" />
 
                 <div className="card-content">
-                  <div className="horizon-index">METRIC_0{index + 1}</div>
+                  <div className="horizon-index">SPEC_0{index + 1}</div>
                   <h3 className="horizon-title">{pillar.title}</h3>
                   <p className="horizon-desc">{pillar.description}</p>
                   <div className="horizon-marker" />

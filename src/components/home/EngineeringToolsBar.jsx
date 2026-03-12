@@ -17,16 +17,17 @@ function EngineeringToolsBar() {
         {`
         .tools-bar-section {
           width: 100%;
-          background: #ffffff;
-          padding: 100px 0; /* Matches CoreServices padding */
+          background: var(--color-bg-white);
+          padding: 100px 0;
           overflow: hidden;
           position: relative;
+          border-bottom: 1px solid var(--color-bg-light-grey);
         }
 
         .tools-container {
-          max-width: 1300px;
+          max-width: var(--container-width, 1400px);
           margin: 0 auto;
-          padding: 0 30px;
+          padding: 0 40px;
         }
 
         .tools-header-box {
@@ -35,23 +36,23 @@ function EngineeringToolsBar() {
         }
 
         .tools-subtitle {
-          color: #10b981; /* Matches var(--color-accent-green) */
-          font-size: 13px;
+          /* Changed from Green to Steel Grey for a technical feel */
+          color: var(--color-steel-grey); 
+          font-size: 12px;
           font-weight: 800;
           text-transform: uppercase;
           letter-spacing: 3px;
-          marginBottom: 12px;
+          margin-bottom: 12px;
           display: block;
         }
 
         .tools-main-title {
-          /* Exactly matching CoreServices font size and weight */
-          font-size: clamp(35px, 5vw, 42px);
+          font-size: clamp(32px, 4vw, 42px);
           font-weight: 900;
-          color: #000033; /* Matches var(--color-primary) */
+          /* Using the logo navy for corporate authority */
+          color: var(--color-logo-navy); 
           line-height: 1.2;
           margin-bottom: 20px;
-          white-space: nowrap; /* Forces one line */
         }
 
         .tools-marquee-area {
@@ -80,17 +81,19 @@ function EngineeringToolsBar() {
         }
 
         .tool-line {
-          width: 10px;
+          width: 12px;
           height: 2px;
-          background: #10b981;
-          opacity: 0.5;
+          /* Using Steel Grey for a subtle, hardware-like divider */
+          background: var(--color-steel-grey);
+          opacity: 0.3;
         }
 
         .tool-text {
-          font-family: 'Inter', sans-serif;
-          font-size: 20px;
+          font-family: var(--font-primary);
+          font-size: 22px;
           font-weight: 600;
-          color: #64748b;
+          /* Slightly darker grey for better readability against white */
+          color: var(--color-text-main);
           white-space: nowrap;
           letter-spacing: -0.5px;
         }
@@ -102,19 +105,18 @@ function EngineeringToolsBar() {
 
         .tools-caption {
           font-size: 14px;
-          color: #94a3b8;
+          color: var(--color-steel-grey);
           text-align: center;
           max-width: 600px;
           margin: 50px auto 0;
           line-height: 1.6;
-          border-top: 1px solid #f1f5f9;
+          border-top: 1px solid var(--color-bg-light-grey);
           padding-top: 30px;
         }
 
         @media (max-width: 768px) {
           .tools-bar-section { padding: 60px 0; }
-          .tools-main-title { white-space: normal; } /* Allow wrap on mobile only */
-          .tool-text { font-size: 16px; }
+          .tool-text { font-size: 18px; }
           .tools-wrapper { gap: 60px; }
         }
         `}
@@ -123,16 +125,19 @@ function EngineeringToolsBar() {
       <section className="tools-bar-section">
         <div className="tools-container">
           <div className="tools-header-box">
-            <span className="tools-subtitle">Credibility Strip</span>
+            <span className="tools-subtitle">Simulation Capabilities</span>
             <h2 className="tools-main-title">
-              Precision Simulation{" "}
-              <span style={{ color: "#10b981" }}>Ecosystem.</span>
+              Precision Engineering{" "}
+              <span style={{ color: "var(--color-electric-blue)" }}>
+                Ecosystem.
+              </span>
             </h2>
           </div>
 
           <div className="fade-mask">
             <div className="tools-marquee-area">
               <div className="tools-wrapper">
+                {/* Doubling the array for seamless infinite scroll */}
                 {[...tools, ...tools].map((tool, index) => (
                   <div key={index} className="tool-item">
                     <div className="tool-line" />
@@ -145,8 +150,8 @@ function EngineeringToolsBar() {
 
           <div className="tools-caption">
             <p>
-              Advanced engineering simulation platforms used for accurate power
-              system and grounding analysis.
+              Industry-standard computational platforms utilized for rigorous
+              power system modeling and electromagnetic interference analysis.
             </p>
           </div>
         </div>

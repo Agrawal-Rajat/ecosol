@@ -6,7 +6,7 @@ function Leadership() {
       name: "Senior Engineering Leadership",
       role: "Power Systems & Electrical Design",
       experience:
-        "20+ years of experience in power generation, transmission, substations, and industrial electrical systems.",
+        "20+ years of expertise in power generation, transmission, substations, and industrial electrical systems globally.",
       details: [
         "Generation",
         "Transmission",
@@ -18,7 +18,7 @@ function Leadership() {
       name: "Engineering & Project Oversight",
       role: "Protection, Safety & Compliance",
       experience:
-        "Extensive experience in protection coordination, arc flash studies, grounding systems, and international standards compliance.",
+        "Specialized in protection coordination, arc flash studies, grounding systems, and international IEEE/IEC standards.",
       details: [
         "Protection Coordination",
         "Arc Flash",
@@ -32,52 +32,101 @@ function Leadership() {
     <>
       <style>
         {`
-          .leadership-section {
-            padding: 120px 0;
-            background-color: #ffffff;
-            background-image: radial-gradient(#e2e8f0 0.8px, transparent 0.8px);
-            background-size: 24px 24px;
+          .ecosol-leadership-scope {
+            /* Tightened vertical flow */
+            padding: 80px 0 100px 0;
+            background-color: var(--color-bg-white);
             position: relative;
+            overflow: hidden;
+            font-family: var(--font-primary);
           }
 
-          .leadership-container {
-            max-width: var(--container-width);
+          /* Layered Grid Texture - Matches AboutHero and Overview */
+          .ecosol-leadership-scope::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: 
+              radial-gradient(var(--color-bg-light-grey) 1.2px, transparent 1.2px),
+              linear-gradient(var(--color-bg-light-grey) 1px, transparent 1px),
+              linear-gradient(90deg, var(--color-bg-light-grey) 1px, transparent 1px);
+            background-size: 30px 30px, 120px 120px, 120px 120px;
+            z-index: 1;
+            opacity: 0.4;
+            pointer-events: none;
+          }
+
+          .ecosol-leadership-scope .leadership-container {
+            max-width: var(--container-width, 1400px);
             margin: 0 auto;
             padding: 0 40px;
+            position: relative;
+            z-index: 2;
           }
 
-          .leadership-header {
-            margin-bottom: 80px;
-            max-width: 800px;
+          .ecosol-leadership-scope .leadership-header {
+            margin-bottom: 60px;
+            max-width: 850px;
+            border-left: 4px solid var(--color-electric-blue);
+            padding-left: 25px;
           }
 
-          .leadership-grid {
+          .ecosol-leadership-scope .header-tag {
+            color: var(--color-electric-blue);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            display: block;
+          }
+
+          .ecosol-leadership-scope .header-title {
+            font-size: clamp(32px, 5vw, 48px); /* Standardized Scale */
+            font-weight: 900;
+            color: var(--color-logo-navy);
+            line-height: 1.1;
+            margin-bottom: 25px;
+            letter-spacing: -1.5px;
+            text-transform: uppercase;
+          }
+
+          .ecosol-leadership-scope .header-desc {
+            font-size: 17px;
+            color: var(--color-text-main);
+            line-height: 1.7;
+            max-width: 700px;
+          }
+
+          /* --- Technical Expert Cards --- */
+          .ecosol-leadership-scope .leadership-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
+            gap: 30px;
           }
 
-          .expert-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            padding: 60px 45px;
+          .ecosol-leadership-scope .expert-card {
+            background: var(--color-bg-white);
+            border: 1px solid var(--color-bg-light-grey);
+            padding: 50px 40px;
             display: flex;
             flex-direction: column;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
             position: relative;
+            border-radius: 2px;
           }
 
-          .expert-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--color-accent-green);
-            box-shadow: 0 30px 60px rgba(0,0,68,0.06);
+          .ecosol-leadership-scope .expert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-logo-blue);
+            box-shadow: 0 20px 40px rgba(11, 17, 32, 0.06);
           }
 
-          .expert-meta {
+          .ecosol-leadership-scope .expert-meta {
             font-family: monospace;
-            font-size: 11px;
-            color: var(--color-accent-green);
-            letter-spacing: 3px;
+            font-size: 10px;
+            color: var(--color-steel-grey);
+            letter-spacing: 2px;
             font-weight: 700;
             margin-bottom: 25px;
             display: flex;
@@ -85,96 +134,76 @@ function Leadership() {
             gap: 15px;
           }
 
-          .expert-meta::after {
+          .ecosol-leadership-scope .expert-meta::after {
             content: "";
             flex: 1;
             height: 1px;
-            background: #f1f5f9;
+            background: var(--color-bg-light-grey);
           }
 
-          .expert-name {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--color-primary);
-            margin-bottom: 12px;
-          }
-
-          .expert-role {
-            font-size: 15px;
-            color: var(--color-accent-green);
-            font-weight: 700;
+          .ecosol-leadership-scope .expert-name {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--color-logo-navy);
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+          }
+
+          .ecosol-leadership-scope .expert-role {
+            font-size: 12px;
+            color: var(--color-electric-blue);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             margin-bottom: 25px;
           }
 
-          .expert-bio {
-            font-size: 16px;
-            color: #64748b;
+          .ecosol-leadership-scope .expert-bio {
+            font-size: 15px;
+            color: var(--color-text-main);
             line-height: 1.7;
             margin-bottom: 35px;
             flex: 1;
           }
 
-          .expertise-tags {
+          /* --- Expertise Tags --- */
+          .ecosol-leadership-scope .expertise-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
             padding-top: 25px;
-            border-top: 1px solid #f1f5f9;
+            border-top: 1px solid var(--color-bg-light-grey);
           }
 
-          .tech-tag {
-            font-size: 11px;
-            background: #f8fafc;
-            color: #94a3b8;
-            padding: 4px 10px;
-            font-weight: 600;
+          .ecosol-leadership-scope .tech-tag {
+            font-size: 9px;
+            background: var(--color-bg-light-grey);
+            color: var(--color-logo-navy);
+            padding: 5px 12px;
+            font-weight: 800;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 2px;
           }
 
           @media (max-width: 1024px) {
-            .leadership-grid { grid-template-columns: 1fr; }
-            .leadership-section { padding: 100px 24px; }
-            .expert-card { padding: 40px 30px; }
+            .ecosol-leadership-scope .leadership-grid { grid-template-columns: 1fr; }
+            .ecosol-leadership-scope { padding: 60px 0; }
+            .ecosol-leadership-scope .expert-card { padding: 40px 30px; }
           }
         `}
       </style>
 
-      <section className="leadership-section">
+      <section className="ecosol-leadership-scope">
         <div className="leadership-container">
           <div className="leadership-header">
-            <div
-              style={{
-                color: "var(--color-accent-green)",
-                fontSize: "12px",
-                fontWeight: "700",
-                textTransform: "uppercase",
-                letterSpacing: "4px",
-                marginBottom: "15px",
-              }}
-            >
-              Technical Governance
-            </div>
-            <h2
-              style={{
-                fontSize: "48px",
-                fontWeight: "900",
-                color: "var(--color-primary)",
-                lineHeight: "1.1",
-                marginBottom: "30px",
-                letterSpacing: "-1.5px",
-              }}
-            >
-              Senior Engineering Leadership
-            </h2>
-            <p
-              style={{ fontSize: "18px", color: "#64748b", lineHeight: "1.7" }}
-            >
-              Ecosol is led by professionals with over two decades of experience
-              delivering complex electrical engineering solutions. Every
-              deliverable is reviewed by our senior technical team to ensure
-              absolute integrity.
+            <span className="header-tag">Technical Governance</span>
+            <h2 className="header-title">Senior Engineering Leadership</h2>
+            <p className="header-desc">
+              Ecosol is led by professionals with over two decades of global
+              experience. Every deliverable is subjected to a multi-stage
+              technical review to ensure absolute engineering integrity.
             </p>
           </div>
 

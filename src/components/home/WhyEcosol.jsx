@@ -34,17 +34,18 @@ function WhyEcosol() {
         {`
           .why-section {
             padding: 120px 0;
-            background-color: #ffffff;
+            background-color: var(--color-bg-white);
             overflow: hidden;
+            border-top: 1px solid var(--color-bg-light-grey);
           }
 
           .why-container {
-            max-width: 1400px;
+            max-width: var(--container-width, 1400px);
             margin: 0 auto;
             padding: 0 40px;
             display: grid;
             grid-template-columns: 450px 1fr;
-            gap: 60px;
+            gap: 80px;
             align-items: center;
           }
 
@@ -56,51 +57,54 @@ function WhyEcosol() {
 
           .why-card {
             position: relative;
-            height: 280px;
-            border-radius: 20px;
+            height: 300px;
+            border-radius: 4px; /* Sharper engineering edges */
             overflow: hidden;
-            background: #0f172a;
+            background: var(--color-deep-blue);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 30px;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 35px;
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
             cursor: pointer;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.05);
           }
 
           .card-bg {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             object-fit: cover;
-            opacity: 0.4;
-            transition: all 0.6s ease;
+            opacity: 0.3;
+            filter: grayscale(100%); /* Technical muted look */
+            transition: all 0.7s ease;
             z-index: 1;
           }
 
           .card-overlay {
             position: absolute;
-            bottom: 0; left: 0; width: 100%; height: 70%;
-            background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 20%, transparent);
+            bottom: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, var(--color-deep-blue) 15%, transparent 100%);
             z-index: 2;
           }
 
           .card-content {
             position: relative;
             z-index: 3;
-            transform: translateY(20px);
+            transform: translateY(15px);
             transition: all 0.5s ease;
           }
 
           /* Hover Effects */
           .why-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
+            transform: translateY(-8px);
+            border-color: var(--color-logo-blue);
+            box-shadow: 0 30px 60px -12px rgba(11, 17, 32, 0.3);
           }
 
           .why-card:hover .card-bg {
-            opacity: 0.7;
-            transform: scale(1.1);
+            opacity: 0.5;
+            filter: grayscale(0%);
+            transform: scale(1.05);
           }
 
           .why-card:hover .card-content {
@@ -108,16 +112,16 @@ function WhyEcosol() {
           }
 
           .card-title {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 10px;
+            color: var(--color-bg-white);
+            margin-bottom: 12px;
             letter-spacing: -0.5px;
           }
 
           .card-desc {
             font-size: 14px;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--color-steel-grey);
             line-height: 1.6;
             opacity: 0;
             transition: all 0.4s ease;
@@ -127,10 +131,9 @@ function WhyEcosol() {
             opacity: 1;
           }
 
-          /* MOBILE HORIZONTAL SCROLL SNAP */
           @media (max-width: 1024px) {
-            .why-container { grid-template-columns: 1fr; gap: 50px; padding: 0 20px; }
-            .why-content-left { text-align: center; max-width: 100%; }
+            .why-container { grid-template-columns: 1fr; gap: 50px; padding: 0 24px; }
+            .why-content-left { text-align: center; max-width: 100%; margin: 0 auto; }
             
             .why-grid-right {
               display: flex;
@@ -138,20 +141,19 @@ function WhyEcosol() {
               scroll-snap-type: x mandatory;
               gap: 20px;
               padding: 20px 0 40px;
-              scrollbar-width: none; /* Hide scrollbar for Chrome/Safari */
+              scrollbar-width: none;
             }
 
             .why-grid-right::-webkit-scrollbar { display: none; }
 
             .why-card {
-              flex: 0 0 85%; /* Shows part of the next card to signal scrolling */
+              flex: 0 0 85%;
               scroll-snap-align: center;
               height: 320px;
             }
 
-            .card-desc { opacity: 1; } /* Keep text visible on touch devices */
+            .card-desc { opacity: 1; }
             .card-content { transform: translateY(0); }
-            .main-heading { font-size: 48px !important; line-height: 1 !important; }
           }
         `}
       </style>
@@ -162,10 +164,10 @@ function WhyEcosol() {
           <div className="why-content-left">
             <span
               style={{
-                color: "#10b981",
+                color: "var(--color-steel-grey)",
                 fontWeight: "800",
                 letterSpacing: "4px",
-                fontSize: "11px",
+                fontSize: "12px",
                 textTransform: "uppercase",
                 display: "block",
                 marginBottom: "15px",
@@ -174,33 +176,34 @@ function WhyEcosol() {
               Technical Value
             </span>
             <h2
-              className="main-heading"
               style={{
                 fontSize: "clamp(42px, 5vw, 62px)",
                 fontWeight: "900",
-                color: "#0f172a",
-                letterSpacing: "-3px",
+                color: "var(--color-logo-navy)",
+                letterSpacing: "-2px",
                 lineHeight: "1",
               }}
             >
               Why <br />
-              <span style={{ color: "#10b981" }}>Ecosol ?</span>
+              <span style={{ color: "var(--color-electric-blue)" }}>
+                Ecosol?
+              </span>
             </h2>
             <p
               style={{
                 marginTop: "25px",
-                color: "#64748b",
+                color: "var(--color-text-main)",
                 fontSize: "18px",
                 lineHeight: "1.7",
                 maxWidth: "400px",
               }}
             >
               We combine deep industry expertise with global standards to
-              deliver technically sound solutions.
+              deliver technically rigorous, independent engineering solutions.
             </p>
           </div>
 
-          {/* Right Side: Horizontal Swipe Cards */}
+          {/* Right Side: Showcase Cards */}
           <div className="why-grid-right">
             {points.map((p, i) => (
               <div key={i} className="why-card">
@@ -209,10 +212,10 @@ function WhyEcosol() {
                 <div className="card-content">
                   <div
                     style={{
-                      width: "30px",
-                      height: "3px",
-                      background: "#10b981",
-                      marginBottom: "15px",
+                      width: "35px",
+                      height: "2px",
+                      background: "var(--color-electric-blue)",
+                      marginBottom: "20px",
                     }}
                   />
                   <h3 className="card-title">{p.title}</h3>

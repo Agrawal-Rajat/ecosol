@@ -23,147 +23,141 @@ function CompanyOverview() {
     <>
       <style>
         {`
-          .overview-module {
-            padding: 140px 0;
-            background-color: #ffffff;
+          .ecosol-overview-scope {
+            /* Tightened padding to sit closer to Hero */
+            padding: 80px 0 100px 0;
+            background-color: var(--color-bg-white);
             position: relative;
             overflow: hidden;
+            font-family: var(--font-primary);
           }
 
-          /* Subtle Engineering Grid Background */
-          .overview-module::before {
+          /* Layered Grid Texture */
+          .ecosol-overview-scope::before {
             content: "";
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: radial-gradient(#e2e8f0 1.2px, transparent 1.2px);
-            background-size: 40px 40px;
-            opacity: 0.5;
+            inset: 0;
+            background-image: radial-gradient(var(--color-bg-light-grey) 1.2px, transparent 1.2px);
+            background-size: 30px 30px;
+            opacity: 0.6;
             pointer-events: none;
           }
 
-          .module-container {
-            max-width: 1300px;
+          .ecosol-overview-scope .module-container {
+            max-width: var(--container-width, 1400px);
             margin: 0 auto;
             padding: 0 40px;
             position: relative;
             z-index: 2;
           }
 
-          .module-header {
-            margin-bottom: 80px;
-            border-left: 5px solid var(--color-accent-green);
-            padding-left: 30px;
+          /* --- Standardized Heading Scale --- */
+          .ecosol-overview-scope .module-header {
+            margin-bottom: 60px;
+            border-left: 4px solid var(--color-electric-blue);
+            padding-left: 25px;
           }
 
-          .module-grid {
+          .ecosol-overview-scope .header-eyebrow {
+            color: var(--color-steel-grey);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            display: block;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+          }
+
+          .ecosol-overview-scope .header-title {
+            font-size: clamp(32px, 5vw, 48px); /* Aligned to 48px scale */
+            font-weight: 900;
+            color: var(--color-logo-navy);
+            margin: 0;
+            letter-spacing: -1.5px;
+            text-transform: uppercase;
+          }
+
+          /* --- Engineering Grid --- */
+          .ecosol-overview-scope .module-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-            background-color: #f1f5f9; /* Creates the hairline divider */
+            gap: 1px;
+            background-color: var(--color-bg-light-grey); /* Technical Hairline Divider */
+            border: 1px solid var(--color-bg-light-grey);
           }
 
-          .module-card {
-            background-color: #ffffff;
-            padding: 60px 40px;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+          .ecosol-overview-scope .module-card {
+            background-color: var(--color-bg-white);
+            padding: 50px 40px;
+            transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
             position: relative;
             display: flex;
             flex-direction: column;
           }
 
-          .module-card:hover {
-            background-color: #fcfdfe;
-            box-shadow: inset 0 -4px 0 var(--color-accent-green);
+          .ecosol-overview-scope .module-card:hover {
+            background-color: var(--color-bg-light-grey);
           }
 
-          .card-number {
-            font-size: 60px;
-            font-weight: 900;
-            color: #f1f5f9;
-            line-height: 1;
-            margin-bottom: 20px;
-            transition: color 0.4s ease;
-          }
-
-          .module-card:hover .card-number {
-            color: rgba(68, 158, 29, 0.1);
-          }
-
-          .card-label {
+          /* Technical Serial Code replaces large numbers */
+          .ecosol-overview-scope .card-serial {
             font-family: monospace;
-            font-size: 11px;
+            font-size: 10px;
+            color: var(--color-steel-grey);
+            margin-bottom: 25px;
+            display: block;
+            opacity: 0.7;
+          }
+
+          .ecosol-overview-scope .card-label {
+            font-size: 10px;
             font-weight: 800;
-            color: var(--color-accent-green);
+            color: var(--color-electric-blue);
             letter-spacing: 3px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 10px;
+            text-transform: uppercase;
           }
 
-          .card-label::after {
-            content: "";
-            height: 1px;
-            width: 20px;
-            background: var(--color-accent-green);
-          }
-
-          .card-title {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--color-primary);
-            margin-bottom: 20px;
+          .ecosol-overview-scope .card-title {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--color-logo-navy);
+            margin-bottom: 15px;
             line-height: 1.2;
+            letter-spacing: -0.5px;
           }
 
-          .card-text {
-            font-size: 16px;
-            color: #64748b;
+          .ecosol-overview-scope .card-text {
+            font-size: 15px;
+            color: var(--color-text-main);
             line-height: 1.7;
           }
 
           @media (max-width: 1024px) {
-            .module-grid { grid-template-columns: 1fr; }
-            .module-card { padding: 40px; }
-            .overview-module { padding: 80px 24px; }
+            .ecosol-overview-scope .module-grid { grid-template-columns: 1fr; gap: 20px; background: none; border: none;}
+            .ecosol-overview-scope .module-card { 
+              padding: 40px 30px; 
+              border: 1px solid var(--color-bg-light-grey);
+            }
+            .ecosol-overview-scope { padding: 60px 0; }
           }
         `}
       </style>
 
-      <section className="overview-module">
+      <section className="ecosol-overview-scope">
         <div className="module-container">
           <div className="module-header">
-            <span
-              style={{
-                color: "#94a3b8",
-                fontSize: "12px",
-                fontWeight: "700",
-                letterSpacing: "4px",
-                display: "block",
-                marginBottom: "10px",
-              }}
-            >
-              STRUCTURED FRAMEWORK
-            </span>
-            <h2
-              style={{
-                fontSize: "48px",
-                fontWeight: "900",
-                color: "var(--color-primary)",
-                margin: 0,
-                letterSpacing: "-1.5px",
-              }}
-            >
-              Company Overview
-            </h2>
+            <span className="header-eyebrow">Structured Framework</span>
+            <h2 className="header-title">Company Overview</h2>
           </div>
 
           <div className="module-grid">
             {dataPoints.map((item, index) => (
               <div key={index} className="module-card">
-                <div className="card-number">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
+                <span className="card-serial">REF_00{index + 1}</span>
                 <span className="card-label">{item.label}</span>
                 <h3 className="card-title">{item.title}</h3>
                 <p className="card-text">{item.text}</p>

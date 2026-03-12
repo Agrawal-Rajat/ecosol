@@ -9,7 +9,7 @@ function ServicesGrid() {
         "Advanced electrical network modeling and system performance studies to ensure stability, safety, and operational efficiency.",
       link: "/services/power-system-analysis",
       image:
-        "https://images.unsplash.com/photo-1581092334651-ddf26d9a1930?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
     },
     {
       title: "Electromagnetic Analysis",
@@ -17,7 +17,7 @@ function ServicesGrid() {
         "Electromagnetic interference and high voltage interaction studies to assess infrastructure impact on nearby systems.",
       link: "/services/electromagnetic-analysis",
       image:
-        "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1581092334651-ddf26d9a1930?auto=format&fit=crop&q=80&w=800",
     },
     {
       title: "Grounding Analysis",
@@ -41,7 +41,7 @@ function ServicesGrid() {
         "Complete electrical engineering design services for substations, power plants, and industrial infrastructure.",
       link: "/services/detail-design-engineering",
       image:
-        "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800",
     },
     {
       title: "Procurement Assistance",
@@ -57,7 +57,7 @@ function ServicesGrid() {
         "Independent inspection and quality verification services for electrical equipment before installation and commissioning.",
       link: "/services/third-party-inspection",
       image:
-        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800",
     },
   ];
 
@@ -65,164 +65,154 @@ function ServicesGrid() {
     <>
       <style>
         {`
-          .services-section {
-            background-color: #ffffff;
-            background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
-            background-size: 40px 40px;
-            padding: 100px 0;
+          .ecosol-services-grid-scope {
+            background-color: var(--color-bg-white);
+            /* Clean Blueprint Texture */
+            background-image: radial-gradient(var(--color-bg-light-grey) 1.2px, transparent 1.2px);
+            background-size: 50px 50px;
+            padding: 120px 0;
+            font-family: var(--font-primary);
           }
 
-          .section-header {
-            margin-bottom: 60px;
-            max-width: 800px;
-            padding: 0 20px;
+          .ecosol-services-grid-scope .section-header {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 40px;
+            text-align: center;
           }
 
-          .section-label {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--color-accent-green);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            display: block;
-            margin-bottom: 15px;
-          }
-
-          .section-title {
-            font-size: clamp(32px, 5vw, 48px);
+          .ecosol-services-grid-scope .section-label {
+            font-size: 11px;
             font-weight: 800;
-            color: var(--color-primary);
+            color: var(--color-electric-blue);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            display: block;
+            margin-bottom: 20px;
+          }
+
+          .ecosol-services-grid-scope .section-title {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 900;
+            color: var(--color-logo-navy);
             line-height: 1.1;
             margin: 0;
             text-transform: uppercase;
+            letter-spacing: -1px;
           }
 
-          .services-grid {
+          .ecosol-services-grid-scope .services-grid {
+            max-width: 1300px;
+            margin: 0 auto;
             display: grid;
-            /* Changed minmax to be more fluid for mobile */
-            grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
-            gap: 30px;
-            padding: 0 20px;
+            /* Strict 3-column layout for desktop */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            padding: 0 40px;
           }
 
-          .service-card {
-            background: #ffffff;
+          .ecosol-services-grid-scope .service-card {
+            background: var(--color-bg-white);
             text-decoration: none;
-            border: 1px solid #e2e8f0;
             display: flex;
             flex-direction: column;
             transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
             position: relative;
-            overflow: hidden;
-            width: 100%; /* Ensures full width alignment */
+            border: 1px solid var(--color-bg-light-grey);
+            border-radius: 2px;
           }
 
-          .card-image-wrapper {
+          .ecosol-services-grid-scope .card-image-wrapper {
             width: 100%;
-            height: 220px;
+            height: 200px;
             overflow: hidden;
-            background: var(--color-primary);
-            position: relative;
+            background: var(--color-logo-navy);
+            padding: 10px; /* Inset frame effect */
           }
 
-          .card-image {
+          .ecosol-services-grid-scope .card-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%) contrast(1.1);
-            opacity: 0.8;
-            transition: all 0.6s ease;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.7s ease;
           }
 
-          .service-card:hover .card-image {
-            filter: grayscale(0%) contrast(1);
+          .ecosol-services-grid-scope .service-card:hover .card-image {
+            filter: grayscale(0%);
             opacity: 1;
-            transform: scale(1.05);
           }
 
-          .card-content {
-            padding: 30px; /* Slightly reduced for better mobile fit */
+          .ecosol-services-grid-scope .card-content {
+            padding: 35px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            background: #ffffff;
           }
 
-          .service-card::before {
-            content: '';
-            position: absolute;
-            top: -1px; left: -1px; right: -1px; bottom: -1px;
-            border: 2px solid var(--color-accent-green);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 10;
-            clip-path: inset(0 100% 100% 0);
-          }
-
-          .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 102, 0.08);
-            border-color: transparent;
-          }
-
-          .service-card:hover::before {
-            opacity: 1;
-            clip-path: inset(0 0 0 0);
-          }
-
-          .srv-title {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--color-primary);
-            line-height: 1.3;
-            margin-bottom: 12px;
+          .ecosol-services-grid-scope .srv-title {
+            font-size: 19px;
+            font-weight: 900;
+            color: var(--color-logo-navy);
+            line-height: 1.2;
+            margin-bottom: 15px;
             text-transform: uppercase;
-            transition: color 0.3s ease;
+            letter-spacing: -0.5px;
           }
 
-          .service-card:hover .srv-title {
-            color: var(--color-accent-green);
+          .ecosol-services-grid-scope .srv-desc {
+            font-size: 15px;
+            color: var(--color-text-main);
+            line-height: 1.7;
+            margin-bottom: 30px;
+            opacity: 0.85;
           }
 
-          .srv-desc {
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.6;
-            margin-bottom: 20px;
+          /* --- Removed Hover Border Accent --- */
+          .ecosol-services-grid-scope .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(11, 17, 32, 0.08);
+            /* Border remains original color on hover */
+            border-color: var(--color-bg-light-grey); 
           }
 
-          .learn-more {
+          .ecosol-services-grid-scope .learn-more {
             margin-top: auto;
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--color-primary);
+            font-size: 10px;
+            font-weight: 800;
+            color: var(--color-electric-blue);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             display: flex;
             align-items: center;
             gap: 10px;
           }
 
+          @media (max-width: 1024px) {
+            .ecosol-services-grid-scope .services-grid { 
+               grid-template-columns: repeat(2, 1fr);
+               gap: 30px;
+            }
+          }
+
           @media (max-width: 768px) {
-            .services-section { padding: 60px 0; }
-            .section-header { text-align: center; margin-bottom: 40px; }
-            .card-image-wrapper { height: 180px; }
-            .services-grid { gap: 20px; }
-            .card-content { padding: 25px; }
+            .ecosol-services-grid-scope { padding: 80px 0; }
+            .ecosol-services-grid-scope .services-grid { 
+               grid-template-columns: 1fr;
+               padding: 0 24px;
+            }
+            .ecosol-services-grid-scope .section-header { padding: 0 24px; margin-bottom: 50px; }
           }
         `}
       </style>
 
-      <section className="services-section">
+      <section className="ecosol-services-grid-scope">
         <div className="container">
           <header className="section-header">
             <span className="section-label">Service Portfolio</span>
-            <h2 className="section-title">
-              Specialized <br />
-              <span style={{ color: "var(--color-accent-green)" }}>
-                Engineering
-              </span>{" "}
-              Solutions
-            </h2>
+            <h2 className="section-title">Specialized Engineering Solutions</h2>
           </header>
 
           <div className="services-grid">
@@ -233,13 +223,14 @@ function ServicesGrid() {
                     src={service.image}
                     alt={service.title}
                     className="card-image"
+                    loading="lazy"
                   />
                 </div>
                 <div className="card-content">
                   <h3 className="srv-title">{service.title}</h3>
                   <p className="srv-desc">{service.description}</p>
                   <div className="learn-more">
-                    Technical Specifications <span>→</span>
+                    Technical Specs <span>→</span>
                   </div>
                 </div>
               </Link>

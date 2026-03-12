@@ -10,17 +10,24 @@ function ServiceDetail() {
     return (
       <div
         style={{
-          padding: "100px 24px",
+          padding: "120px 24px",
           textAlign: "center",
           fontFamily: "var(--font-primary)",
+          backgroundColor: "var(--color-bg-white)",
         }}
       >
-        <h2 style={{ color: "var(--color-primary)", fontWeight: 900 }}>
-          SPECIFICATION_NOT_FOUND
+        <h2
+          style={{
+            color: "var(--color-logo-navy)",
+            fontWeight: 900,
+            fontSize: "42px",
+          }}
+        >
+          404: MODULE_NOT_FOUND
         </h2>
-        <p>
-          The requested service module could not be located in the 2026
-          database.
+        <p style={{ color: "var(--color-steel-grey)" }}>
+          The requested engineering module could not be located in the current
+          project database.
         </p>
       </div>
     );
@@ -30,24 +37,18 @@ function ServiceDetail() {
     const images = {
       "power-system-analysis":
         "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1600",
-
       "electromagnetic-analysis":
         "https://images.unsplash.com/photo-1581092162384-8987c1d64718?q=80&w=1600",
-
       "grounding-analysis":
         "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600",
-
       "engineering-software-capabilities":
         "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600",
-
       "detail-design-engineering":
-        "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=1600",
-
+        "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1600",
       "procurement-assistance":
         "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=1600",
-
       "third-party-inspection":
-        "https://images.unsplash.com/photo-1541913053121-31f82cb527b9?q=80&w=1600",
+        "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1600",
     };
     return (
       images[slug] ||
@@ -61,180 +62,189 @@ function ServiceDetail() {
     <>
       <style>
         {`
-          :root {
-            --color-primary: #000066; 
-            --color-accent-green: #449e1d; 
-            --color-logo-blue: #1a5fb4; 
-            --color-bg: #f9fafb;
-            --color-white: #ffffff;
-            --font-primary: "Inter", system-ui, sans-serif;
-          }
-
-          .service-page-wrapper {
-            background-color: var(--color-white);
+          .ecosol-detail-scope {
+            background-color: var(--color-bg-white);
             font-family: var(--font-primary);
-            color: var(--color-primary);
-            overflow-x: hidden;
+            color: var(--color-logo-navy);
           }
 
-          .container-tight {
-            max-width: 1100px;
+          .ecosol-detail-scope .container-tight {
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 40px;
             position: relative;
             z-index: 5;
           }
 
-          /* --- LOW TONE HERO (80% SCREEN) --- */
-          .hero-split-section {
+          /* --- ENGINEERING HERO --- */
+          .ecosol-detail-scope .hero-split-section {
             position: relative;
-            height: 80vh;
-            min-height: 600px;
+            height: 70vh;
+            min-height: 550px;
             background-image: url('${heroImage}');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             display: flex;
             align-items: center;
+            overflow: hidden;
           }
 
-          /* Subtle light overlay to make Navy text pop */
-          .hero-split-section::before {
+          /* Technical Grid Overlay */
+          .ecosol-detail-scope .hero-split-section::after {
             content: '';
             position: absolute;
             inset: 0;
+            background-image: 
+              linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 2;
+          }
+
+          .ecosol-detail-scope .hero-overlay {
+            position: absolute;
+            inset: 0;
             background: linear-gradient(90deg, 
-              rgba(249, 250, 251, 0.96) 0%, 
-              rgba(249, 250, 251, 0.8) 40%, 
-              rgba(249, 250, 251, 0.1) 100%);
+              rgba(11, 17, 32, 0.98) 0%, 
+              rgba(11, 17, 32, 0.85) 40%, 
+              rgba(11, 17, 32, 0.2) 100%);
             z-index: 1;
           }
 
-          .hero-info-text {
-            max-width: 800px;
-            z-index: 3;
+          .ecosol-detail-scope .hero-info-text {
+            max-width: 850px;
+            z-index: 10;
+            position: relative;
           }
 
-          .hero-title-main {
-            font-size: clamp(38px, 7vw, 75px);
-            font-weight: 800;
-            line-height: 1;
+          .ecosol-detail-scope .hero-title-main {
+            font-size: clamp(38px, 6vw, 68px);
+            font-weight: 900;
+            line-height: 1.05;
             letter-spacing: -3px;
             margin: 20px 0;
-            color: var(--color-primary);
+            color: #ffffff;
             text-transform: uppercase;
           }
 
-          .hero-description {
-            font-size: 21px;
-            line-height: 1.6;
-            color: #334155;
-            border-left: 5px solid var(--color-accent-green);
+          .ecosol-detail-scope .hero-description {
+            font-size: 20px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+            border-left: 4px solid var(--color-electric-blue);
             padding-left: 30px;
             max-width: 650px;
           }
 
           /* --- DATA STRIPS --- */
-          .data-strip {
+          .ecosol-detail-scope .data-strip {
             padding: 100px 0;
             position: relative;
-            border-bottom: 1px solid #edf2f7;
+            border-bottom: 1px solid var(--color-bg-light-grey);
+            background-image: radial-gradient(var(--color-bg-light-grey) 1px, transparent 1px);
+            background-size: 40px 40px;
           }
 
-          .strip-muted { background: var(--color-bg); }
+          .ecosol-detail-scope .strip-muted { background: #fcfdfe; }
 
-          .layout-grid-compact {
+          .ecosol-detail-scope .layout-grid-compact {
             display: grid;
-            grid-template-columns: 280px 1fr;
+            grid-template-columns: 300px 1fr;
             gap: 60px;
           }
 
-          .sidebar-label-bold {
-            font-size: 13px;
+          .ecosol-detail-scope .sidebar-label-bold {
+            font-size: 11px;
             font-weight: 800;
-            color: var(--color-accent-green);
+            color: var(--color-electric-blue);
             text-transform: uppercase;
             letter-spacing: 4px;
             position: sticky;
-            top: 100px;
+            top: 120px;
             height: fit-content;
           }
 
-          .text-content-rich {
-            font-size: 22px;
+          .ecosol-detail-scope .text-content-rich {
+            font-size: 20px;
             line-height: 1.8;
-            color: #1a202c;
+            color: var(--color-text-main);
+            font-weight: 400;
           }
 
           /* --- CARDS --- */
-          .card-grid-tight {
+          .ecosol-detail-scope .card-grid-tight {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            gap: 25px;
           }
 
-          .minimal-data-card {
-            background: var(--color-white);
-            padding: 40px;
-            border-top: 4px solid var(--color-logo-blue);
-            box-shadow: 0 10px 30px rgba(0, 0, 102, 0.04);
-            transition: all 0.3s ease;
+          .ecosol-detail-scope .minimal-data-card {
+            background: #ffffff;
+            padding: 45px;
+            border: 1px solid var(--color-bg-light-grey);
+            border-top: 4px solid var(--color-logo-navy);
+            transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+            position: relative;
           }
 
-          .minimal-data-card:hover {
-            transform: translateY(-5px);
-            border-top-color: var(--color-accent-green);
+          .ecosol-detail-scope .minimal-data-card:hover {
+            transform: translateY(-8px);
+            border-top-color: var(--color-electric-blue);
+            box-shadow: 0 20px 40px rgba(11, 17, 32, 0.06);
           }
 
-          .tag-industrial-heavy {
+          .ecosol-detail-scope .tag-industrial-heavy {
             padding: 12px 20px;
-            background: var(--color-primary);
-            color: var(--color-white);
+            background: var(--color-logo-navy);
+            color: #ffffff;
             font-size: 11px;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin: 0 12px 12px 0;
+            margin: 0 10px 10px 0;
             display: inline-block;
+            border-radius: 2px;
           }
 
-          .background-num-watermark {
+          .ecosol-detail-scope .background-num-watermark {
             position: absolute;
-            font-size: 250px;
+            font-size: 220px;
             font-weight: 900;
-            color: rgba(0, 0, 102, 0.03);
+            color: rgba(11, 17, 32, 0.03);
             right: 40px;
-            bottom: -20px;
+            bottom: -10px;
             pointer-events: none;
             line-height: 1;
           }
 
-          /* --- MOBILE --- */
           @media (max-width: 900px) {
-            .hero-split-section { height: 65vh; text-align: center; background-attachment: scroll; }
-            .hero-split-section::before { background: rgba(249, 250, 251, 0.92); }
-            .hero-description { border-left: none; padding-left: 0; margin: 0 auto; font-size: 18px; }
-            .layout-grid-compact { grid-template-columns: 1fr; gap: 30px; }
-            .sidebar-label-bold { position: static; margin-bottom: 10px; }
-            .container-tight { padding: 0 24px; }
+            .ecosol-detail-scope .hero-split-section { height: 60vh; background-attachment: scroll; }
+            .ecosol-detail-scope .hero-overlay { background: rgba(11, 17, 32, 0.92); }
+            .ecosol-detail-scope .hero-description { border-left-width: 3px; padding-left: 20px; font-size: 17px; }
+            .ecosol-detail-scope .layout-grid-compact { grid-template-columns: 1fr; gap: 30px; }
+            .ecosol-detail-scope .sidebar-label-bold { position: static; margin-bottom: 10px; }
+            .ecosol-detail-scope .container-tight { padding: 0 24px; }
+            .ecosol-detail-scope .data-strip { padding: 70px 0; }
           }
         `}
       </style>
 
-      <div className="service-page-wrapper">
+      <div className="ecosol-detail-scope">
         {/* HERO SECTION */}
         <header className="hero-split-section">
+          <div className="hero-overlay" />
           <div className="container-tight">
             <div className="hero-info-text">
               <span
                 style={{
-                  color: "var(--color-accent-green)",
+                  color: "var(--color-electric-blue)",
                   fontWeight: 800,
-                  letterSpacing: "4px",
-                  fontSize: "12px",
+                  letterSpacing: "5px",
+                  fontSize: "11px",
                 }}
               >
-                CORE SERVICE MODULE
+                TECHNICAL SPECIFICATION // 2026
               </span>
               <h1 className="hero-title-main">{service.title}</h1>
               <p className="hero-description">{service.heroText}</p>
@@ -247,7 +257,7 @@ function ServiceDetail() {
           <div className="background-num-watermark">01</div>
           <div className="container-tight">
             <div className="layout-grid-compact">
-              <div className="sidebar-label-bold">Executive Overview</div>
+              <div className="sidebar-label-bold">Consultancy Overview</div>
               <p className="text-content-rich">{service.overview}</p>
             </div>
           </div>
@@ -258,23 +268,30 @@ function ServiceDetail() {
           <div className="background-num-watermark">02</div>
           <div className="container-tight">
             <div className="layout-grid-compact">
-              <div className="sidebar-label-bold">Operational Scope</div>
+              <div className="sidebar-label-bold">Service Scope</div>
               <div className="card-grid-tight">
                 {service.scope.map((item, i) => (
                   <div key={i} className="minimal-data-card">
                     <span
                       style={{
-                        fontSize: "10px",
-                        color: "var(--color-logo-blue)",
+                        fontSize: "9px",
+                        color: "var(--color-electric-blue)",
                         fontWeight: 800,
                         display: "block",
-                        marginBottom: "12px",
+                        marginBottom: "15px",
+                        letterSpacing: "1px",
                       }}
                     >
-                      MODULE_PROTOCOL_{i + 1}
+                      PROTOCOL_MD_{i + 1}
                     </span>
                     <h3
-                      style={{ fontSize: "20px", fontWeight: 700, margin: 0 }}
+                      style={{
+                        fontSize: "19px",
+                        fontWeight: 900,
+                        margin: 0,
+                        textTransform: "uppercase",
+                        letterSpacing: "-0.5px",
+                      }}
                     >
                       {item}
                     </h3>
@@ -294,9 +311,11 @@ function ServiceDetail() {
               <div>
                 <h4
                   style={{
-                    fontSize: "14px",
-                    color: "#64748b",
-                    marginBottom: "15px",
+                    fontSize: "11px",
+                    color: "var(--color-steel-grey)",
+                    marginBottom: "20px",
+                    fontWeight: 800,
+                    letterSpacing: "2px",
                   }}
                 >
                   ENGINEERING TOOLSET
@@ -308,10 +327,12 @@ function ServiceDetail() {
                 ))}
                 <h4
                   style={{
-                    fontSize: "14px",
-                    color: "#64748b",
-                    marginTop: "30px",
-                    marginBottom: "15px",
+                    fontSize: "11px",
+                    color: "var(--color-steel-grey)",
+                    marginTop: "40px",
+                    marginBottom: "20px",
+                    fontWeight: 800,
+                    letterSpacing: "2px",
                   }}
                 >
                   REGULATORY STANDARDS
@@ -320,7 +341,7 @@ function ServiceDetail() {
                   <span
                     key={i}
                     className="tag-industrial-heavy"
-                    style={{ background: "var(--color-logo-blue)" }}
+                    style={{ background: "var(--color-electric-blue)" }}
                   >
                     {item}
                   </span>
@@ -338,42 +359,43 @@ function ServiceDetail() {
           <div className="background-num-watermark">04</div>
           <div className="container-tight">
             <div className="layout-grid-compact">
-              <div className="sidebar-label-bold">Verified Deliverables</div>
+              <div className="sidebar-label-bold">Verified Outputs</div>
               <div className="card-grid-tight">
                 {service.deliverables.map((item, i) => (
                   <div
                     key={i}
                     className="minimal-data-card"
-                    style={{ borderTopColor: "var(--color-accent-green)" }}
+                    style={{ borderTopColor: "var(--color-electric-blue)" }}
                   >
                     <h3
                       style={{
-                        fontSize: "18px",
-                        fontWeight: 700,
-                        marginBottom: "15px",
+                        fontSize: "17px",
+                        fontWeight: 900,
+                        marginBottom: "20px",
+                        textTransform: "uppercase",
                       }}
                     >
                       {item}
                     </h3>
                     <div
                       style={{
-                        color: "var(--color-accent-green)",
+                        color: "var(--color-electric-blue)",
                         fontWeight: 800,
-                        fontSize: "11px",
+                        fontSize: "10px",
                         display: "flex",
                         alignItems: "center",
-                        gap: "8px",
+                        gap: "10px",
+                        letterSpacing: "1px",
                       }}
                     >
                       <span
                         style={{
-                          width: "8px",
-                          height: "8px",
-                          background: "var(--color-accent-green)",
-                          borderRadius: "2px",
+                          width: "12px",
+                          height: "2px",
+                          background: "var(--color-electric-blue)",
                         }}
                       ></span>
-                      CERTIFIED_OUTPUT
+                      CERTIFIED_DELIVERABLE
                     </div>
                   </div>
                 ))}

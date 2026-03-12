@@ -9,113 +9,261 @@ function Footer() {
     <>
       <style>
         {`
+          .ecosol-footer-scope {
+            background-color: var(--color-deep-blue);
+            color: var(--color-bg-white);
+            padding: 100px 0 40px 0;
+            
+            /* --- GLOWING TOP BORDER --- */
+            /* Using electric blue with a box shadow to create the 'glow' */
+            border-top: 2px solid var(--color-electric-blue);
+            box-shadow: 0 -10px 20px rgba(14, 165, 233, 0.15); 
+            
+            font-family: var(--font-primary);
+            position: relative;
+          }
+
+          /* Optional: Adds a very subtle light beam at the very top */
+          .ecosol-footer-scope::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-electric-blue), transparent);
+            filter: blur(2px);
+          }
+
+          .ecosol-footer-scope .footer-container {
+            max-width: var(--container-width, 1400px);
+            margin: 0 auto;
+            padding: 0 40px;
+          }
+
+          .ecosol-footer-scope .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+            padding-bottom: 60px;
+          }
+
+          .ecosol-footer-scope .footer-brand {
+            flex: 1 1 300px;
+          }
+
+          .ecosol-footer-scope .footer-logo {
+            height: 60px;
+            width: auto;
+            display: block;
+            margin-bottom: 25px;
+          }
+
+          .ecosol-footer-scope .footer-desc {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--color-steel-grey);
+            max-width: 360px;
+          }
+
+          .ecosol-footer-scope .column-title {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            color: var(--color-electric-blue);
+          }
+
+          .ecosol-footer-scope .nav-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+          }
+
+          .ecosol-footer-scope .footer-link {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: all 0.3s ease;
+          }
+
+          .ecosol-footer-scope .footer-link:hover {
+            color: var(--color-bg-white);
+            transform: translateX(5px);
+          }
+
+          .ecosol-footer-scope .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+          }
+
+          .ecosol-footer-scope .contact-item {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+          }
+
+          .ecosol-footer-scope .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+          }
+
+          .ecosol-footer-scope .copyright {
+            font-size: 13px;
+            color: var(--color-steel-grey);
+          }
+
+          .ecosol-footer-scope .legal-links {
+            display: flex;
+            gap: 20px;
+          }
+
           @media (max-width: 768px) {
-            .footer-top {
-              flex-direction: column !important;
-              align-items: center !important;
-              text-align: center !important;
-              gap: 40px !important;
+            .ecosol-footer-scope {
+              padding: 60px 0 30px 0;
             }
-            .footer-brand {
-              display: flex !important;
-              flex-direction: column !important;
-              align-items: center !important;
-              flex: 1 1 auto !important;
+
+            .ecosol-footer-scope .footer-top {
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+              gap: 40px;
             }
-            .footer-links {
-              align-items: center !important;
-              width: 100% !important;
+
+            .ecosol-footer-scope .footer-brand {
+              flex: 1 1 auto;
+              width: 100%;
             }
-            .footer-bottom {
-              flex-direction: column !important;
-              text-align: center !important;
+
+            .ecosol-footer-scope .footer-logo {
+              margin: 0 auto 20px;
+            }
+
+            .ecosol-footer-scope .footer-desc {
+              margin: 0 auto;
+            }
+
+            .ecosol-footer-scope .contact-item {
+              justify-content: center;
+              text-align: left;
+            }
+
+            .ecosol-footer-scope .footer-bottom {
+              flex-direction: column;
+              text-align: center;
+              padding-top: 25px;
+            }
+
+            .ecosol-footer-scope .legal-links {
+              justify-content: center;
             }
           }
         `}
       </style>
 
-      <footer style={styles.footer}>
-        <div style={styles.container}>
-          {/* Main Footer Content */}
-          <div style={styles.topSection} className="footer-top">
-            {/* Brand & Logo Column */}
-            <div style={styles.brandColumn} className="footer-brand">
-              <div style={styles.logoWrapper}>
-                <img
-                  src={footerLogo}
-                  alt="Ecosol Projects"
-                  style={styles.logoImage}
-                />
-              </div>
-              <p style={styles.description}>
-                Leading the transition to sustainable energy through precision
-                engineering and global consultancy expertise.
+      <footer className="ecosol-footer-scope">
+        <div className="footer-container">
+          <div className="footer-top">
+            {/* Column 1: Brand */}
+            <div className="footer-brand">
+              <img
+                src={footerLogo}
+                alt="Ecosol Projects"
+                className="footer-logo"
+              />
+              <p className="footer-desc">
+                Specialized electrical engineering consultancy providing
+                advanced power system studies, grounding design, and
+                infrastructure solutions for global utility and industrial
+                sectors.
               </p>
             </div>
 
-            {/* Quick Links */}
-            <div style={styles.linkColumn} className="footer-links">
-              <h4 style={styles.columnTitle}>Company</h4>
-              <nav style={styles.navStack}>
-                <NavLink to="/about" style={styles.footerLink}>
-                  About Us
+            {/* Column 2: Consultancy Links */}
+            <div style={{ flex: "1 1 150px" }}>
+              <h4 className="column-title">Consultancy</h4>
+              <nav className="nav-stack">
+                <NavLink to="/about" className="footer-link">
+                  About Ecosol
                 </NavLink>
-                <NavLink to="/projects" style={styles.footerLink}>
-                  Our Projects
+                <NavLink to="/projects" className="footer-link">
+                  Project Portfolio
                 </NavLink>
-                <NavLink to="/careers" style={styles.footerLink}>
+                <NavLink to="/careers" className="footer-link">
                   Careers
                 </NavLink>
-                <NavLink to="/contact" style={styles.footerLink}>
+                <NavLink to="/contact" className="footer-link">
                   Contact
                 </NavLink>
               </nav>
             </div>
 
-            {/* Services */}
-            <div style={styles.linkColumn} className="footer-links">
-              <h4 style={styles.columnTitle}>Services</h4>
-              <nav style={styles.navStack}>
-                <NavLink to="/services" style={styles.footerLink}>
-                  Power Engineering
+            {/* Column 3: Expertise Links */}
+            <div style={{ flex: "1 1 180px" }}>
+              <h4 className="column-title">Expertise</h4>
+              <nav className="nav-stack">
+                <NavLink to="/services" className="footer-link">
+                  Power System Studies
                 </NavLink>
-                <NavLink to="/services" style={styles.footerLink}>
-                  Technical Audit
+                <NavLink to="/services" className="footer-link">
+                  Grounding Engineering
                 </NavLink>
-                <NavLink to="/services" style={styles.footerLink}>
-                  Consultancy
+                <NavLink to="/services" className="footer-link">
+                  Electrical Detail Design
                 </NavLink>
-                <NavLink to="/services" style={styles.footerLink}>
-                  Renewables
+                <NavLink to="/services" className="footer-link">
+                  Technical Advisory
                 </NavLink>
               </nav>
             </div>
 
-            {/* Contact Details */}
-            <div style={styles.linkColumn} className="footer-links">
-              <h4 style={styles.columnTitle}>Get in Touch</h4>
-              <div style={styles.contactInfo}>
-                <p style={styles.contactItem}>📧 info@ecosolprojects.com</p>
-                <p style={styles.contactItem}>📞 +91 90048 17084</p>
-                <p style={styles.contactItem}>
-                  📍 523, Omaxe City – 1 Mayakhedi, Indore – 453771 Madhya
-                  Pradesh, India
-                </p>
+            {/* Column 4: Contact info */}
+            <div style={{ flex: "1 1 250px" }}>
+              <h4 className="column-title">Global Office</h4>
+              <div className="contact-info">
+                <div className="contact-item">
+                  <span>✉️</span> info@ecosolprojects.com
+                </div>
+                <div className="contact-item">
+                  <span>📞</span> +91 90048 17084
+                </div>
+                <div className="contact-item">
+                  <span>📍</span> 523, Omaxe City – 1 Mayakhedi, Indore – 453771
+                  India
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Copyright & Legal */}
-          <div style={styles.bottomSection} className="footer-bottom">
-            <p style={styles.copyright}>
-              © {currentYear} Ecosol Projects Pvt. Ltd. All Rights Reserved.
+          <div className="footer-bottom">
+            <p className="copyright">
+              © {currentYear} Ecosol Projects Pvt. Ltd. | Power Engineering &
+              Consultancy
             </p>
-            <div style={styles.legalLinks}>
-              <NavLink to="/privacy" style={styles.legalLink}>
+            <div className="legal-links">
+              <NavLink
+                to="/privacy"
+                className="footer-link"
+                style={{ fontSize: "13px" }}
+              >
                 Privacy Policy
               </NavLink>
-              <span style={styles.divider}>|</span>
-              <NavLink to="/terms" style={styles.legalLink}>
+              <NavLink
+                to="/terms"
+                className="footer-link"
+                style={{ fontSize: "13px" }}
+              >
                 Terms of Service
               </NavLink>
             </div>
@@ -125,102 +273,5 @@ function Footer() {
     </>
   );
 }
-
-const styles = {
-  footer: {
-    backgroundColor: "#0f172a",
-    color: "#fff",
-    padding: "80px 0 40px 0",
-    borderTop: "6px solid #10b981",
-  },
-  container: {
-    maxWidth: "1200px",
-    margin: "0 auto",
-    padding: "0 40px",
-  },
-  topSection: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "50px",
-    justifyContent: "space-between",
-    paddingBottom: "60px",
-  },
-  brandColumn: {
-    flex: "1 1 350px",
-  },
-  logoWrapper: {
-    marginBottom: "25px",
-  },
-  logoImage: {
-    height: "80px",
-    width: "auto",
-    display: "block",
-  },
-  description: {
-    fontSize: "16px",
-    lineHeight: "1.7",
-    color: "rgba(255, 255, 255, 0.8)",
-    maxWidth: "340px",
-  },
-  linkColumn: {
-    flex: "1 1 180px",
-    display: "flex",
-    flexDirection: "column",
-  },
-  columnTitle: {
-    fontSize: "14px",
-    fontWeight: "800",
-    textTransform: "uppercase",
-    letterSpacing: "2px",
-    marginBottom: "30px",
-    color: "#10b981",
-  },
-  navStack: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "15px",
-  },
-  footerLink: {
-    fontSize: "15px",
-    color: "rgba(255, 255, 255, 0.7)",
-    textDecoration: "none",
-    transition: "color 0.3s ease",
-  },
-  contactInfo: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "15px",
-  },
-  contactItem: {
-    fontSize: "15px",
-    color: "rgba(255, 255, 255, 0.7)",
-  },
-  bottomSection: {
-    paddingTop: "30px",
-    borderTop: "1px solid rgba(255, 255, 255, 0.1)",
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    alignItems: "center",
-    gap: "20px",
-  },
-  copyright: {
-    fontSize: "13px",
-    color: "rgba(255, 255, 255, 0.5)",
-  },
-  legalLinks: {
-    display: "flex",
-    alignItems: "center",
-    gap: "15px",
-  },
-  legalLink: {
-    fontSize: "13px",
-    color: "rgba(255, 255, 255, 0.5)",
-    textDecoration: "none",
-  },
-  divider: {
-    color: "rgba(255, 255, 255, 0.2)",
-  },
-};
 
 export default Footer;

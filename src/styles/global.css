@@ -9,23 +9,23 @@
 html {
   scroll-behavior: smooth;
 }
-/* Update your global.css */
 
 #root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Takes full height of the browser */
+  min-height: 100vh;
 }
 
 main {
-  flex: 1; /* This pushes the footer to the bottom by taking all available space */
+  flex: 1;
 }
 
 body {
-  /* Using the navy primary color for better text contrast on enterprise sites */
   font-family: var(--font-primary);
-  background-color: var(--color-bg);
-  color: #1a1a1a;
+  /* Defaulting to white for that clean, enterprise consultancy look */
+  background-color: var(--color-bg-white);
+  /* Using dark steel instead of #1a1a1a for a technical aesthetic */
+  color: var(--color-text-main);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,7 +39,8 @@ a {
 }
 
 a:hover {
-  color: var(--color-accent-green);
+  /* Swapped from accent-green to logo-blue to remove the sustainability feel */
+  color: var(--color-logo-blue);
 }
 
 /* Image Handling */
@@ -63,7 +64,8 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--color-primary);
+  /* Using the logo navy for headings establishes strong corporate branding */
+  color: var(--color-logo-navy);
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -72,6 +74,7 @@ h6 {
 
 /* Selection color matching the brand */
 ::selection {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  /* Using logo blue instead of navy so text remains readable when highlighted */
+  background-color: var(--color-logo-blue);
+  color: var(--color-bg-white);
 }

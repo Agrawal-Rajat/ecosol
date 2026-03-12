@@ -6,129 +6,145 @@ function ServicesCTA() {
     <>
       <style>
         {`
-          .cta-section {
-            background-color: #ffffff;
-            padding: 100px 0;
+          .ecosol-services-cta-scope {
+            background-color: var(--color-bg-white);
+            padding: 80px 0 120px 0;
             position: relative;
-            /* Faint dotted grid to keep the technical feel without the heavy navy */
-            background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
-            background-size: 30px 30px;
+            /* Technical Blueprint Texture */
+            background-image: radial-gradient(var(--color-bg-light-grey) 1.2px, transparent 1.2px);
+            background-size: 40px 40px;
+            font-family: var(--font-primary);
           }
 
-          .cta-wrapper {
+          .ecosol-services-cta-scope .cta-wrapper {
             max-width: 1100px;
             margin: 0 auto;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
+            background: var(--color-bg-white);
+            border: 1px solid var(--color-bg-light-grey);
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
+            grid-template-columns: 1.6fr 1fr;
             align-items: center;
             position: relative;
             z-index: 2;
-            box-shadow: 0 20px 50px rgba(0,0,68,0.05);
+            box-shadow: 20px 20px 0px var(--color-bg-light-grey);
+            border-radius: 2px;
           }
 
-          /* Contrast side-bar for technical info */
-          .cta-info-side {
+          /* --- Technical Info Section --- */
+          .ecosol-services-cta-scope .cta-info-side {
             padding: 60px;
-            border-right: 1px solid #e2e8f0;
+            border-right: 1px solid var(--color-bg-light-grey);
           }
 
-          .cta-action-side {
+          /* --- Action Section --- */
+          .ecosol-services-cta-scope .cta-action-side {
             padding: 60px;
-            background-color: var(--color-bg); /* Very light gray/blue */
+            background-color: var(--color-bg-light-grey); 
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            height: 100%;
+            justify-content: center;
           }
 
-          .cta-label {
-            font-family: 'Courier New', monospace;
+          .ecosol-services-cta-scope .cta-label {
             font-size: 11px;
-            font-weight: 700;
-            color: var(--color-accent-green);
+            font-weight: 800;
+            color: var(--color-electric-blue);
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             display: block;
             margin-bottom: 20px;
           }
 
-          .cta-heading {
-            font-size: 36px;
-            font-weight: 800;
-            color: var(--color-primary);
-            line-height: 1.2;
+          .ecosol-services-cta-scope .cta-heading {
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 900;
+            color: var(--color-logo-navy);
+            line-height: 1.1;
             text-transform: uppercase;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
             margin-bottom: 20px;
           }
 
-          .cta-text {
+          .ecosol-services-cta-scope .cta-heading span {
+            color: var(--color-electric-blue);
+          }
+
+          .ecosol-services-cta-scope .cta-text {
             font-size: 16px;
-            color: #64748b;
+            color: var(--color-text-main);
             line-height: 1.7;
             margin: 0;
           }
 
-          .cta-button {
+          .ecosol-services-cta-scope .cta-button {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 16px 32px;
-            background-color: var(--color-primary);
-            color: #ffffff;
-            font-size: 13px;
-            font-weight: 700;
+            gap: 15px;
+            padding: 20px 40px;
+            background-color: var(--color-logo-navy);
+            color: #ffffff !important;
+            font-size: 12px;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 2px;
             text-decoration: none;
-            transition: all 0.3s ease;
-            border: 1px solid var(--color-primary);
+            transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+            border-radius: 2px;
           }
 
-          .cta-button:hover {
-            background-color: var(--color-accent-green);
-            border-color: var(--color-accent-green);
-            transform: translateY(-3px);
+          .ecosol-services-cta-scope .cta-button:hover {
+            background-color: var(--color-logo-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(11, 17, 32, 0.2);
           }
 
-          .cta-sub-note {
-            margin-top: 15px;
-            font-size: 12px;
-            color: #94a3b8;
-            font-weight: 500;
+          .ecosol-services-cta-scope .cta-button span {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+          }
+
+          .ecosol-services-cta-scope .cta-button:hover span {
+            transform: translateX(5px);
+          }
+
+          .ecosol-services-cta-scope .cta-sub-note {
+            margin-top: 20px;
+            font-size: 11px;
+            color: var(--color-steel-grey);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
           }
 
           @media (max-width: 992px) {
-            .cta-wrapper { grid-template-columns: 1fr; }
-            .cta-info-side { border-right: none; border-bottom: 1px solid #e2e8f0; padding: 40px; }
-            .cta-action-side { padding: 40px; }
+            .ecosol-services-cta-scope .cta-wrapper { grid-template-columns: 1fr; box-shadow: 10px 10px 0px var(--color-bg-light-grey); }
+            .ecosol-services-cta-scope .cta-info-side { border-right: none; border-bottom: 1px solid var(--color-bg-light-grey); padding: 45px 30px; }
+            .ecosol-services-cta-scope .cta-action-side { padding: 45px 30px; }
           }
 
           @media (max-width: 768px) {
-            .cta-section { padding: 60px 20px; }
-            .cta-heading { font-size: 28px; }
+            .ecosol-services-cta-scope { padding: 60px 24px; }
+            .ecosol-services-cta-scope .cta-heading { font-size: 32px; }
+            .ecosol-services-cta-scope .cta-button { width: 100%; justify-content: center; }
           }
         `}
       </style>
 
-      <section className="cta-section">
+      <section className="ecosol-services-cta-scope">
         <div className="container">
           <div className="cta-wrapper">
             <div className="cta-info-side">
-              {/* <span className="cta-label">03 // Project Consultation</span> */}
+              <span className="cta-label">Project Integration</span>
               <h2 className="cta-heading">
-                Discuss Your <br />
-                <span style={{ color: "var(--color-accent-green)" }}>
-                  Engineering
-                </span>{" "}
-                Scope
+                Define Your Technical <span>Scope.</span>
               </h2>
               <p className="cta-text">
-                Engage with our engineering team to evaluate your project
-                requirements and define a technically sound, standards-compliant
-                solution for your critical infrastructure.
+                Engage with our lead technical consultants to evaluate your
+                infrastructure requirements and define a standards-compliant
+                framework for your next engineering milestone.
               </p>
             </div>
 
@@ -136,7 +152,9 @@ function ServicesCTA() {
               <Link to="/contact" className="cta-button">
                 Get Started <span>→</span>
               </Link>
-              <p className="cta-sub-note">Available for global consultancy</p>
+              <p className="cta-sub-note">
+                Global Consultancy Support Available
+              </p>
             </div>
           </div>
         </div>
