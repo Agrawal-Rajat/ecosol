@@ -9,35 +9,32 @@ function CoreServices() {
       image:
         "https://www.jeftechno.com/assets/images/blog/Power-System%20Studies.jpg",
       description:
-        "Advanced network modelling, short-circuit studies, load flow analysis, and system stability assessment.",
-      tags: ["ETAP", "DIgSILENT"],
+        "Advanced Electrical studies using industry-standard computational modeling.",
+      tags: ["Load Flow", "Short Circuit"],
     },
     {
       id: "02",
-      title: "Electromagnetic Analysis",
+      title: "Protection & Safety",
       image:
         "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800",
-      description:
-        "Electromagnetic interference studies, transmission line interaction analysis, and mitigation engineering.",
-      tags: ["CDEGS", "PSCAD"],
+      description: "Electrical Protection & Safety Assessment",
+      tags: ["Protection", "Safety"],
     },
     {
       id: "03",
-      title: "Grounding Engineering",
+      title: "Renewable Integration",
       image:
-        "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800",
-      description:
-        "Substation grounding design, step-touch voltage analysis, and grounding grid optimization.",
-      tags: ["IEEE 80", "IEC"],
+        "https://res.cloudinary.com/de0rdsbph/image/upload/q_auto/f_auto/v1776666629/0480cdc5-3a7a-4041-8ee0-c18c358a947e.png",
+      description: "Renewable Design Engineering",
+      tags: ["Solar PV", "Grid Integration"],
     },
     {
       id: "04",
-      title: "Electrical Detail Design",
+      title: "Substations & Grounding",
       image:
         "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=800",
-      description:
-        "Detailed engineering for substations, electrical infrastructure, and power distribution systems.",
-      tags: ["AUTOCAD", "INFRA"],
+      description: "Detail Design Engineering",
+      tags: ["Substations", "Earthing"],
     },
   ];
 

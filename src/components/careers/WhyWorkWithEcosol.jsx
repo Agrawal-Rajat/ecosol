@@ -35,7 +35,7 @@ function WhyWorkWithEcosol() {
         {`
           .ecosol-career-orbit {
             background-color: var(--color-bg-white);
-            padding: 100px 0;
+            padding: 100px 48px;
             display: flex;
             justify-content: center;
             overflow: hidden;
@@ -163,6 +163,19 @@ function WhyWorkWithEcosol() {
             line-height: 1.6;
           }
 
+          @media (min-width: 1101px) {
+            .ecosol-career-orbit {
+              padding-top: 150px;
+              padding-bottom: 120px;
+              overflow: visible;
+            }
+
+            .orbit-container {
+              height: 860px;
+              margin-top: 20px;
+            }
+          }
+
           @media (max-width: 1100px) {
             .orbit-container {
               height: auto;
@@ -184,6 +197,21 @@ function WhyWorkWithEcosol() {
               margin-bottom: 40px;
               width: 240px;
               height: 240px;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .ecosol-career-orbit {
+              padding: 80px 24px;
+            }
+
+            .orbit-container {
+              padding: 0 16px;
+            }
+
+            .orbit-hub {
+              width: 220px;
+              height: 220px;
             }
           }
         `}

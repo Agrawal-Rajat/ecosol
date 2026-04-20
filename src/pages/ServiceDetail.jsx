@@ -71,7 +71,7 @@ function ServiceDetail() {
           .ecosol-detail-scope .container-tight {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 32px;
             position: relative;
             z-index: 5;
           }
@@ -79,8 +79,8 @@ function ServiceDetail() {
           /* --- ENGINEERING HERO --- */
           .ecosol-detail-scope .hero-split-section {
             position: relative;
-            height: 70vh;
-            min-height: 550px;
+            height: 62vh;
+            min-height: 460px;
             background-image: url('${heroImage}');
             background-size: cover;
             background-position: center;
@@ -123,23 +123,23 @@ function ServiceDetail() {
             font-weight: 900;
             line-height: 1.05;
             letter-spacing: -3px;
-            margin: 20px 0;
+            margin: 12px 0;
             color: #ffffff;
             text-transform: uppercase;
           }
 
           .ecosol-detail-scope .hero-description {
-            font-size: 20px;
-            line-height: 1.7;
+            font-size: 18px;
+            line-height: 1.65;
             color: rgba(255, 255, 255, 0.8);
             border-left: 4px solid var(--color-electric-blue);
-            padding-left: 30px;
+            padding-left: 24px;
             max-width: 650px;
           }
 
           /* --- DATA STRIPS --- */
           .ecosol-detail-scope .data-strip {
-            padding: 100px 0;
+            padding: 64px 0;
             position: relative;
             border-bottom: 1px solid var(--color-bg-light-grey);
             background-image: radial-gradient(var(--color-bg-light-grey) 1px, transparent 1px);
@@ -151,7 +151,7 @@ function ServiceDetail() {
           .ecosol-detail-scope .layout-grid-compact {
             display: grid;
             grid-template-columns: 300px 1fr;
-            gap: 60px;
+            gap: 36px;
           }
 
           .ecosol-detail-scope .sidebar-label-bold {
@@ -161,13 +161,13 @@ function ServiceDetail() {
             text-transform: uppercase;
             letter-spacing: 4px;
             position: sticky;
-            top: 120px;
+            top: 96px;
             height: fit-content;
           }
 
           .ecosol-detail-scope .text-content-rich {
-            font-size: 20px;
-            line-height: 1.8;
+            font-size: 18px;
+            line-height: 1.7;
             color: var(--color-text-main);
             font-weight: 400;
           }
@@ -176,12 +176,12 @@ function ServiceDetail() {
           .ecosol-detail-scope .card-grid-tight {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            gap: 18px;
           }
 
           .ecosol-detail-scope .minimal-data-card {
             background: #ffffff;
-            padding: 45px;
+            padding: 30px;
             border: 1px solid var(--color-bg-light-grey);
             border-top: 4px solid var(--color-logo-navy);
             transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
@@ -195,21 +195,21 @@ function ServiceDetail() {
           }
 
           .ecosol-detail-scope .tag-industrial-heavy {
-            padding: 12px 20px;
+            padding: 10px 14px;
             background: var(--color-logo-navy);
             color: #ffffff;
             font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin: 0 10px 10px 0;
+            margin: 0 8px 8px 0;
             display: inline-block;
             border-radius: 2px;
           }
 
           .ecosol-detail-scope .background-num-watermark {
             position: absolute;
-            font-size: 220px;
+            font-size: 150px;
             font-weight: 900;
             color: rgba(11, 17, 32, 0.03);
             right: 40px;
@@ -222,10 +222,10 @@ function ServiceDetail() {
             .ecosol-detail-scope .hero-split-section { height: 60vh; background-attachment: scroll; }
             .ecosol-detail-scope .hero-overlay { background: rgba(11, 17, 32, 0.92); }
             .ecosol-detail-scope .hero-description { border-left-width: 3px; padding-left: 20px; font-size: 17px; }
-            .ecosol-detail-scope .layout-grid-compact { grid-template-columns: 1fr; gap: 30px; }
+            .ecosol-detail-scope .layout-grid-compact { grid-template-columns: 1fr; gap: 24px; }
             .ecosol-detail-scope .sidebar-label-bold { position: static; margin-bottom: 10px; }
             .ecosol-detail-scope .container-tight { padding: 0 24px; }
-            .ecosol-detail-scope .data-strip { padding: 70px 0; }
+            .ecosol-detail-scope .data-strip { padding: 52px 0; }
           }
         `}
       </style>
@@ -278,7 +278,7 @@ function ServiceDetail() {
                         color: "var(--color-electric-blue)",
                         fontWeight: 800,
                         display: "block",
-                        marginBottom: "15px",
+                        marginBottom: "10px",
                         letterSpacing: "1px",
                       }}
                     >
@@ -329,8 +329,8 @@ function ServiceDetail() {
                   style={{
                     fontSize: "11px",
                     color: "var(--color-steel-grey)",
-                    marginTop: "40px",
-                    marginBottom: "20px",
+                    marginTop: "24px",
+                    marginBottom: "14px",
                     fontWeight: 800,
                     letterSpacing: "2px",
                   }}
@@ -371,7 +371,7 @@ function ServiceDetail() {
                       style={{
                         fontSize: "17px",
                         fontWeight: 900,
-                        marginBottom: "20px",
+                        marginBottom: "14px",
                         textTransform: "uppercase",
                       }}
                     >

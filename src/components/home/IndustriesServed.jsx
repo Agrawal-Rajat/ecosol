@@ -23,17 +23,19 @@ function IndustriesServed() {
       code: "SEC_IND_03",
     },
     {
+      label: "EPC Companies",
+      desc: "Independent engineering advisory and technical consulting services supporting EPC contractors during project design, procurement, and technical evaluation phases.",
+      img: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&q=80&w=1200",
+      code: "SEC_EPC_04",
+    },
+    /*
+    {
       label: "Transmission Infrastructure Projects",
       desc: "Advanced engineering analysis for high-voltage transmission systems including electromagnetic studies, grounding design, and transmission corridor analysis.",
       img: "https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?auto=format&fit=crop&q=80&w=1200",
       code: "SEC_TRN_04",
     },
-    {
-      label: "EPC Companies",
-      desc: "Independent engineering advisory and technical consulting services supporting EPC contractors during project design, procurement, and technical evaluation phases.",
-      img: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&q=80&w=1200",
-      code: "SEC_EPC_05",
-    },
+    */
   ];
 
   return (

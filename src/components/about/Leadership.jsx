@@ -3,7 +3,7 @@ import React from "react";
 function Leadership() {
   const leaders = [
     {
-      name: "Senior Engineering Leadership",
+      name: "Power Systems Leadership",
       role: "Power Systems & Electrical Design",
       experience:
         "20+ years of expertise in power generation, transmission, substations, and industrial electrical systems globally.",
@@ -122,25 +122,6 @@ function Leadership() {
             box-shadow: 0 20px 40px rgba(11, 17, 32, 0.06);
           }
 
-          .ecosol-leadership-scope .expert-meta {
-            font-family: monospace;
-            font-size: 10px;
-            color: var(--color-steel-grey);
-            letter-spacing: 2px;
-            font-weight: 700;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-          }
-
-          .ecosol-leadership-scope .expert-meta::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: var(--color-bg-light-grey);
-          }
-
           .ecosol-leadership-scope .expert-name {
             font-size: 22px;
             font-weight: 900;
@@ -210,7 +191,6 @@ function Leadership() {
           <div className="leadership-grid">
             {leaders.map((leader, index) => (
               <div key={index} className="expert-card">
-                <div className="expert-meta">AUTH_LEVEL_0{index + 1}</div>
                 <h3 className="expert-name">{leader.name}</h3>
                 <p className="expert-role">{leader.role}</p>
                 <p className="expert-bio">{leader.experience}</p>

@@ -9,6 +9,7 @@ function HomeHero() {
           .hero-section {
             position: relative;
             min-height: 85vh; 
+            padding: 48px 0;
             display: flex;
             align-items: center;
             background-color: var(--color-deep-blue);
@@ -61,6 +62,7 @@ function HomeHero() {
           @media (max-width: 1024px) {
             .hero-section { 
               min-height: 80vh;
+              padding: 36px 0;
               text-align: center; 
               background-image: linear-gradient(rgba(11, 17, 32, 0.9), rgba(11, 17, 32, 0.9)), 
                                 url('https://images.unsplash.com/photo-1548345680-f5475ea90f14?auto=format&fit=crop&q=80&w=2070');

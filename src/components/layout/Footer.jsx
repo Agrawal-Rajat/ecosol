@@ -239,8 +239,7 @@ function Footer() {
                   <span>📞</span> +91 90048 17084
                 </div>
                 <div className="contact-item">
-                  <span>📍</span> 523, Omaxe City – 1 Mayakhedi, Indore – 453771
-                  India
+                  <span>📍</span> Indore – 453771, Madhya Pradesh, India
                 </div>
               </div>
             </div>

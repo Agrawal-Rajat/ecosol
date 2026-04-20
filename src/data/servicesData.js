@@ -112,6 +112,78 @@ const servicesData = [
     },
 
     {
+        slug: "power-system-protection-study",
+        title: "Power System Protection Study",
+        heroText:
+            "Protection coordination, relay setting review, and fault level analysis to improve the safety and reliability of electrical power systems.",
+
+        overview:
+            "Power system protection studies ensure that electrical networks respond correctly to faults and abnormal operating conditions. Our engineers evaluate protective devices, coordination settings, and fault behavior to support safe and reliable system operation.",
+
+        scope: [
+            "Protection relay coordination studies",
+            "Fault level and short-circuit analysis",
+            "Relay setting review and validation",
+            "Protection device selectivity assessment",
+            "System safety and reliability analysis"
+        ],
+
+        deliverables: [
+            "Protection coordination reports",
+            "Fault analysis and relay setting recommendations",
+            "Single-line protection diagrams",
+            "Engineering review documentation"
+        ],
+
+        tools: ["ETAP", "DIgSILENT PowerFactory", "PSCAD"],
+
+        standards: ["IEC", "IEEE", "NFPA"],
+
+        industries: [
+            "Utilities",
+            "Industrial Power Systems",
+            "Substations",
+            "Energy Infrastructure"
+        ]
+    },
+
+    {
+        slug: "solar-power-plant-engineering",
+        title: "Solar Power Plant Engineering",
+        heroText:
+            "Integrated engineering support for solar power plants, including electrical layout development, grid interconnection, and construction-ready design documentation.",
+
+        overview:
+            "Solar power plant engineering combines electrical design, system integration, and project execution support to deliver efficient and compliant renewable energy facilities. We develop engineering packages that support planning, procurement, and installation.",
+
+        scope: [
+            "Plant electrical layout development",
+            "DC and AC system design",
+            "Grid interconnection studies",
+            "Equipment sizing and cable routing",
+            "Construction-ready engineering packages"
+        ],
+
+        deliverables: [
+            "Solar plant engineering drawings",
+            "Electrical design and routing documentation",
+            "Interconnection and system analysis reports",
+            "Project execution support documents"
+        ],
+
+        tools: ["AutoCAD Electrical", "ETAP", "PVsyst"],
+
+        standards: ["IEC", "IEEE", "MNRE"],
+
+        industries: [
+            "Solar Developers",
+            "Renewable Energy EPCs",
+            "Utilities",
+            "Industrial Renewable Projects"
+        ]
+    },
+
+    {
         slug: "engineering-software-capabilities",
         title: "Engineering Software Capabilities",
         heroText:
@@ -165,12 +237,11 @@ const servicesData = [
             "Detailed engineering transforms conceptual electrical designs into executable construction-ready documentation. Our engineering team provides comprehensive design solutions for substations, power plants, and industrial electrical systems.",
 
         scope: [
-            "Electrical single line diagram development",
-            "Load calculations and equipment sizing",
-            "Cable routing and cable schedule preparation",
-            "Substation layout engineering",
-            "Lighting and power distribution design",
-            "Protection and control system architecture"
+            "Electrical Single Line Diagram & Protection & Metering Diagrams",
+            "Electrical Load List",
+            "Electrical Equipment Sizing Calculations - Generator Set, Transformer, HT/LT Cable, DC Charger, AC UPS System, Battery, Switchgear",
+            "Electrical System Design Calculation - Earthing, Lightening, Illumination",
+            "Layout Engineering - Substation, Field Equipment, Earthing and Lightening, Lighting and Small Power"
         ],
 
         deliverables: [
@@ -206,6 +277,7 @@ const servicesData = [
             "Preparation of technical specifications and RFQ documentation",
             "Vendor prequalification and technical bid evaluation",
             "Vendor proposal analysis and compliance review",
+            "Post Order Vendor Document Review",
             "Equipment performance comparison and recommendation"
         ],
 

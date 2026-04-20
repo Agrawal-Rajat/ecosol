@@ -167,8 +167,7 @@ function ContactInformation() {
                   Office
                 </h2>
                 <div className="rich-details">
-                  523, Omaxe City – 1<br />
-                  Mayakhedi, Indore – 453771
+                  Indore – 453771
                   <br />
                   Madhya Pradesh, India
                 </div>

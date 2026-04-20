@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CredentialsReminder from "../components/contact/CredentialsReminder";
 
 function Projects() {
   const [filter, setFilter] = useState("All");
@@ -16,7 +17,8 @@ function Projects() {
       id: 1,
       title:
         "Review of Insulation Coordination Study for Garraf Fase 2 Project",
-      client: "Progetti Europa & Global S.p.A",
+      client: null, // Left null as per your instruction to only show End Client for P1
+      endClient: "Progetti Europa & Global S.p.A",
       category: "Oil & Gas",
       location: "Iraq",
       image:
@@ -28,6 +30,7 @@ function Projects() {
       title:
         "Electrical Detail Design Engineering for 44MWAC/61.6MWp Solar Power Plant",
       client: "KBH Infra",
+      endClient: "Torrent Power Limited",
       category: "Renewables",
       location: "India",
       image:
@@ -39,10 +42,11 @@ function Projects() {
       title:
         "Review of Power System Study and Protection Study for Ingot-Wafer Factory",
       client: "Jacobs Engineering",
+      endClient: "Reliance Industries Limited",
       category: "Industrial",
       location: "International",
       image:
-        "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/q_auto/f_auto/v1776668524/895cefc9-8ef6-4c79-bb2a-395af50939ac.png",
       desc: "Advanced stability analysis and protection coordination for high-precision semiconductor manufacturing facilities.",
     },
   ];
@@ -51,9 +55,54 @@ function Projects() {
     filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
-    <>
+    <div className="projects-page-compact">
       <style>
         {`
+          .projects-page-compact .ecosol-projects-scope {
+            padding: 80px 0 64px;
+          }
+
+          .projects-page-compact .ecosol-projects-scope .projects-header-box {
+            margin-bottom: 52px;
+          }
+
+          .projects-page-compact .ecosol-projects-scope .filter-bar {
+            margin-bottom: 44px;
+          }
+
+          .projects-page-compact .ecosol-projects-scope .project-grid {
+            gap: 24px;
+          }
+
+          .projects-page-compact .ecosol-projects-scope .project-info {
+            padding: 28px;
+          }
+
+          .projects-page-compact .ecosol-projects-scope .project-title {
+            margin-bottom: 12px;
+          }
+
+          .projects-page-compact .ecosol-projects-scope .project-desc {
+            margin-bottom: 20px !important;
+          }
+
+          .projects-page-compact .ecosol-credentials-scope {
+            padding: 72px 0 56px;
+          }
+
+          .projects-page-compact .ecosol-credentials-scope .credentials-subheading {
+            margin-bottom: 44px;
+          }
+
+          .projects-page-compact .ecosol-credentials-scope .stats-horizontal-row {
+            gap: 48px;
+            margin-bottom: 28px;
+          }
+
+          .projects-page-compact .ecosol-credentials-scope .credentials-para {
+            margin-top: 28px;
+          }
+
           .ecosol-projects-scope {
             padding: 100px 0; 
             background-color: var(--color-bg-white);
@@ -69,7 +118,6 @@ function Projects() {
             padding: 0 40px;
           }
 
-          /* --- ENHANCED HEADING STYLES --- */
           .ecosol-projects-scope .projects-header-box {
             text-align: center;
             margin-bottom: 70px;
@@ -86,7 +134,6 @@ function Projects() {
           }
 
           .ecosol-projects-scope .main-heading {
-            /* Increased scale to align with primary CTA and Hero */
             font-size: clamp(38px, 6vw, 64px); 
             font-weight: 900;
             color: var(--color-logo-navy);
@@ -100,7 +147,6 @@ function Projects() {
             color: var(--color-electric-blue);
           }
 
-          /* --- Filter Bar --- */
           .ecosol-projects-scope .filter-bar {
             display: flex;
             justify-content: center;
@@ -130,7 +176,6 @@ function Projects() {
             background: var(--color-bg-light-grey);
           }
 
-          /* --- Project Grid & Cards --- */
           .ecosol-projects-scope .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
@@ -202,6 +247,14 @@ function Projects() {
             letter-spacing: -0.5px;
           }
 
+          .ecosol-projects-scope .client-meta {
+             font-weight: 800;
+             color: var(--color-logo-navy);
+             margin-bottom: 4px;
+             font-size: 12px;
+             text-transform: uppercase;
+          }
+
           .ecosol-projects-scope .view-case-btn {
             margin-top: auto;
             color: var(--color-logo-navy);
@@ -222,11 +275,16 @@ function Projects() {
           }
 
           @media (max-width: 768px) {
-            .ecosol-projects-scope { padding: 80px 0; }
-            .ecosol-projects-scope .project-grid { grid-template-columns: 1fr; }
-            .ecosol-projects-scope .projects-inner-container { padding: 0 24px; }
-            
-            /* High Impact Mobile Size */
+            .projects-page-compact .ecosol-projects-scope { padding: 64px 0 48px; }
+            .projects-page-compact .ecosol-projects-scope .projects-header-box { margin-bottom: 40px; }
+            .projects-page-compact .ecosol-projects-scope .filter-bar { margin-bottom: 32px; }
+            .projects-page-compact .ecosol-projects-scope .project-grid { grid-template-columns: 1fr; gap: 18px; }
+            .projects-page-compact .ecosol-projects-scope .projects-inner-container { padding: 0 24px; }
+            .projects-page-compact .ecosol-projects-scope .project-info { padding: 24px; }
+            .projects-page-compact .ecosol-credentials-scope { padding: 56px 0 44px; }
+            .projects-page-compact .ecosol-credentials-scope .credentials-subheading { margin-bottom: 32px; }
+            .projects-page-compact .ecosol-credentials-scope .stats-horizontal-row { gap: 32px; margin-bottom: 24px; }
+            .projects-page-compact .ecosol-credentials-scope .credentials-para { margin-top: 24px; }
             .ecosol-projects-scope .main-heading { 
               font-size: 52px !important; 
               line-height: 1.05 !important;
@@ -266,17 +324,17 @@ function Projects() {
                 </div>
                 <div className="project-info">
                   <h3 className="project-title">{p.title}</h3>
-                  <p
-                    style={{
-                      fontWeight: "800",
-                      color: "var(--color-logo-navy)",
-                      marginBottom: "10px",
-                      fontSize: "13px",
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    Client: {p.client}
-                  </p>
+
+                  {/* Conditional Rendering for Clients */}
+                  {p.client && (
+                    <p className="client-meta">Client: {p.client}</p>
+                  )}
+                  {p.endClient && (
+                    <p className="client-meta" style={{ marginBottom: "15px" }}>
+                      End Client: {p.endClient}
+                    </p>
+                  )}
+
                   <p
                     className="project-desc"
                     style={{
@@ -295,9 +353,11 @@ function Projects() {
               </div>
             ))}
           </div>
+
+          <CredentialsReminder />
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

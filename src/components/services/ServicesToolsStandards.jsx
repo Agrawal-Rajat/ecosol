@@ -170,6 +170,7 @@ function ServicesToolsStandards() {
                     "PSCAD",
                     "CDEGS",
                     "MATLAB",
+                    "PVSyst",
                   ].map((tool) => (
                     <span key={tool} className="tech-tag">
                       {tool}

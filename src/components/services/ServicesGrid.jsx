@@ -12,12 +12,20 @@ function ServicesGrid() {
         "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
     },
     {
+      title: "Solar Power Plant Engineering",
+      description:
+        "End-to-end engineering support for solar power plants, including layout development, electrical design, and grid integration studies.",
+      link: "/services/solar-power-plant-engineering",
+      image:
+        "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=800",
+    },
+    {
       title: "Electromagnetic Analysis",
       description:
         "Electromagnetic interference and high voltage interaction studies to assess infrastructure impact on nearby systems.",
       link: "/services/electromagnetic-analysis",
       image:
-        "https://images.unsplash.com/photo-1581092334651-ddf26d9a1930?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/q_auto/f_auto/v1776682110/c7409f9d-670d-4330-8f50-2921e7aaf27b.png",
     },
     {
       title: "Grounding Analysis",
@@ -25,15 +33,15 @@ function ServicesGrid() {
         "Electrical earthing and ground potential safety engineering to ensure personnel protection and reliable fault dissipation.",
       link: "/services/grounding-analysis",
       image:
-        "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/q_auto/f_auto/v1776682183/02b9b66b-4568-4c7b-bfce-59999ccb929f.png",
     },
     {
-      title: "Engineering Software Capabilities",
+      title: "Power System Protection Study",
       description:
-        "Advanced digital simulation platforms used globally for electrical engineering modeling and system analysis.",
-      link: "/services/engineering-software-capabilities",
+        "Protection coordination, relay settings review, and fault analysis for safe and reliable power system operations.",
+      link: "/services/power-system-protection-study",
       image:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&q=80&w=800",
     },
     {
       title: "Detail Design Engineering",
@@ -49,7 +57,7 @@ function ServicesGrid() {
         "Technical procurement support for electrical infrastructure projects including vendor evaluation and specification development.",
       link: "/services/procurement-assistance",
       image:
-        "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/q_auto/f_auto/v1776682377/ad3417c9-5e71-4cac-a4d0-07f2cd7d0ade.png",
     },
     {
       title: "Third Party Inspection",
@@ -116,7 +124,6 @@ function ServicesGrid() {
             text-decoration: none;
             display: flex;
             flex-direction: column;
-            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
             position: relative;
             border: 1px solid var(--color-bg-light-grey);
             border-radius: 2px;
@@ -134,13 +141,7 @@ function ServicesGrid() {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%);
-            opacity: 0.6;
-            transition: all 0.7s ease;
-          }
-
-          .ecosol-services-grid-scope .service-card:hover .card-image {
-            filter: grayscale(0%);
+            filter: none;
             opacity: 1;
           }
 
@@ -168,14 +169,6 @@ function ServicesGrid() {
             line-height: 1.7;
             margin-bottom: 30px;
             opacity: 0.85;
-          }
-
-          /* --- Removed Hover Border Accent --- */
-          .ecosol-services-grid-scope .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(11, 17, 32, 0.08);
-            /* Border remains original color on hover */
-            border-color: var(--color-bg-light-grey); 
           }
 
           .ecosol-services-grid-scope .learn-more {

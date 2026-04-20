@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import servicesData from "../../data/servicesData.js";
-import ecosolLogo from "../../assets/logos/weblogo.png";
+import ecosolLogo from "../../assets/logos/weblogo-transparent.png";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -136,7 +136,7 @@ function Header() {
               alt="Ecosol Projects Logo"
               style={{
                 ...styles.logoImage,
-                height: scrolled ? "55px" : "60px",
+                height: scrolled ? "64px" : "72px",
               }}
             />
           </NavLink>
@@ -176,16 +176,20 @@ function Header() {
                       </NavLink>
                     </div>
                     <div style={styles.megaLinksPane}>
-                      {servicesData.map((s) => (
-                        <NavLink
-                          key={s.slug}
-                          to={`/services/${s.slug}`}
-                          className="mega-grid-link"
-                          onClick={closeAllMenus}
-                        >
-                          {s.title}
-                        </NavLink>
-                      ))}
+                      {servicesData
+                        .filter(
+                          (s) => s.slug !== "engineering-software-capabilities",
+                        )
+                        .map((s) => (
+                          <NavLink
+                            key={s.slug}
+                            to={`/services/${s.slug}`}
+                            className="mega-grid-link"
+                            onClick={closeAllMenus}
+                          >
+                            {s.title}
+                          </NavLink>
+                        ))}
                     </div>
                   </div>
                 </div>
@@ -305,6 +309,7 @@ const styles = {
     width: "auto",
     transition: "all 0.3s ease",
     objectFit: "contain",
+    filter: "drop-shadow(0 2px 8px rgba(11, 17, 32, 0.12))",
   },
   nav: { display: "flex", gap: "35px", height: "100%", alignItems: "center" },
   actionArea: { display: "flex", alignItems: "center" },
