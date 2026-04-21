@@ -62,7 +62,7 @@ function ClientGrid() {
             border-top: 1px solid var(--color-bg-light-grey);
           }
 
-          .container {
+          .clients-section .container {
             max-width: var(--container-width, 1400px);
             margin: 0 auto;
             padding: 0 40px;
@@ -73,10 +73,10 @@ function ClientGrid() {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             background: var(--color-logo-navy);
-            padding: 50px 40px;
+            padding: 32px 28px;
             border-radius: 2px;
-            margin-bottom: 100px;
-            margin-top: -95px;
+            margin-bottom: 48px;
+            margin-top: -48px;
             box-shadow: 0 30px 60px rgba(11, 17, 32, 0.2);
             position: relative;
             z-index: 10;
@@ -94,7 +94,7 @@ function ClientGrid() {
             font-weight: 900; 
             color: var(--color-electric-blue); 
             line-height: 1;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
           }
 
           .metric-label { 
@@ -110,7 +110,7 @@ function ClientGrid() {
           .header-center {
             text-align: center;
             max-width: 900px;
-            margin: 0 auto 100px;
+            margin: 0 auto 44px;
           }
 
           .vivid-heading {
@@ -119,7 +119,7 @@ function ClientGrid() {
             color: var(--color-logo-navy);
             letter-spacing: -2px;
             line-height: 1.1;
-            margin-bottom: 30px;
+            margin-bottom: 18px;
           }
 
           .accent-text-blue {
@@ -131,21 +131,21 @@ function ClientGrid() {
             font-weight: 900;
             color: var(--color-logo-navy);
             letter-spacing: -1px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             line-height: 1.2;
           }
 
           /* --- Logo Box Style (Original Colors Restored) --- */
           .logo-box {
-            width: 280px;
-            height: 140px;
+            width: 220px;
+            height: 110px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: var(--color-bg-white);
             border: 1px solid var(--color-bg-light-grey);
             border-radius: 2px;
-            padding: 30px;
+            padding: 20px;
             transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
           }
 
@@ -166,13 +166,13 @@ function ClientGrid() {
           .direct-clients-wrapper {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-bottom: 120px;
+            gap: 20px;
+            margin-bottom: 50px;
           }
 
           /* --- Marquee --- */
           .marquee-track { display: flex; width: max-content; }
-          .marquee-content { display: flex; gap: 24px; animation: scroll-left 60s linear infinite; padding-right: 24px; }
+          .marquee-content { display: flex; gap: 16px; animation: scroll-left 60s linear infinite; padding-right: 16px; }
           
           @keyframes scroll-left {
             0% { transform: translateX(0); }
@@ -180,9 +180,11 @@ function ClientGrid() {
           }
 
           @media (max-width: 768px) {
-            .metrics-strip { grid-template-columns: repeat(2, 1fr); gap: 30px; padding: 35px; margin-top: -60px; }
+            .metrics-strip { grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 22px 16px; margin-top: -24px; margin-bottom: 30px; }
             .direct-clients-wrapper { flex-direction: column; align-items: center; gap: 20px; }
-            .logo-box { width: 100%; max-width: 320px; }
+            .logo-box { width: 100%; max-width: 260px; height: 96px; padding: 16px; }
+            .header-center { margin: 0 auto 30px; }
+            .sub-heading-text { font-size: 22px; }
           }
         `}
       </style>
@@ -235,20 +237,20 @@ function ClientGrid() {
           </div>
 
           {/* Direct Clients */}
-          <div style={{ textAlign: "center", marginBottom: "50px" }}>
+          <div style={{ textAlign: "center", marginBottom: "28px" }}>
             <div
               style={{
                 height: "2px",
                 width: "60px",
                 background: "var(--color-electric-blue)",
-                margin: "0 auto 25px",
+                margin: "0 auto 16px",
               }}
             ></div>
             <h3 className="sub-heading-text">Direct Clients</h3>
             <p
               style={{
                 color: "var(--color-steel-grey)",
-                fontSize: "16px",
+                fontSize: "15px",
                 maxWidth: "600px",
                 margin: "0 auto",
               }}
@@ -267,13 +269,13 @@ function ClientGrid() {
           </div>
 
           {/* Project Experience */}
-          <div style={{ textAlign: "center", marginBottom: "50px" }}>
+          <div style={{ textAlign: "center", marginBottom: "28px" }}>
             <div
               style={{
                 height: "2px",
                 width: "60px",
                 background: "var(--color-electric-blue)",
-                margin: "0 auto 25px",
+                margin: "0 auto 16px",
               }}
             ></div>
             <h3 className="sub-heading-text">
@@ -285,7 +287,7 @@ function ClientGrid() {
             <p
               style={{
                 color: "var(--color-steel-grey)",
-                fontSize: "16px",
+                fontSize: "15px",
                 maxWidth: "750px",
                 margin: "0 auto",
               }}
@@ -298,7 +300,7 @@ function ClientGrid() {
         </div>
 
         {/* Marquee */}
-        <div style={{ marginTop: "40px" }}>
+        <div style={{ marginTop: "18px" }}>
           <div className="marquee-track">
             <div className="marquee-content">
               {marqueeLogos.map((logo, index) => (
@@ -313,8 +315,8 @@ function ClientGrid() {
         <div className="container">
           <div
             style={{
-              marginTop: "80px",
-              paddingTop: "40px",
+              marginTop: "32px",
+              paddingTop: "12px",
               borderTop: "1px solid var(--color-bg-light-grey)",
               textAlign: "center",
             }}

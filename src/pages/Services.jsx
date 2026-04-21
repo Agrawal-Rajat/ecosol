@@ -11,11 +11,11 @@ function Services() {
       <style>
         {`
           .services-page-compact .ecosol-services-hero-scope {
-            padding: 72px 0 56px;
+            padding: 48px 0 30px;
           }
 
           .services-page-compact .tools-bar-section {
-            padding: 56px 0;
+            padding: 30px 0;
           }
 
           .services-page-compact .tools-header-box {
@@ -32,45 +32,45 @@ function Services() {
           }
 
           .services-page-compact .ecosol-sectors-scope {
-            padding: 56px 0;
+            padding: 30px 0;
           }
 
           .services-page-compact .ecosol-sectors-scope .sectors-container {
-            gap: 40px;
+            gap: 32px;
           }
 
           .services-page-compact .ecosol-services-grid-scope {
-            padding: 64px 0 56px;
+            padding: 34px 0 30px;
           }
 
           .services-page-compact .ecosol-services-grid-scope .section-header {
-            margin-bottom: 40px;
+            margin-bottom: 32px;
           }
 
           .services-page-compact .ecosol-tools-scope {
-            padding: 60px 0;
+            padding: 32px 0;
           }
 
           .services-page-compact .ecosol-tools-scope .tech-flex {
-            gap: 40px;
+            gap: 32px;
           }
 
           .services-page-compact .ecosol-services-cta-scope {
-            padding: 48px 0 64px;
+            padding: 28px 0 40px;
           }
 
           .services-page-compact .ecosol-services-cta-scope .cta-info-side,
           .services-page-compact .ecosol-services-cta-scope .cta-action-side {
-            padding: 40px;
+            padding: 34px;
           }
 
           @media (max-width: 768px) {
             .services-page-compact .ecosol-services-hero-scope {
-              padding: 60px 0 44px;
+              padding: 40px 0 26px;
             }
 
             .services-page-compact .tools-bar-section {
-              padding: 44px 0;
+              padding: 24px 0;
             }
 
             .services-page-compact .tools-header-box {
@@ -82,23 +82,23 @@ function Services() {
             }
 
             .services-page-compact .ecosol-sectors-scope {
-              padding: 44px 0;
+              padding: 24px 0;
             }
 
             .services-page-compact .ecosol-services-grid-scope {
-              padding: 52px 0 44px;
+              padding: 30px 0 26px;
             }
 
             .services-page-compact .ecosol-services-grid-scope .section-header {
-              margin-bottom: 30px;
+              margin-bottom: 24px;
             }
 
             .services-page-compact .ecosol-tools-scope {
-              padding: 48px 0;
+              padding: 26px 0;
             }
 
             .services-page-compact .ecosol-services-cta-scope {
-              padding: 40px 0 52px;
+              padding: 22px 0 30px;
             }
 
             .services-page-compact .ecosol-services-cta-scope .cta-info-side,

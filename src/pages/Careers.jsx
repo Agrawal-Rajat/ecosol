@@ -11,11 +11,11 @@ function Careers() {
       <style>
         {`
           .careers-page-compact .ecosol-careers-hero-scope {
-            padding: 20px 0 72px 0;
+            padding: 16px 0 60px 0;
           }
 
           .careers-page-compact .ecosol-career-orbit {
-            padding: 76px 0;
+            padding: 64px 0 20px 0;
           }
 
           .careers-page-compact .orbit-container {
@@ -23,11 +23,11 @@ function Careers() {
           }
 
           .careers-page-compact .ecosol-culture-scope {
-            padding: 88px 0;
+            padding: 20px 0 28px 0;
           }
 
           .careers-page-compact .ecosol-culture-scope .section-header-compact {
-            margin-bottom: 52px;
+            margin-bottom: 42px;
           }
 
           .careers-page-compact .ecosol-culture-scope .culture-visual-grid {
@@ -35,11 +35,11 @@ function Careers() {
           }
 
           .careers-page-compact .ecosol-opps-scope {
-            padding: 88px 0;
+            padding: 20px 0 72px 0;
           }
 
           .careers-page-compact .ecosol-opps-scope .opps-header {
-            margin-bottom: 52px;
+            margin-bottom: 42px;
           }
 
           .careers-page-compact .ecosol-opps-scope .opps-grid {
@@ -47,15 +47,15 @@ function Careers() {
           }
 
           .careers-page-compact .ecosol-submit-scope {
-            padding: 88px 0;
+            padding: 72px 0;
           }
 
           .careers-page-compact .ecosol-submit-scope .submit-text {
-            margin-bottom: 36px;
+            margin-bottom: 28px;
           }
 
           .careers-page-compact .ecosol-eoe-scope {
-            padding: 72px 0;
+            padding: 60px 0;
           }
 
           @media (max-width: 1100px) {
@@ -66,21 +66,33 @@ function Careers() {
 
           @media (max-width: 768px) {
             .careers-page-compact .ecosol-careers-hero-scope {
-              padding: 12px 0 56px 0;
+              padding: 10px 0 48px 0;
             }
 
             .careers-page-compact .ecosol-career-orbit,
-            .careers-page-compact .ecosol-culture-scope,
-            .careers-page-compact .ecosol-opps-scope,
             .careers-page-compact .ecosol-submit-scope,
             .careers-page-compact .ecosol-eoe-scope {
-              padding-top: 56px;
-              padding-bottom: 56px;
+              padding-top: 48px;
+              padding-bottom: 48px;
+            }
+
+            .careers-page-compact .ecosol-career-orbit {
+              padding-bottom: 20px;
+            }
+
+            .careers-page-compact .ecosol-culture-scope {
+              padding-top: 20px;
+              padding-bottom: 22px;
+            }
+
+            .careers-page-compact .ecosol-opps-scope {
+              padding-top: 16px;
+              padding-bottom: 48px;
             }
 
             .careers-page-compact .ecosol-culture-scope .section-header-compact,
             .careers-page-compact .ecosol-opps-scope .opps-header {
-              margin-bottom: 36px;
+              margin-bottom: 30px;
             }
 
             .careers-page-compact .ecosol-culture-scope .culture-visual-grid,
@@ -89,7 +101,7 @@ function Careers() {
             }
 
             .careers-page-compact .ecosol-submit-scope .submit-text {
-              margin-bottom: 28px;
+              margin-bottom: 22px;
             }
           }
         `}

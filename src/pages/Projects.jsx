@@ -59,15 +59,15 @@ function Projects() {
       <style>
         {`
           .projects-page-compact .ecosol-projects-scope {
-            padding: 80px 0 64px;
+            padding: 70px 0 56px;
           }
 
           .projects-page-compact .ecosol-projects-scope .projects-header-box {
-            margin-bottom: 52px;
+            margin-bottom: 42px;
           }
 
           .projects-page-compact .ecosol-projects-scope .filter-bar {
-            margin-bottom: 44px;
+            margin-bottom: 34px;
           }
 
           .projects-page-compact .ecosol-projects-scope .project-grid {
@@ -87,20 +87,20 @@ function Projects() {
           }
 
           .projects-page-compact .ecosol-credentials-scope {
-            padding: 72px 0 56px;
+            padding: 60px 0 46px;
           }
 
           .projects-page-compact .ecosol-credentials-scope .credentials-subheading {
-            margin-bottom: 44px;
+            margin-bottom: 34px;
           }
 
           .projects-page-compact .ecosol-credentials-scope .stats-horizontal-row {
-            gap: 48px;
-            margin-bottom: 28px;
+            gap: 36px;
+            margin-bottom: 22px;
           }
 
           .projects-page-compact .ecosol-credentials-scope .credentials-para {
-            margin-top: 28px;
+            margin-top: 20px;
           }
 
           .ecosol-projects-scope {
@@ -275,16 +275,16 @@ function Projects() {
           }
 
           @media (max-width: 768px) {
-            .projects-page-compact .ecosol-projects-scope { padding: 64px 0 48px; }
-            .projects-page-compact .ecosol-projects-scope .projects-header-box { margin-bottom: 40px; }
-            .projects-page-compact .ecosol-projects-scope .filter-bar { margin-bottom: 32px; }
+            .projects-page-compact .ecosol-projects-scope { padding: 56px 0 40px; }
+            .projects-page-compact .ecosol-projects-scope .projects-header-box { margin-bottom: 32px; }
+            .projects-page-compact .ecosol-projects-scope .filter-bar { margin-bottom: 24px; }
             .projects-page-compact .ecosol-projects-scope .project-grid { grid-template-columns: 1fr; gap: 18px; }
             .projects-page-compact .ecosol-projects-scope .projects-inner-container { padding: 0 24px; }
             .projects-page-compact .ecosol-projects-scope .project-info { padding: 24px; }
-            .projects-page-compact .ecosol-credentials-scope { padding: 56px 0 44px; }
-            .projects-page-compact .ecosol-credentials-scope .credentials-subheading { margin-bottom: 32px; }
-            .projects-page-compact .ecosol-credentials-scope .stats-horizontal-row { gap: 32px; margin-bottom: 24px; }
-            .projects-page-compact .ecosol-credentials-scope .credentials-para { margin-top: 24px; }
+            .projects-page-compact .ecosol-credentials-scope { padding: 48px 0 36px; }
+            .projects-page-compact .ecosol-credentials-scope .credentials-subheading { margin-bottom: 24px; }
+            .projects-page-compact .ecosol-credentials-scope .stats-horizontal-row { gap: 24px; margin-bottom: 18px; }
+            .projects-page-compact .ecosol-credentials-scope .credentials-para { margin-top: 18px; }
             .ecosol-projects-scope .main-heading { 
               font-size: 52px !important; 
               line-height: 1.05 !important;

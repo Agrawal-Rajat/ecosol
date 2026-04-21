@@ -239,7 +239,7 @@ function Footer() {
                   <span>📞</span> +91 90048 17084
                 </div>
                 <div className="contact-item">
-                  <span>📍</span> Indore – 453771, Madhya Pradesh, India
+                  <span>📍</span> Indore, Madhya Pradesh, India
                 </div>
               </div>
             </div>

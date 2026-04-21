@@ -167,7 +167,7 @@ function ContactInformation() {
                   Office
                 </h2>
                 <div className="rich-details">
-                  Indore – 453771
+                  Indore
                   <br />
                   Madhya Pradesh, India
                 </div>

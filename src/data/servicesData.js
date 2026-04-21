@@ -237,7 +237,7 @@ const servicesData = [
             "Detailed engineering transforms conceptual electrical designs into executable construction-ready documentation. Our engineering team provides comprehensive design solutions for substations, power plants, and industrial electrical systems.",
 
         scope: [
-            "Electrical Single Line Diagram & Protection & Metering Diagrams",
+            "Electrical Single Line Diagram, Protection & Metering Diagrams",
             "Electrical Load List",
             "Electrical Equipment Sizing Calculations - Generator Set, Transformer, HT/LT Cable, DC Charger, AC UPS System, Battery, Switchgear",
             "Electrical System Design Calculation - Earthing, Lightening, Illumination",

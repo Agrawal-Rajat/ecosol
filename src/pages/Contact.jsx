@@ -8,12 +8,12 @@ function Contact() {
       <style>
         {`
           .contact-page-compact .ecosol-contact-hero-scope {
-            height: 68vh;
-            min-height: 500px;
+            height: 62vh;
+            min-height: 460px;
           }
 
           .contact-page-compact .ecosol-contact-info-scope {
-            padding: 72px 0;
+            padding: 60px 0 24px 0;
           }
 
           .contact-page-compact .ecosol-contact-info-scope .contact-rich-grid {
@@ -21,49 +21,49 @@ function Contact() {
           }
 
           .contact-page-compact .ecosol-contact-info-scope .rich-info-box {
-            min-height: 360px;
-            padding: 42px;
+            min-height: 330px;
+            padding: 36px;
           }
 
           .contact-page-compact .ecosol-enquiry-scope {
-            padding: 72px 0;
+            padding: 20px 0 60px 0;
           }
 
           .contact-page-compact .ecosol-enquiry-scope .enquiry-header {
-            margin-bottom: 44px;
+            margin-bottom: 34px;
           }
 
           .contact-page-compact .ecosol-enquiry-scope .enquiry-form {
-            padding: 48px;
-            gap: 24px;
+            padding: 40px;
+            gap: 20px;
           }
 
           @media (max-width: 768px) {
             .contact-page-compact .ecosol-contact-hero-scope {
-              height: 60vh;
-              min-height: 440px;
+              height: 56vh;
+              min-height: 400px;
             }
 
             .contact-page-compact .ecosol-contact-info-scope {
-              padding: 60px 0;
+              padding: 48px 0 20px 0;
             }
 
             .contact-page-compact .ecosol-contact-info-scope .rich-info-box {
               min-height: auto;
-              padding: 34px 24px;
+              padding: 28px 20px;
             }
 
             .contact-page-compact .ecosol-enquiry-scope {
-              padding: 60px 0;
+              padding: 16px 0 48px 0;
             }
 
             .contact-page-compact .ecosol-enquiry-scope .enquiry-header {
-              margin-bottom: 36px;
+              margin-bottom: 28px;
             }
 
             .contact-page-compact .ecosol-enquiry-scope .enquiry-form {
-              padding: 34px 24px;
-              gap: 20px;
+              padding: 28px 20px;
+              gap: 16px;
             }
           }
         `}

@@ -139,7 +139,7 @@ function ServiceDetail() {
 
           /* --- DATA STRIPS --- */
           .ecosol-detail-scope .data-strip {
-            padding: 64px 0;
+            padding: 30px 0;
             position: relative;
             border-bottom: 1px solid var(--color-bg-light-grey);
             background-image: radial-gradient(var(--color-bg-light-grey) 1px, transparent 1px);
@@ -151,7 +151,7 @@ function ServiceDetail() {
           .ecosol-detail-scope .layout-grid-compact {
             display: grid;
             grid-template-columns: 300px 1fr;
-            gap: 36px;
+            gap: 24px;
           }
 
           .ecosol-detail-scope .sidebar-label-bold {
@@ -176,12 +176,12 @@ function ServiceDetail() {
           .ecosol-detail-scope .card-grid-tight {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 18px;
+            gap: 14px;
           }
 
           .ecosol-detail-scope .minimal-data-card {
             background: #ffffff;
-            padding: 30px;
+            padding: 24px;
             border: 1px solid var(--color-bg-light-grey);
             border-top: 4px solid var(--color-logo-navy);
             transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
@@ -222,10 +222,10 @@ function ServiceDetail() {
             .ecosol-detail-scope .hero-split-section { height: 60vh; background-attachment: scroll; }
             .ecosol-detail-scope .hero-overlay { background: rgba(11, 17, 32, 0.92); }
             .ecosol-detail-scope .hero-description { border-left-width: 3px; padding-left: 20px; font-size: 17px; }
-            .ecosol-detail-scope .layout-grid-compact { grid-template-columns: 1fr; gap: 24px; }
+            .ecosol-detail-scope .layout-grid-compact { grid-template-columns: 1fr; gap: 16px; }
             .ecosol-detail-scope .sidebar-label-bold { position: static; margin-bottom: 10px; }
             .ecosol-detail-scope .container-tight { padding: 0 24px; }
-            .ecosol-detail-scope .data-strip { padding: 52px 0; }
+            .ecosol-detail-scope .data-strip { padding: 24px 0; }
           }
         `}
       </style>
