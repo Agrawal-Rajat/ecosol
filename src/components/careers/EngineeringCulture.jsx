@@ -5,27 +5,27 @@ function EngineeringCulture() {
     {
       title: "Precision & Accuracy",
       image:
-        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777471500/f3b9b281-6e71-4345-a786-662ae4cd9cd2.png",
     },
     {
       title: "Technical Thinking",
       image:
-        "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777471555/07042f4e-f0b0-4e92-a4d8-000b6a527301.png",
     },
     {
       title: "Quality Standards",
       image:
-        "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777471602/368f0604-06f3-4a31-b3a2-d195d405d921.png",
     },
     {
       title: "Collaborative Design",
       image:
-        "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777471643/6aa365f8-5a80-4bad-882f-cca31005d8b6.png",
     },
     {
       title: "Compliance First",
       image:
-        "https://images.unsplash.com/photo-1454165833767-02a6e3099033?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777471681/8ff260e0-07b0-4226-82fe-fbcac1cd926f.png",
     },
   ];
 

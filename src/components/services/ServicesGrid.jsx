@@ -9,7 +9,7 @@ function ServicesGrid() {
         "Advanced electrical network modeling and system performance studies to ensure stability, safety, and operational efficiency.",
       link: "/services/power-system-analysis",
       image:
-        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470376/2632a95d-197d-4bb8-be40-ce938f11ea9e.png",
     },
     {
       title: "Solar Power Plant Engineering",
@@ -17,7 +17,7 @@ function ServicesGrid() {
         "End-to-end engineering support for solar power plants, including layout development, electrical design, and grid integration studies.",
       link: "/services/solar-power-plant-engineering",
       image:
-        "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470288/5bffbb82-7016-4f29-aa86-ba4295833d20.png",
     },
     {
       title: "Grounding Analysis",
@@ -25,7 +25,7 @@ function ServicesGrid() {
         "Electrical earthing and ground potential safety engineering to ensure personnel protection and reliable fault dissipation.",
       link: "/services/grounding-analysis",
       image:
-        "https://res.cloudinary.com/de0rdsbph/image/upload/q_auto/f_auto/v1776682183/02b9b66b-4568-4c7b-bfce-59999ccb929f.png",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470352/601d69a4-d0ac-4406-a4d7-854db5910f71.png",
     },
     {
       title: "Power System Protection Study",
@@ -41,7 +41,7 @@ function ServicesGrid() {
         "Complete electrical engineering design services for substations, power plants, and industrial infrastructure.",
       link: "/services/detail-design-engineering",
       image:
-        "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470261/1752d165-73d2-4e7f-abcb-d321f4275bc4.png",
     },
     {
       title: "Procurement Assistance",
@@ -49,7 +49,7 @@ function ServicesGrid() {
         "Technical procurement support for electrical infrastructure projects including vendor evaluation and specification development.",
       link: "/services/procurement-assistance",
       image:
-        "https://res.cloudinary.com/de0rdsbph/image/upload/q_auto/f_auto/v1776682377/ad3417c9-5e71-4cac-a4d0-07f2cd7d0ade.png",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470231/2abf64fc-61c1-49a1-a8fe-54f27b759eda.png",
     },
     {
       title: "Third Party Inspection",
@@ -57,7 +57,7 @@ function ServicesGrid() {
         "Independent inspection and quality verification services for electrical equipment before installation and commissioning.",
       link: "/services/third-party-inspection",
       image:
-        "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470189/fdf7b2c4-1584-432a-91e2-1246e3073d3c.png",
     },
   ];
 

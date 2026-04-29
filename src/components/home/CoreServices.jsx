@@ -8,7 +8,7 @@ function CoreServices() {
       id: "01",
       title: "Power System Studies",
       image:
-        "https://www.jeftechno.com/assets/images/blog/Power-System%20Studies.jpg",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470376/2632a95d-197d-4bb8-be40-ce938f11ea9e.png",
       description:
         "Advanced Electrical studies using industry-standard computational modeling.",
       tags: ["Load Flow", "Short Circuit"],
@@ -17,7 +17,7 @@ function CoreServices() {
       id: "02",
       title: "Protection & Safety",
       image:
-        "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470323/a032640c-382d-46bf-9b50-7607c65b7fdc.png",
       description: "Electrical Protection & Safety Assessment",
       tags: ["Protection", "Safety"],
     },

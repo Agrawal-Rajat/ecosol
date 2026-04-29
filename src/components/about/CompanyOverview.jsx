@@ -158,7 +158,7 @@ function CompanyOverview() {
           <div className="module-grid">
             {dataPoints.map((item, index) => (
               <div key={index} className="module-card">
-                <span className="card-serial">REF_00{index + 1}</span>
+                {/* <span className="card-serial">REF_00{index + 1}</span> */}
                 <span className="card-label">{item.label}</span>
                 <h3 className="card-title">{item.title}</h3>
                 <p className="card-text">{item.text}</p>

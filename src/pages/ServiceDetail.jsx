@@ -36,21 +36,27 @@ function ServiceDetail() {
   const getIllustration = (slug) => {
     const images = {
       "power-system-analysis":
-        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1600",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470376/2632a95d-197d-4bb8-be40-ce938f11ea9e.png",
       "grounding-analysis":
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470349/bd46a398-cc59-4255-840c-a731db6c0a7c.png",
       "engineering-software-capabilities":
         "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600",
       "detail-design-engineering":
-        "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1600",
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470261/1752d165-73d2-4e7f-abcb-d321f4275bc4.png",
       "procurement-assistance":
         "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=1600",
       "third-party-inspection":
         "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1600",
+      "solar-power-plant-engineering":
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470810/87893553-9fcf-4c12-ae70-04c616a1ca4b.png",
+      "procurement-assistance":
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470231/2abf64fc-61c1-49a1-a8fe-54f27b759eda.png",
+      "power-system-protection-study":
+        "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470323/a032640c-382d-46bf-9b50-7607c65b7fdc.png",
     };
     return (
       images[slug] ||
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600"
+      "https://res.cloudinary.com/de0rdsbph/image/upload/v1777470288/5bffbb82-7016-4f29-aa86-ba4295833d20.png"
     );
   };
 
