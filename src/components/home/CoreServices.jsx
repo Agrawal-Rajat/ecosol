@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 function CoreServices() {
+  const descRefs = useRef([]);
   const services = [
     {
       id: "01",
@@ -37,6 +38,28 @@ function CoreServices() {
       tags: ["Substations", "Earthing"],
     },
   ];
+
+  useEffect(() => {
+    const setHeights = () => {
+      // ensure array length matches
+      descRefs.current = descRefs.current.slice(0, services.length);
+      const heights = descRefs.current.map((el) =>
+        el ? el.getBoundingClientRect().height : 0,
+      );
+      const max = heights.length ? Math.max(...heights) : 0;
+      descRefs.current.forEach((el) => {
+        if (el) el.style.minHeight = max ? `${max}px` : "";
+      });
+    };
+
+    // Run once after mount/layout
+    const id = setTimeout(setHeights, 0);
+    window.addEventListener("resize", setHeights);
+    return () => {
+      clearTimeout(id);
+      window.removeEventListener("resize", setHeights);
+    };
+  }, [services]);
 
   return (
     <>
@@ -81,6 +104,26 @@ function CoreServices() {
             transition: transform 0.8s ease, filter 0.8s ease;
           }
 
+          .service-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-bg-white);
+  margin-bottom: 10px;
+
+  min-height: 56px; /* aligns all titles */
+  display: flex;
+  align-items: flex-end;
+}
+
+          .service-desc {
+            font-size: 14px;
+            color: var(--color-steel-grey);
+            line-height: 1.6;
+            margin-bottom: 0;
+            transition: min-height 0.2s ease;
+          }
+
+
           .service-gradient {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -90,11 +133,16 @@ function CoreServices() {
           }
 
           .service-content-box {
-            position: absolute;
-            bottom: 0; left: 0; width: 100%;
-            padding: 30px;
-            z-index: 3;
-          }
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          padding: 30px;
+          z-index: 3;
+
+          display: flex;
+          flex-direction: column;
+        }
 
           .service-item-card:hover {
             transform: translateY(-8px);
@@ -133,19 +181,19 @@ function CoreServices() {
           }
 
          .view-all-btn {
-  display: inline-block;
-  padding: 18px 45px;
-  background: var(--color-logo-navy);
-  color: var(--color-bg-white) !important; /* Force white text */
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
-}
+          display: inline-block;
+          padding: 18px 45px;
+          background: var(--color-logo-navy);
+          color: var(--color-bg-white) !important; /* Force white text */
+          font-size: 13px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          text-decoration: none;
+          border-radius: 2px;
+          transition: all 0.3s ease;
+          border: 1px solid transparent;
+        }
 
 .view-all-btn:hover {
   background: var(--color-logo-blue);
@@ -201,30 +249,17 @@ function CoreServices() {
                 />
                 <div className="service-gradient" />
                 <div className="service-content-box">
-                  <div className="tech-tag-group">
+                  {/* <div className="tech-tag-group">
                     {service.tags.map((tag, i) => (
                       <span key={i} className="tech-pill">
                         {tag}
                       </span>
                     ))}
-                  </div>
-                  <h3
-                    style={{
-                      fontSize: "22px",
-                      fontWeight: "700",
-                      color: "var(--color-bg-white)",
-                      marginBottom: "10px",
-                    }}
-                  >
-                    {service.title}
-                  </h3>
+                  </div> */}
+                  <h3 className="service-title">{service.title}</h3>
                   <p
-                    style={{
-                      fontSize: "14px",
-                      color: "var(--color-steel-grey)",
-                      lineHeight: "1.6",
-                      marginBottom: "0",
-                    }}
+                    className="service-desc"
+                    ref={(el) => (descRefs.current[index] = el)}
                   >
                     {service.description}
                   </p>

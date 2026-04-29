@@ -16,13 +16,13 @@ function Leadership() {
     },
     {
       name: "Engineering & Project Oversight",
-      role: "Protection, Safety & Compliance",
+      role: "Safety & Technical Compliance",
       experience:
         "Specialized in protection coordination, arc flash studies, grounding systems, and international IEEE/IEC standards.",
       details: [
-        "Protection Coordination",
-        "Arc Flash",
-        "Grounding",
+        "Detail Design",
+        "FEED",
+        "Engineering Practices",
         "IEEE/IEC Compliance",
       ],
     },

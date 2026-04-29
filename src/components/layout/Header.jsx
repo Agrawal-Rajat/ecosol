@@ -178,7 +178,9 @@ function Header() {
                     <div style={styles.megaLinksPane}>
                       {servicesData
                         .filter(
-                          (s) => s.slug !== "engineering-software-capabilities",
+                          (s) =>
+                            s.slug !== "engineering-software-capabilities" &&
+                            s.slug !== "electromagnetic-analysis",
                         )
                         .map((s) => (
                           <NavLink

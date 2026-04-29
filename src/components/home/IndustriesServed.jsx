@@ -232,6 +232,7 @@ function IndustriesServed() {
             color: var(--color-text-main);
             line-height: 1.7;
             max-width: 650px;
+            text-align: justify;
           }
 
           @media (max-width: 1100px) {
@@ -264,7 +265,7 @@ function IndustriesServed() {
                   onClick={() => setActiveTab(index)}
                 >
                   <span className="sector-label">{ind.label}</span>
-                  <span className="sector-code">{ind.code}</span>
+                  {/* <span className="sector-code">{ind.code}</span> */}
                 </button>
               ))}
             </div>

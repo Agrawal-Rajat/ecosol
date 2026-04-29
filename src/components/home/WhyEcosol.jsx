@@ -125,6 +125,7 @@ function WhyEcosol() {
             line-height: 1.6;
             opacity: 0;
             transition: all 0.4s ease;
+            text-align: justify;
           }
 
           .why-card:hover .card-desc {
@@ -196,6 +197,7 @@ function WhyEcosol() {
                 fontSize: "18px",
                 lineHeight: "1.7",
                 maxWidth: "400px",
+                textAlign: "justify",
               }}
             >
               We combine deep industry expertise with global standards to

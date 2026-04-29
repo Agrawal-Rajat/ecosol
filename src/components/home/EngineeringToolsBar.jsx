@@ -151,7 +151,7 @@ function EngineeringToolsBar() {
           <div className="tools-caption">
             <p>
               Industry-standard computational platforms utilized for rigorous
-              power system modeling and electromagnetic interference analysis.
+              power system modeling and analysis.
             </p>
           </div>
         </div>

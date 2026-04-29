@@ -169,7 +169,7 @@ function ContactInformation() {
                 <div className="rich-details">
                   Indore
                   <br />
-                  Madhya Pradesh, India
+                  India
                 </div>
               </div>
             </div>

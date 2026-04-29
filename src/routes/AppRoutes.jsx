@@ -6,6 +6,7 @@ import ServiceDetail from "../pages/ServiceDetail";
 import Projects from "../pages/Projects";
 import Expertise from "../pages/Expertise";
 import Careers from "../pages/Careers";
+import JobDetail from "../pages/JobDetail";
 import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
 
@@ -19,6 +20,7 @@ function AppRoutes() {
       <Route path="/projects" element={<Projects />} />
       <Route path="/expertise" element={<Expertise />} />
       <Route path="/careers" element={<Careers />} />
+      <Route path="/careers/:slug" element={<JobDetail />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

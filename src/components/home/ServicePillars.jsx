@@ -160,6 +160,7 @@ function ServicePillars() {
             font-size: 15px;
             color: var(--color-steel-grey); /* Technical grey for descriptions */
             line-height: 1.7;
+            text-align: justify;
           }
 
           .horizon-marker {
@@ -227,7 +228,7 @@ function ServicePillars() {
                 <div className="card-overlay" />
 
                 <div className="card-content">
-                  <div className="horizon-index">SPEC_0{index + 1}</div>
+                  <div className="horizon-index"></div>
                   <h3 className="horizon-title">{pillar.title}</h3>
                   <p className="horizon-desc">{pillar.description}</p>
                   <div className="horizon-marker" />

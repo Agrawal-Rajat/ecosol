@@ -32,6 +32,8 @@ function ClientGrid() {
   ];
 
   const projectExp = [
+    { src: kbhLogo, alt: "KBH Infra" },
+    { src: jacobsLogo, alt: "Jacobs Engineering" },
     { src: logo3, alt: "Petroleum Development Oman" },
     { src: logo4, alt: "Exterran" },
     { src: logo5, alt: "Foseco" },
@@ -192,14 +194,14 @@ function ClientGrid() {
       <section className="clients-section">
         <div className="container">
           {/* Metrics Strip */}
-          <div className="metrics-strip">
+          {/* <div className="metrics-strip">
             {metrics.map((m, i) => (
               <div key={i} className="metric-item">
                 <span className="metric-value">{m.value}</span>
                 <span className="metric-label">{m.label}</span>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Header */}
           <div className="header-center">
@@ -237,7 +239,7 @@ function ClientGrid() {
           </div>
 
           {/* Direct Clients */}
-          <div style={{ textAlign: "center", marginBottom: "28px" }}>
+          {/* <div style={{ textAlign: "center", marginBottom: "28px" }}>
             <div
               style={{
                 height: "2px",
@@ -266,7 +268,7 @@ function ClientGrid() {
                 <img src={client.src} alt={client.alt} className="logo-img" />
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Project Experience */}
           <div style={{ textAlign: "center", marginBottom: "28px" }}>
@@ -279,7 +281,7 @@ function ClientGrid() {
               }}
             ></div>
             <h3 className="sub-heading-text">
-              Project Contributions With <br />
+              Expertise Contribute to <br />
               <span className="accent-text-blue">
                 Leading Global Organizations
               </span>

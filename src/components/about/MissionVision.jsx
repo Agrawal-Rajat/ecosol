@@ -118,7 +118,7 @@ function MissionVision() {
             <div className="mv-card">
               <div className="mv-meta-group">
                 <div className="mv-indicator" />
-                <span className="mv-label">MISSION_REF_01</span>
+                <span className="mv-label">MISSION</span>
               </div>
               <h2 className="mv-title">
                 Functional <br />
@@ -135,7 +135,7 @@ function MissionVision() {
             <div className="mv-card">
               <div className="mv-meta-group">
                 <div className="mv-indicator" />
-                <span className="mv-label">VISION_REF_02</span>
+                <span className="mv-label">VISION</span>
               </div>
               <h2 className="mv-title">
                 Global <br />

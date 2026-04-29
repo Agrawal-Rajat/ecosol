@@ -113,6 +113,7 @@ function AboutHero() {
             border-left: 3px solid var(--color-electric-blue);
             padding-left: 25px;
             margin: 0;
+            text-align: justify;
           }
 
           /* --- Right Panel: Enhanced Glassmorphism --- */
@@ -190,7 +191,7 @@ function AboutHero() {
             <div className="spec-item">
               <span className="spec-label">Domain Expertise</span>
               <span className="spec-value">
-                High-Voltage Infrastructure & Grid Stability
+                Electrical Power System Analysis
               </span>
             </div>
 

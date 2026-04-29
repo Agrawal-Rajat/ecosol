@@ -37,8 +37,6 @@ function ServiceDetail() {
     const images = {
       "power-system-analysis":
         "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1600",
-      "electromagnetic-analysis":
-        "https://images.unsplash.com/photo-1581092162384-8987c1d64718?q=80&w=1600",
       "grounding-analysis":
         "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600",
       "engineering-software-capabilities":
@@ -135,6 +133,7 @@ function ServiceDetail() {
             border-left: 4px solid var(--color-electric-blue);
             padding-left: 24px;
             max-width: 650px;
+            text-align: justify;
           }
 
           /* --- DATA STRIPS --- */
@@ -170,6 +169,7 @@ function ServiceDetail() {
             line-height: 1.7;
             color: var(--color-text-main);
             font-weight: 400;
+            text-align: justify;
           }
 
           /* --- CARDS --- */
@@ -236,7 +236,7 @@ function ServiceDetail() {
           <div className="hero-overlay" />
           <div className="container-tight">
             <div className="hero-info-text">
-              <span
+              {/* <span
                 style={{
                   color: "var(--color-electric-blue)",
                   fontWeight: 800,
@@ -245,7 +245,7 @@ function ServiceDetail() {
                 }}
               >
                 TECHNICAL SPECIFICATION // 2026
-              </span>
+              </span> */}
               <h1 className="hero-title-main">{service.title}</h1>
               <p className="hero-description">{service.heroText}</p>
             </div>
@@ -272,7 +272,7 @@ function ServiceDetail() {
               <div className="card-grid-tight">
                 {service.scope.map((item, i) => (
                   <div key={i} className="minimal-data-card">
-                    <span
+                    {/* <span
                       style={{
                         fontSize: "9px",
                         color: "var(--color-electric-blue)",
@@ -283,7 +283,7 @@ function ServiceDetail() {
                       }}
                     >
                       PROTOCOL_MD_{i + 1}
-                    </span>
+                    </span> */}
                     <h3
                       style={{
                         fontSize: "19px",
@@ -359,7 +359,7 @@ function ServiceDetail() {
           <div className="background-num-watermark">04</div>
           <div className="container-tight">
             <div className="layout-grid-compact">
-              <div className="sidebar-label-bold">Verified Outputs</div>
+              <div className="sidebar-label-bold">Reports & Analysis</div>
               <div className="card-grid-tight">
                 {service.deliverables.map((item, i) => (
                   <div
@@ -377,7 +377,7 @@ function ServiceDetail() {
                     >
                       {item}
                     </h3>
-                    <div
+                    {/* <div
                       style={{
                         color: "var(--color-electric-blue)",
                         fontWeight: 800,
@@ -396,7 +396,7 @@ function ServiceDetail() {
                         }}
                       ></span>
                       CERTIFIED_DELIVERABLE
-                    </div>
+                    </div> */}
                   </div>
                 ))}
               </div>

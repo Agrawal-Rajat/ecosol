@@ -97,6 +97,7 @@ function CredentialsReminder() {
             max-width: 700px;
             margin: 40px auto 0 auto;
             line-height: 1.8;
+            text-align: center;
           }
 
           @media (max-width: 1024px) {

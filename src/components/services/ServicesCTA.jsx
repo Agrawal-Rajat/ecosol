@@ -77,6 +77,7 @@ function ServicesCTA() {
             color: var(--color-text-main);
             line-height: 1.7;
             margin: 0;
+            text-align: justify;
           }
 
           .ecosol-services-cta-scope .cta-button {

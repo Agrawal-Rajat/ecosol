@@ -93,12 +93,14 @@ function CareersHero() {
             line-height: 1.25;
             margin-bottom: 15px;
             letter-spacing: -0.5px;
+            text-align: justify;
           }
 
           .ecosol-careers-hero-scope .sub-text {
             font-size: 16px;
             color: var(--color-text-main);
             line-height: 1.8;
+            text-align: justify;
           }
 
           .ecosol-careers-hero-scope .image-showcase {

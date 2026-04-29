@@ -66,6 +66,7 @@ function Footer() {
             line-height: 1.8;
             color: var(--color-steel-grey);
             max-width: 360px;
+            text-align: justify;
           }
 
           .ecosol-footer-scope .column-title {
@@ -139,6 +140,7 @@ function Footer() {
               align-items: center;
               text-align: center;
               gap: 40px;
+              padding-bottom: 0;
             }
 
             .ecosol-footer-scope .footer-brand {
@@ -152,6 +154,7 @@ function Footer() {
 
             .ecosol-footer-scope .footer-desc {
               margin: 0 auto;
+              text-align: center;
             }
 
             .ecosol-footer-scope .contact-item {
@@ -162,7 +165,8 @@ function Footer() {
             .ecosol-footer-scope .footer-bottom {
               flex-direction: column;
               text-align: center;
-              padding-top: 25px;
+              padding-top: 0;
+              border-top: none;
             }
 
             .ecosol-footer-scope .legal-links {
@@ -213,24 +217,36 @@ function Footer() {
             <div style={{ flex: "1 1 180px" }}>
               <h4 className="column-title">Expertise</h4>
               <nav className="nav-stack">
-                <NavLink to="/services" className="footer-link">
-                  Power System Studies
+                <NavLink
+                  to="/services/power-system-analysis"
+                  className="footer-link"
+                >
+                  Power System Analysis
                 </NavLink>
-                <NavLink to="/services" className="footer-link">
-                  Grounding Engineering
+                <NavLink
+                  to="/services/grounding-analysis"
+                  className="footer-link"
+                >
+                  Grounding Analysis
                 </NavLink>
-                <NavLink to="/services" className="footer-link">
-                  Electrical Detail Design
+                <NavLink
+                  to="/services/power-system-protection-study"
+                  className="footer-link"
+                >
+                  Protection Study
                 </NavLink>
-                <NavLink to="/services" className="footer-link">
-                  Technical Advisory
+                <NavLink
+                  to="/services/solar-power-plant-engineering"
+                  className="footer-link"
+                >
+                  Solar Power Plant
                 </NavLink>
               </nav>
             </div>
 
             {/* Column 4: Contact info */}
             <div style={{ flex: "1 1 250px" }}>
-              <h4 className="column-title">Global Office</h4>
+              <h4 className="column-title">Contact</h4>
               <div className="contact-info">
                 <div className="contact-item">
                   <span>✉️</span> info@ecosolprojects.com
@@ -239,7 +255,7 @@ function Footer() {
                   <span>📞</span> +91 90048 17084
                 </div>
                 <div className="contact-item">
-                  <span>📍</span> Indore, Madhya Pradesh, India
+                  <span>📍</span> Indore, India
                 </div>
               </div>
             </div>

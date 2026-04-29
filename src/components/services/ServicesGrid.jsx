@@ -20,14 +20,6 @@ function ServicesGrid() {
         "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=800",
     },
     {
-      title: "Electromagnetic Analysis",
-      description:
-        "Electromagnetic interference and high voltage interaction studies to assess infrastructure impact on nearby systems.",
-      link: "/services/electromagnetic-analysis",
-      image:
-        "https://res.cloudinary.com/de0rdsbph/image/upload/q_auto/f_auto/v1776682110/c7409f9d-670d-4330-8f50-2921e7aaf27b.png",
-    },
-    {
       title: "Grounding Analysis",
       description:
         "Electrical earthing and ground potential safety engineering to ensure personnel protection and reliable fault dissipation.",
@@ -169,6 +161,7 @@ function ServicesGrid() {
             line-height: 1.7;
             margin-bottom: 30px;
             opacity: 0.85;
+            text-align: justify;
           }
 
           .ecosol-services-grid-scope .learn-more {

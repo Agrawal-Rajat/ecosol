@@ -120,7 +120,7 @@ function ServicesHero() {
             margin: 0 auto 50px auto;
             border-left: 3px solid var(--color-electric-blue, #0066ff);
             padding-left: 25px;
-            text-align: left; /* Kept left aligned within the center for the lead-border style */
+            text-align: justify;
             display: inline-block;
           }
 

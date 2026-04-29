@@ -1,39 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import jobs from "../../data/jobsData";
 
 function CurrentOpportunities() {
-  const jobs = [
-    {
-      title: "Electrical Design Engineer",
-      experience: "3–8 Years Experience",
-      details: [
-        "Preparation of single line diagrams and electrical layouts",
-        "Equipment sizing and specification",
-        "Coordination with multidisciplinary teams",
-        "Compliance with IEEE / IEC standards",
-      ],
-    },
-    {
-      title: "Power System Studies Engineer",
-      experience: "3–10 Years Experience",
-      details: [
-        "Load flow and short circuit analysis",
-        "Protection coordination studies",
-        "Arc flash and grounding studies",
-        "Use of ETAP / DIgSILENT / PSCAD",
-      ],
-    },
-    {
-      title: "Graduate Engineer Trainee",
-      experience: "0–2 Years Experience",
-      details: [
-        "Support in engineering calculations",
-        "Preparation of technical documentation",
-        "Assistance in system studies and design tasks",
-        "Learning under senior engineering supervision",
-      ],
-    },
-  ];
-
   return (
     <>
       <style>
@@ -210,9 +179,12 @@ function CurrentOpportunities() {
                   </ul>
                 </div>
 
-                <a href="#contact" className="apply-link">
-                  Technical Application
-                </a>
+                <Link
+                  to={`/careers/${jobs[index].slug}`}
+                  className="apply-link"
+                >
+                  View more
+                </Link>
               </div>
             ))}
           </div>

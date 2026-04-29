@@ -247,6 +247,10 @@ function Projects() {
             letter-spacing: -0.5px;
           }
 
+          .ecosol-projects-scope p {
+            text-align: justify;
+          }
+
           .ecosol-projects-scope .client-meta {
              font-weight: 800;
              color: var(--color-logo-navy);
@@ -346,9 +350,9 @@ function Projects() {
                   >
                     {p.desc}
                   </p>
-                  <a href="#" className="view-case-btn">
+                  {/* <a href="#" className="view-case-btn">
                     Technical Overview <span>→</span>
-                  </a>
+                  </a> */}
                 </div>
               </div>
             ))}

@@ -1,7 +1,12 @@
 import React from "react";
 
 function GlobalPresenceContact() {
-  const regions = ["India", "Middle East & North Africa", "Europe", "Africa"];
+  const regions = [
+    "India",
+    "Middle East & North Africa",
+    "Europe",
+    "South East Asia",
+  ];
 
   return (
     <>

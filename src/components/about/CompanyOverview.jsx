@@ -134,6 +134,7 @@ function CompanyOverview() {
             font-size: 15px;
             color: var(--color-text-main);
             line-height: 1.7;
+            text-align: justify;
           }
 
           @media (max-width: 1024px) {

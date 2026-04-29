@@ -38,43 +38,6 @@ const servicesData = [
     },
 
     {
-        slug: "electromagnetic-analysis",
-        title: "Electromagnetic Analysis",
-        heroText:
-            "Electromagnetic interference and high voltage system interaction studies to evaluate electrical infrastructure impact on nearby equipment, pipelines, and communication systems.",
-
-        overview:
-            "High-voltage electrical infrastructure can create electromagnetic interactions that impact nearby equipment, pipelines, and communication systems. Our electromagnetic analysis services help identify and mitigate these risks through advanced simulation and engineering evaluation.",
-
-        scope: [
-            "Electromagnetic interference (EMI) analysis",
-            "Conductive and inductive coupling studies",
-            "Transmission line interaction analysis",
-            "Lightning and switching transient analysis",
-            "High-frequency and low-frequency EM field modeling"
-        ],
-
-        deliverables: [
-            "Electromagnetic risk assessment reports",
-            "EM field simulation models",
-            "Interference mitigation recommendations",
-            "Compliance documentation and technical validation"
-        ],
-
-        tools: ["CDEGS", "PSCAD", "Advanced EM modeling tools"],
-
-        standards: ["IEC", "IEEE"],
-
-        industries: [
-            "Transmission Utilities",
-            "Pipeline Infrastructure",
-            "Telecommunications",
-            "Industrial Power Systems",
-            "Energy Infrastructure"
-        ]
-    },
-
-    {
         slug: "grounding-analysis",
         title: "Grounding Analysis",
         heroText:
@@ -98,7 +61,7 @@ const servicesData = [
             "Safety compliance verification reports"
         ],
 
-        tools: ["CDEGS", "Grounding simulation software"],
+        tools: ["CDEGS", "ETAP"],
 
         standards: ["IEC", "IEEE"],
 
@@ -115,24 +78,24 @@ const servicesData = [
         slug: "power-system-protection-study",
         title: "Power System Protection Study",
         heroText:
-            "Protection coordination, relay setting review, and fault level analysis to improve the safety and reliability of electrical power systems.",
+            "Protection coordination, relay setting to improve the safety and reliability of electrical power systems.",
 
         overview:
             "Power system protection studies ensure that electrical networks respond correctly to faults and abnormal operating conditions. Our engineers evaluate protective devices, coordination settings, and fault behavior to support safe and reliable system operation.",
 
         scope: [
             "Protection relay coordination studies",
-            "Fault level and short-circuit analysis",
+            "Unit Protection Setting and Calculations",
             "Relay setting review and validation",
             "Protection device selectivity assessment",
-            "System safety and reliability analysis"
+            "Review of Equipment Schematic Drawings"
         ],
 
         deliverables: [
-            "Protection coordination reports",
-            "Fault analysis and relay setting recommendations",
-            "Single-line protection diagrams",
-            "Engineering review documentation"
+            "Protection Study reports",
+            "Fault analysis and Protection Relay Setting Schedules and Tables",
+            "Protection and metering Single line diagrams",
+            "Root Cause Analysis Reports"
         ],
 
         tools: ["ETAP", "DIgSILENT PowerFactory", "PSCAD"],
@@ -160,20 +123,20 @@ const servicesData = [
             "Plant electrical layout development",
             "DC and AC system design",
             "Grid interconnection studies",
-            "Equipment sizing and cable routing",
-            "Construction-ready engineering packages"
+            "System and Equipment Sizing Calculations",
+            "Construction-ready engineering deliverables"
         ],
 
         deliverables: [
             "Solar plant engineering drawings",
-            "Electrical design and routing documentation",
-            "Interconnection and system analysis reports",
+            "Electrical design and documentation",
+            "Grid Integration and System Analysis reports",
             "Project execution support documents"
         ],
 
         tools: ["AutoCAD Electrical", "ETAP", "PVsyst"],
 
-        standards: ["IEC", "IEEE", "MNRE"],
+        standards: ["IEC", "IEEE", "IS"],
 
         industries: [
             "Solar Developers",
@@ -231,7 +194,7 @@ const servicesData = [
         slug: "detail-design-engineering",
         title: "Detail Design Engineering",
         heroText:
-            "Complete electrical engineering design services for substations, power plants, and industrial electrical infrastructure.",
+            "Complete electrical engineering design services for substations, power plants, and industrial infrastructure.",
 
         overview:
             "Detailed engineering transforms conceptual electrical designs into executable construction-ready documentation. Our engineering team provides comprehensive design solutions for substations, power plants, and industrial electrical systems.",
@@ -241,7 +204,8 @@ const servicesData = [
             "Electrical Load List",
             "Electrical Equipment Sizing Calculations - Generator Set, Transformer, HT/LT Cable, DC Charger, AC UPS System, Battery, Switchgear",
             "Electrical System Design Calculation - Earthing, Lightening, Illumination",
-            "Layout Engineering - Substation, Field Equipment, Earthing and Lightening, Lighting and Small Power"
+            "Layout Engineering - Substation, Field Equipment, Earthing and Lightening, Lighting and Small Power",
+            "Electrical Installation Drawings"
         ],
 
         deliverables: [
@@ -251,7 +215,7 @@ const servicesData = [
             "Construction-ready engineering packages"
         ],
 
-        tools: ["International Electrical Codes"],
+        tools: ["EXCEL", "DATASHEETS", "AutoCAD"],
 
         standards: ["IEC", "IEEE", "NEC"],
 
@@ -268,13 +232,13 @@ const servicesData = [
         slug: "procurement-assistance",
         title: "Procurement Assistance",
         heroText:
-            "Technical procurement support services for electrical infrastructure projects to ensure equipment reliability and vendor compliance.",
+            "Technical procurement support services for electrical infrastructure projects to ensure technical compliance and scope defination.",
 
         overview:
             "Selecting the right electrical equipment and vendors is essential for project reliability and long-term operational performance. Our procurement support services ensure that equipment specifications, vendor proposals, and procurement decisions align with engineering requirements.",
 
         scope: [
-            "Preparation of technical specifications and RFQ documentation",
+            "Preparation of technical specifications, Datasheets and RFQ documentation",
             "Vendor prequalification and technical bid evaluation",
             "Vendor proposal analysis and compliance review",
             "Post Order Vendor Document Review",
@@ -283,14 +247,14 @@ const servicesData = [
 
         deliverables: [
             "Technical bid evaluation reports",
-            "Vendor comparison matrices",
-            "Procurement technical specifications",
-            "Equipment selection recommendations"
+            "Evaluation and Comparison Matrices",
+            "RFQ Documents",
+            "Scope of Work & documentation"
         ],
 
         tools: ["Engineering procurement documentation tools"],
 
-        standards: ["IEC", "IEEE"],
+        standards: ["Established Global Engineering  Practices"],
 
         industries: [
             "Power Infrastructure Projects",
@@ -313,7 +277,7 @@ const servicesData = [
         scope: [
             "Factory inspection of transformers, switchgear, and control systems",
             "Factory Acceptance Test (FAT) witnessing",
-            "Manufacturing quality verification",
+            "Review of Test Reports",
             "Installation and site inspection support"
         ],
 
@@ -321,10 +285,10 @@ const servicesData = [
             "Inspection reports and compliance verification",
             "FAT witnessing reports and validation documentation",
             "Non-conformance and corrective action reports",
-            "Equipment quality certification documentation"
+
         ],
 
-        tools: ["Inspection and testing equipment"],
+        tools: ["MATLAB", "DATASHEETS"],
 
         standards: ["IEC Testing Standards", "IEEE Equipment Standards", "Industrial QA Protocols"],
 

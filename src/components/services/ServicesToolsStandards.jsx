@@ -62,6 +62,7 @@ function ServicesToolsStandards() {
             color: var(--color-text-main);
             line-height: 1.8;
             max-width: 480px;
+            text-align: justify;
           }
 
           .ecosol-tools-scope .tech-grid {
@@ -187,13 +188,11 @@ function ServicesToolsStandards() {
                   Regulatory Codes & Standards
                 </h3>
                 <div className="tags-container">
-                  {["IEEE", "IEC", "NFPA 70E", "NEC", "BS Standards"].map(
-                    (std) => (
-                      <span key={std} className="tech-tag">
-                        {std}
-                      </span>
-                    ),
-                  )}
+                  {["IEEE", "IEC", "NFPA 70E", "NEC", "IS"].map((std) => (
+                    <span key={std} className="tech-tag">
+                      {std}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>

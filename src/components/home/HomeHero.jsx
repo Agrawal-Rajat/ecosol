@@ -158,6 +158,7 @@ const styles = {
     marginBottom: "48px",
     lineHeight: "1.7",
     maxWidth: "680px",
+    textAlign: "justify",
   },
   buttonGroup: {
     display: "flex",
